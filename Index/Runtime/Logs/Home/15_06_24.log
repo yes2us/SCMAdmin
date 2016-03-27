@@ -1,0 +1,1778 @@
+[ 2015-06-24T19:09:52+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBStaffMng/getRawUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.1086s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vtext] FROM [sysparameters] WHERE ( [name]='eekabsc.com' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0112s ]
+
+[ 2015-06-24T19:09:53+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBStaffMng/checkUserPWD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select pwdcompare('rickywang9',[Password])  cmprs from Staffs where LOWER(StaffCode) ='admin' [ RunTime:0.0055s ]
+
+[ 2015-06-24T19:09:53+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBStaffMng/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staff_object' [ RunTime:0.0165s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0177s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [_Identify],[StaffCode],[StaffName],[IsOnJob],[IDCardNO],[Birthday],[MobileNO],[BelongDeptCode],[IsAdmin],[PicturePath],(select vstring from SysParameters where Name='DSSuffix') DSSuffix FROM [staffs] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1  [ RunTime:0.0040s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'vw_deptrelpersons' [ RunTime:0.0168s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  * FROM [vw_deptrelpersons] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1  [ RunTime:0.0130s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'deptstaffs' [ RunTime:0.0164s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  DISTINCT  reltype as rolename FROM [deptstaffs] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1  [ RunTime:0.0015s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [BelongDeptCode] FROM [staffs] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0020s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  * FROM [vw_deptrelpersons] WHERE [DeptCode] = '10025') AS thinkphp) AS T1  [ RunTime:0.0082s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewstaffevents' [ RunTime:0.0163s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY eventscopeorder, eventtypeorder,eventorder) AS ROW_NUMBER FROM (SELECT  * FROM [viewstaffevents] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1  [ RunTime:0.0284s ]
+
+[ 2015-06-24T19:09:53+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0007s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [IsAdmin] FROM [staffs] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0020s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0004s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [VText] FROM [sysparameters] WHERE [Name] = 'wbmenu_admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001259s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001318s ]
+
+[ 2015-06-24T19:09:53+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001525s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [IsAdmin] FROM [staffs] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0001s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0004s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [VText] FROM [sysparameters] WHERE [Name] = 'wbmenu_admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000656s ]
+
+[ 2015-06-24T19:09:53+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+
+[ 2015-06-24T19:09:53+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0804s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0188s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [_identify],[recordcode],[recordtype],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[atvalue],[vtvalue],[tsaleqty],[auditstate],[auditdate],[auditorname],(case when auditstate='批准' then 1 else case when auditstate='拒绝' then 0 else 2 end end) auditvalue FROM [viewscorerecords] WHERE ( AuditState = '待审核' and AuditorCode = 'admin' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0387s ]
+
+[ 2015-06-24T19:09:54+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0288s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0344s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND ( ((NtBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtMateBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtChildBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtChildBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtWeddingAnniDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtWeddingAnniDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5))) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0431s ]
+
+[ 2015-06-24T19:09:54+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000100s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001992s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001236s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0008s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND (  PlanInviteDate is not null and convert(varchar(10),PlanInviteDate,23)<=convert(varchar(10),GetDate()+7,23) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0161s ]
+
+[ 2015-06-24T19:09:54+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0009s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND ( NtContDate is not null and CONVERT(varchar(7),NtContDate,23)<=CONVERT(varchar(7),GETDATE()+7,23) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0156s ]
+
+[ 2015-06-24T19:09:54+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [_identify],[recordcode],[recordtype],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[atvalue],[vtvalue],[tsaleqty],[auditstate],[auditdate],[auditorname],(case when auditstate='批准' then 1 else case when auditstate='拒绝' then 0 else 2 end end) auditvalue FROM [viewscorerecords] WHERE ( AppealState = '待仲裁' and AppealDealer = 'admin' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0130s ]
+
+[ 2015-06-24T19:10:56+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [IsAdmin] FROM [staffs] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0003s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [VText] FROM [sysparameters] WHERE [Name] = 'wbmenu_admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000621s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2015-06-24T19:10:56+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001283s ]
+
+[ 2015-06-24T19:10:56+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0015s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0011s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND ( NtContDate is not null and CONVERT(varchar(7),NtContDate,23)<=CONVERT(varchar(7),GETDATE()+7,23) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0103s ]
+
+[ 2015-06-24T19:10:56+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [_identify],[recordcode],[recordtype],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[atvalue],[vtvalue],[tsaleqty],[auditstate],[auditdate],[auditorname],(case when auditstate='批准' then 1 else case when auditstate='拒绝' then 0 else 2 end end) auditvalue FROM [viewscorerecords] WHERE ( AuditState = '待审核' and AuditorCode = 'admin' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0101s ]
+
+[ 2015-06-24T19:10:56+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [_identify],[recordcode],[recordtype],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[atvalue],[vtvalue],[tsaleqty],[auditstate],[auditdate],[auditorname],(case when auditstate='批准' then 1 else case when auditstate='拒绝' then 0 else 2 end end) auditvalue FROM [viewscorerecords] WHERE ( AppealState = '待仲裁' and AppealDealer = 'admin' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0014s ]
+
+[ 2015-06-24T19:10:56+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND ( ((NtBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtMateBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtChildBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtChildBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtWeddingAnniDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtWeddingAnniDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5))) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0056s ]
+
+[ 2015-06-24T19:10:56+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001168s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001309s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND (  PlanInviteDate is not null and convert(varchar(10),PlanInviteDate,23)<=convert(varchar(10),GetDate()+7,23) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0088s ]
+
+[ 2015-06-24T19:11:15+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+
+[ 2015-06-24T19:11:15+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getScoreCrossStructureColArray
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select EventScopeCode as colcode, EventScope as colname from EventScopes where EventScopeEnabled=1  union select EventTypeCode as colcode, EventType as colname from EventTypes where EventTypeEnabled=1  union select EventCode as colcode, [Event] as colname from [Events] where EventEnabled=1  [ RunTime:0.0044s ]
+
+[ 2015-06-24T19:11:17+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getVariousRanks
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sqllist' [ RunTime:0.0160s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [SQLCode] FROM [sqllist] WHERE ( SQLIndex='WBSQL_Ranker_StoreMngerTY' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0067s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select e.DeptSName,e.StaffName,e.YScore,e.RankNum,e.RankOrder
+from 
+(
+	select DeptSName,StaffName,0.6*ISNULL(c.AvgStaffYScore,0)+0.4*ISNULL(d.YScore,0) YScore, 
+	(select COUNT(1) from Depts where [ScoreMngEnabled]=1 and DeptType='店铺') RankNum,
+	ROW_NUMBER() over(order by 0.6*ISNULL(c.AvgStaffYScore,0)+0.4*ISNULL(d.YScore,0) desc) RankOrder
+	from 
+	(
+		select  a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,AVG(YScore) AvgStaffYScore
+		from ViewStoreMngers as a 
+		left join
+		(
+			select DeptCode,StaffCode,isnull(SUM(YScore),0) YScore
+			from ViewScoreRecords 
+			where RecordTime>='2015-06-01 00:00' and   RecordTime<='2015-06-24 00:00'  and YScore is not null and AuditState='批准'
+			and StaffCode not in (select StaffCode from DeptStaffs where RelType='店长')
+			group by DeptCode,StaffCode
+		) as b
+		on a.DeptCode = b.DeptCode
+		group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName
+	) as c
+	left join 
+	(
+		select StaffCode,SUM(viewscorerecords.YScore) YScore	
+		from viewscorerecords
+		inner join [events] on ViewScoreRecords.eventcode = [events].eventcode
+		where RecordTime>='2015-06-01 00:00' and   RecordTime<='2015-06-24 00:00' and viewscorerecords.YScore is not null 
+and AuditState='批准'  and StaffCode  in (select StaffCode from DeptStaffs where RelType='店长')
+		group by StaffCode
+	) as d
+	on c.StaffCode = d.StaffCode
+) as e
+where RankOrder>(1-1)*1000 and RankOrder<=1*1000 [ RunTime:0.0648s ]
+
+[ 2015-06-24T19:11:21+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getVariousRanks
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000439s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sqllist' [ RunTime:0.0008s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [SQLCode] FROM [sqllist] WHERE ( SQLIndex='WBSQL_Ranker_StoreGARatio' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0018s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select e.StaffName,d.DeptSName,d.AGRatio,d.RankOrder,d.RankNum
+from 
+(
+	select a.DeptSName,a.DeptName,a.TotalTValueTarget,isnull(b.TValue,0) TValue,
+	isnull(b.TValue,0)/a.TotalTValueTarget AGRatio,
+	ROW_NUMBER() OVER (ORDER BY isnull(b.TValue,0)/a.TotalTValueTarget desc) RankOrder,
+	(select COUNT(1) from Depts where [ScoreMngEnabled]=1 and DeptType='店铺') RankNum
+	from
+	(
+		select DeptName,DeptSName,YearMonth,TotalTValueTarget
+		from dbo.DeptGoals inner join dbo.Depts on DeptGoals.DeptCode = Depts.DeptCode
+		where DeptType='店铺' and ScoreMngEnabled=1
+		and YearMonth='2015-06'
+	) as a
+	left join 
+	(
+		select  DeptName,RecordYM,SUM(Tvalue) TValue
+		from dbo.ViewScoreRecords
+		where TValue is not null and AuditState='批准'
+		and RecordYM='2015-06'
+		group by DeptName,RecordYM
+	) as b
+	on a.DeptName = b.DeptName
+) as d 
+left join dbo.ViewStoreMngers as e on d.DeptName = e.DeptName
+where RankOrder>(1-1)*1000 and RankOrder<=1*1000 [ RunTime:0.0529s ]
+
+[ 2015-06-24T19:11:34+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getVariousRanks
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sqllist' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [SQLCode] FROM [sqllist] WHERE ( SQLIndex='WBSQL_Ranker_StoreStaffTY' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0015s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select DeptSName,StaffName,YScore,RankOrder,RankNum
+from 
+(
+	select DeptCode,DeptSName,StaffCode,StaffName,isnull(SUM(YScore),0) YScore,
+	ROW_NUMBER() over(order by isnull(SUM(YScore),0) desc) RankOrder,
+	( select COUNT(1) from Depts inner join DeptStaffs
+	 on Depts.DeptCode = DeptStaffs.DeptCode and DeptStaffs.RelType='部门员工'
+	 inner join Staffs on DeptStaffs.StaffCode = Staffs.StaffCode and Staffs.IsOnJob = 1 and Staffs.IsLocked=0
+	 where DeptType='店铺' and Depts.ScoreMngEnabled = 1) RankNum
+	from ViewScoreRecords 
+	where  RecordTime>='2015-06-01 00:00' and   RecordTime<='2015-06-24 00:00' and YScore is not null and AuditState='批准'
+	and StaffCode not in (select StaffCode from DeptStaffs where RelType='店长')
+	group by DeptCode,DeptSName,StaffCode,StaffName
+) as a
+where RankOrder>(1-1)*1000 and RankOrder<=1*1000 [ RunTime:0.0161s ]
+
+[ 2015-06-24T19:11:38+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getVariousRanks
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sqllist' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [SQLCode] FROM [sqllist] WHERE ( SQLIndex='WBSQL_Ranker_StoreStaffTY' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select DeptSName,StaffName,YScore,RankOrder,RankNum
+from 
+(
+	select DeptCode,DeptSName,StaffCode,StaffName,isnull(SUM(YScore),0) YScore,
+	ROW_NUMBER() over(order by isnull(SUM(YScore),0) desc) RankOrder,
+	( select COUNT(1) from Depts inner join DeptStaffs
+	 on Depts.DeptCode = DeptStaffs.DeptCode and DeptStaffs.RelType='部门员工'
+	 inner join Staffs on DeptStaffs.StaffCode = Staffs.StaffCode and Staffs.IsOnJob = 1 and Staffs.IsLocked=0
+	 where DeptType='店铺' and Depts.ScoreMngEnabled = 1) RankNum
+	from ViewScoreRecords 
+	where  RecordTime>='2015-04-06 00:00' and   RecordTime<='2015-06-24 00:00' and YScore is not null and AuditState='批准'
+	and StaffCode not in (select StaffCode from DeptStaffs where RelType='店长')
+	group by DeptCode,DeptSName,StaffCode,StaffName
+) as a
+where RankOrder>(1-1)*1000 and RankOrder<=1*1000 [ RunTime:0.0887s ]
+
+[ 2015-06-24T19:11:43+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+
+[ 2015-06-24T19:11:43+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getPosHotSpots
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_posyscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0017s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_postscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0015s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_qtypersale' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0014s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: page D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBScoreMngController.class.php 第 22 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: limit D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db\Driver.class.php 第 945 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [recordcode],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[tsaleqty],[auditorcode],[auditorname] FROM [viewscorerecords] WHERE (  [YScore] >= '8' OR [TScore] >= '8' OR [TSaleQty] >= '10' ) AND [AuditState] <> '待审核' AND [EventScope] <> '固定得分') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 20) [ RunTime:0.0312s ]
+
+[ 2015-06-24T19:11:53+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+
+[ 2015-06-24T19:11:53+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBDeptMng/getDeptList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/eekabsc.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [IsAdmin] FROM [staffs] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'depts' [ RunTime:0.0150s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  * FROM [depts] WHERE [VIPMngEnabled] = 1) AS thinkphp) AS T1  [ RunTime:0.0014s ]
+
+[ 2015-06-24T19:12:02+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getVIPList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 25 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  customers._Identify,(case when IsReserved=1 then '保留' else '放弃' end) ReserveVIP,[IsReserved],[CustomerCode],[CustomerName],[MaintainerCode],isnull(StaffName,'(无人维护)') MaintainerName,[MobileNo],[AnzBuyNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],[AnzStateLevel],[AnzImportantLevel],[PlanInviteDate],[PlanInviteContent],[AnzBuyHabitQuad],[AnzRelationLevel],ROW_NUMBER() over (partition by AnzBuyHabitQuad order by AnzBuyNearity) QuadRankNo FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [BelongStoreCode] = '10027' AND [VIPMngEnabled] = 1) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 10000) [ RunTime:0.0234s ]
+
+[ 2015-06-24T19:12:03+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getSingleVIPBasicDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  customers._Identify,[CustomerCode],[IsReserved],[CustomerName],[MobileNo],[Birthday],[BodyShape],[Interest],[DressStyle],[Careen],[Characters],[PicturePath],[AnzStateLevel],[AnzImportantLevel],[BizCircle],[PrefSize],[PrefContWay],[PrefContTime],[PrefBuySites],[PrefColor],[PrefStyle],[BuyReasons],[MateBirthday],[ChildBirthday],[WeddingAnniDate],[WeddingAnniRemark],[OtherPersonalities],[PlanInviteDate],[PlanInviteContent],[NtContDate],[AnzLastContDate],[AnzLastBuyDate],[AnzBuyNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],[AnzTotalBuyMoney],[AnzTotalBuyFreq],[AnzBuyGapDays],[AnzMoneyPerSale],[AnzQtyPerSale],[AnzBuyPrice],[AnzBuyHabitQuad],[BelongStoreCode],isnull(DeptSName,'(无归属店铺)') DeptSName,[MaintainerCode],isnull(StaffName,'(无人维护)') MaintainerName,[AnzEmotionDegree],[AnzContNearity],[anzrelationlevel],[anztotalscore],[ntcontcontent],ROW_NUMBER() over (partition by AnzBuyHabitQuad order by AnzBuyNearity) QuadRankNo FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [CustomerCode] = '200566') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 10) [ RunTime:0.0199s ]
+
+[ 2015-06-24T19:12:03+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getContRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'contactrecords' [ RunTime:0.0160s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY contdate desc) AS ROW_NUMBER FROM (SELECT  [_Identify],[CustomerCode],[ContDate],[MaintainerCode],StaffName as MaintainerName,[ContWay],[ResponseLevel],[InviteResult],[ContContent],ROW_NUMBER() over (order by ContDate desc) as ID FROM [contactrecords] left join VW_Staffs on MaintainerCode = StaffCode  WHERE ( CustomerCode='200566' )) AS thinkphp) AS T1  [ RunTime:0.0047s ]
+
+[ 2015-06-24T19:12:03+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getSaleRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sales' [ RunTime:0.0169s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  CONVERT(varchar(10),[RecordTime],23) RecordTime,Sales.SKU,[Year],[WaveBand],[Series],[ProductCode],[Color],[Size],convert(decimal(10,0),SaleMoney) SaleMoney,[SaleQty],[PicturePath],convert(decimal(5,2),(case when isnull(TicketPrice,0)*isnull(SaleQty,0)=0 then 0 else isnull(SaleMoney,0)/(TicketPrice*SaleQty) end)) Discount FROM [sales] left join SKUs on Sales.SKU = SKUs.SKU INNER JOIN ProductColors on SKUs.ProductColorCode = ProductColors.ProductColorCode  WHERE ( CustomerCode='200566' )) AS thinkphp) AS T1  [ RunTime:0.1059s ]
+
+[ 2015-06-24T19:12:03+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getSaleSpan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000830s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sales' [ RunTime:0.0004s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY WaveBand) AS ROW_NUMBER FROM (SELECT  [WaveBand],[Series],convert(decimal(10,2),SUM(SaleMoney)) SaleMoney,SUM(SaleQty) SaleQty FROM [sales] left join SKUs on Sales.SKU = SKUs.SKU INNER JOIN ProductColors on SKUs.ProductColorCode = ProductColors.ProductColorCode  WHERE ( CustomerCode='200566' ) GROUP BY WaveBand,Series) AS thinkphp) AS T1  [ RunTime:0.0581s ]
+
+[ 2015-06-24T19:12:05+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getSingleVIPBasicDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0007s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  customers._Identify,[CustomerCode],[IsReserved],[CustomerName],[MobileNo],[Birthday],[BodyShape],[Interest],[DressStyle],[Careen],[Characters],[PicturePath],[AnzStateLevel],[AnzImportantLevel],[BizCircle],[PrefSize],[PrefContWay],[PrefContTime],[PrefBuySites],[PrefColor],[PrefStyle],[BuyReasons],[MateBirthday],[ChildBirthday],[WeddingAnniDate],[WeddingAnniRemark],[OtherPersonalities],[PlanInviteDate],[PlanInviteContent],[NtContDate],[AnzLastContDate],[AnzLastBuyDate],[AnzBuyNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],[AnzTotalBuyMoney],[AnzTotalBuyFreq],[AnzBuyGapDays],[AnzMoneyPerSale],[AnzQtyPerSale],[AnzBuyPrice],[AnzBuyHabitQuad],[BelongStoreCode],isnull(DeptSName,'(无归属店铺)') DeptSName,[MaintainerCode],isnull(StaffName,'(无人维护)') MaintainerName,[AnzEmotionDegree],[AnzContNearity],[anzrelationlevel],[anztotalscore],[ntcontcontent],ROW_NUMBER() over (partition by AnzBuyHabitQuad order by AnzBuyNearity) QuadRankNo FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [CustomerCode] = '762445') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 10) [ RunTime:0.0150s ]
+
+[ 2015-06-24T19:12:05+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getSaleSpan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sales' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY WaveBand) AS ROW_NUMBER FROM (SELECT  [WaveBand],[Series],convert(decimal(10,2),SUM(SaleMoney)) SaleMoney,SUM(SaleQty) SaleQty FROM [sales] left join SKUs on Sales.SKU = SKUs.SKU INNER JOIN ProductColors on SKUs.ProductColorCode = ProductColors.ProductColorCode  WHERE ( CustomerCode='762445' ) GROUP BY WaveBand,Series) AS thinkphp) AS T1  [ RunTime:0.0580s ]
+
+[ 2015-06-24T19:12:05+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getContRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'contactrecords' [ RunTime:0.0004s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY contdate desc) AS ROW_NUMBER FROM (SELECT  [_Identify],[CustomerCode],[ContDate],[MaintainerCode],StaffName as MaintainerName,[ContWay],[ResponseLevel],[InviteResult],[ContContent],ROW_NUMBER() over (order by ContDate desc) as ID FROM [contactrecords] left join VW_Staffs on MaintainerCode = StaffCode  WHERE ( CustomerCode='762445' )) AS thinkphp) AS T1  [ RunTime:0.0025s ]
+
+[ 2015-06-24T19:12:05+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getSaleRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sales' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  CONVERT(varchar(10),[RecordTime],23) RecordTime,Sales.SKU,[Year],[WaveBand],[Series],[ProductCode],[Color],[Size],convert(decimal(10,0),SaleMoney) SaleMoney,[SaleQty],[PicturePath],convert(decimal(5,2),(case when isnull(TicketPrice,0)*isnull(SaleQty,0)=0 then 0 else isnull(SaleMoney,0)/(TicketPrice*SaleQty) end)) Discount FROM [sales] left join SKUs on Sales.SKU = SKUs.SKU INNER JOIN ProductColors on SKUs.ProductColorCode = ProductColors.ProductColorCode  WHERE ( CustomerCode='762445' )) AS thinkphp) AS T1  [ RunTime:0.0605s ]
+
+[ 2015-06-24T19:12:07+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getPosHotSpots
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_posyscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_postscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0001s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_qtypersale' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0001s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: page D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBScoreMngController.class.php 第 22 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: limit D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db\Driver.class.php 第 945 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [recordcode],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[tsaleqty],[auditorcode],[auditorname] FROM [viewscorerecords] WHERE (  [YScore] >= '8' OR [TScore] >= '8' OR [TSaleQty] >= '10' ) AND [AuditState] <> '待审核' AND [EventScope] <> '固定得分') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 20) [ RunTime:0.0133s ]
+
+[ 2015-06-24T19:12:34+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0013s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [IsAdmin] FROM [staffs] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0003s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0007s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [VText] FROM [sysparameters] WHERE [Name] = 'wbmenu_admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000919s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000993s ]
+
+[ 2015-06-24T19:12:34+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000997s ]
+
+[ 2015-06-24T19:12:34+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getPosHotSpots
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_posyscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0001s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_postscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_qtypersale' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0001s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: page D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBScoreMngController.class.php 第 22 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: limit D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db\Driver.class.php 第 945 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [recordcode],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[tsaleqty],[auditorcode],[auditorname] FROM [viewscorerecords] WHERE (  [YScore] >= '8' OR [TScore] >= '8' OR [TSaleQty] >= '10' ) AND [AuditState] <> '待审核' AND [EventScope] <> '固定得分') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 20) [ RunTime:0.0138s ]
+
+[ 2015-06-24T19:12:37+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBDeptMng/getDeptList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/eekabsc.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0007s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [IsAdmin] FROM [staffs] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'depts' [ RunTime:0.0008s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  * FROM [depts] WHERE [VIPMngEnabled] = 1) AS thinkphp) AS T1  [ RunTime:0.0004s ]
+
+[ 2015-06-24T19:12:37+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+
+[ 2015-06-24T19:12:38+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000722s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000799s ]
+
+[ 2015-06-24T19:12:38+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'vw_viptemprecords' [ RunTime:0.0158s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  SUM(AddTemperature) AS tp_Sum FROM [vw_viptemprecords] WHERE [RecordDate] < '2014-12-26' AND [CustomerCode] = '344302') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0113s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  SUM(YScore) AS tp_Sum FROM [vw_viptemprecords] WHERE [RecordDate] < '2014-12-26' AND [CustomerCode] = '344302') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0088s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  MIN(RecordDate) AS tp_Min FROM [vw_viptemprecords] WHERE [RecordDate] < '2014-12-26' AND [CustomerCode] = '344302') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0088s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'vw_dateinfo' [ RunTime:0.0153s ]
+ERR: SQLSTATE[42S22]: [Microsoft][SQL Server Native Client 10.0][SQL Server]列名 'WeekDay' 无效。
+
+[ 2015-06-24T19:12:38+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/eekabsc.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'depts' [ RunTime:0.0007s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  DeptCode as id,DeptSName as value FROM [depts] WHERE [Enabled] = 1 AND [VIPMngEnabled] = 1 AND ( deptcode in (select distinct DeptCode from VW_DeptRelPersons where staffcode='admin') )) AS thinkphp) AS T1  [ RunTime:0.0124s ]
+
+[ 2015-06-24T19:12:39+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001648s ]
+
+[ 2015-06-24T19:12:39+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBDeptMng/getDeptSNameList/ScoreMngEnabled/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001121s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001201s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'depts' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  DeptCode as id,DeptSName as value FROM [depts] WHERE [Enabled] = 1 AND [ScoreMngEnabled] = 1) AS thinkphp) AS T1  [ RunTime:0.0012s ]
+
+[ 2015-06-24T19:12:39+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBAttendanceMng/queryAttendanceRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000726s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffattendance' [ RunTime:0.0186s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY recordtime desc) AS ROW_NUMBER FROM (SELECT  StaffAttendance._Identify,[RecordTime],c.DeptCode,[DeptSName],StaffAttendance.StaffCode,a.StaffName,[AttendanceType],[OverTimeHours],[OffDays],[AbsentDays],[Remark],[AuditDate],[AuditorCode],b.StaffName AuditorName,[AuditState],(case when AuditState='批准' then 1 else case when AuditState='拒绝' then 0 else 2 end end) AuditValue FROM [staffattendance] left join Staffs as a on a.StaffCode = StaffAttendance.StaffCode left join Staffs as b on b.StaffCode = StaffAttendance.AuditorCode left join Depts  as c on c.DeptCode = a.BelongDeptCode ) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0061s ]
+
+[ 2015-06-24T19:12:40+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBDeptMng/getDeptSNameList/ScoreMngEnabled/1/DSSuffix/eekabsc.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001170s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'depts' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  DeptCode as id,DeptSName as value FROM [depts] WHERE [Enabled] = 1 AND [ScoreMngEnabled] = 1) AS thinkphp) AS T1  [ RunTime:0.0003s ]
+
+[ 2015-06-24T19:12:40+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000887s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+
+[ 2015-06-24T19:12:41+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getPosHotSpots
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000440s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0010s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_posyscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_postscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_qtypersale' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: page D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBScoreMngController.class.php 第 22 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: limit D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db\Driver.class.php 第 945 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [recordcode],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[tsaleqty],[auditorcode],[auditorname] FROM [viewscorerecords] WHERE (  [YScore] >= '8' OR [TScore] >= '8' OR [TSaleQty] >= '10' ) AND [AuditState] <> '待审核' AND [EventScope] <> '固定得分') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 20) [ RunTime:0.0120s ]
+
+[ 2015-06-24T19:12:41+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getScoreCrossStructureColArray
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select EventScopeCode as colcode, EventScope as colname from EventScopes where EventScopeEnabled=1  union select EventTypeCode as colcode, EventType as colname from EventTypes where EventTypeEnabled=1  union select EventCode as colcode, [Event] as colname from [Events] where EventEnabled=1  [ RunTime:0.0005s ]
+
+[ 2015-06-24T19:12:41+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+
+[ 2015-06-24T19:12:42+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getPosHotSpots
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000439s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_posyscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_postscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0003s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_qtypersale' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: page D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBScoreMngController.class.php 第 22 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: limit D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db\Driver.class.php 第 945 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [recordcode],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[tsaleqty],[auditorcode],[auditorname] FROM [viewscorerecords] WHERE (  [YScore] >= '8' OR [TScore] >= '8' OR [TSaleQty] >= '10' ) AND [AuditState] <> '待审核' AND [EventScope] <> '固定得分') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 20) [ RunTime:0.0122s ]
+
+[ 2015-06-24T19:12:48+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getScoreCrossStructureColArray
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select EventScopeCode as colcode, EventScope as colname from EventScopes where EventScopeEnabled=1  union select EventTypeCode as colcode, EventType as colname from EventTypes where EventTypeEnabled=1  union select EventCode as colcode, [Event] as colname from [Events] where EventEnabled=1  [ RunTime:0.0005s ]
+
+[ 2015-06-24T19:12:49+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+
+[ 2015-06-24T19:12:49+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0031s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0008s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [_identify],[recordcode],[recordtype],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[atvalue],[vtvalue],[tsaleqty],[auditstate],[auditdate],[auditorname],(case when auditstate='批准' then 1 else case when auditstate='拒绝' then 0 else 2 end end) auditvalue FROM [viewscorerecords] WHERE ( AppealState = '待仲裁' and AppealDealer = 'admin' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0040s ]
+
+[ 2015-06-24T19:12:49+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0007s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND (  PlanInviteDate is not null and convert(varchar(10),PlanInviteDate,23)<=convert(varchar(10),GetDate()+7,23) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0089s ]
+
+[ 2015-06-24T19:12:49+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [_identify],[recordcode],[recordtype],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[atvalue],[vtvalue],[tsaleqty],[auditstate],[auditdate],[auditorname],(case when auditstate='批准' then 1 else case when auditstate='拒绝' then 0 else 2 end end) auditvalue FROM [viewscorerecords] WHERE ( AuditState = '待审核' and AuditorCode = 'admin' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0088s ]
+
+[ 2015-06-24T19:12:49+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002356s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND ( NtContDate is not null and CONVERT(varchar(7),NtContDate,23)<=CONVERT(varchar(7),GETDATE()+7,23) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0170s ]
+
+[ 2015-06-24T19:12:49+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001053s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0008s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND ( ((NtBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtMateBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtChildBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtChildBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtWeddingAnniDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtWeddingAnniDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5))) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0034s ]
+
+[ 2015-06-24T19:12:50+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getScoreCrossStructureColArray
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000440s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select EventScopeCode as colcode, EventScope as colname from EventScopes where EventScopeEnabled=1  union select EventTypeCode as colcode, EventType as colname from EventTypes where EventTypeEnabled=1  union select EventCode as colcode, [Event] as colname from [Events] where EventEnabled=1  [ RunTime:0.0005s ]
+
+[ 2015-06-24T19:12:52+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getVariousRanks
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sqllist' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [SQLCode] FROM [sqllist] WHERE ( SQLIndex='WBSQL_Ranker_StoreMngerTY' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0003s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select e.DeptSName,e.StaffName,e.YScore,e.RankNum,e.RankOrder
+from 
+(
+	select DeptSName,StaffName,0.6*ISNULL(c.AvgStaffYScore,0)+0.4*ISNULL(d.YScore,0) YScore, 
+	(select COUNT(1) from Depts where [ScoreMngEnabled]=1 and DeptType='店铺') RankNum,
+	ROW_NUMBER() over(order by 0.6*ISNULL(c.AvgStaffYScore,0)+0.4*ISNULL(d.YScore,0) desc) RankOrder
+	from 
+	(
+		select  a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,AVG(YScore) AvgStaffYScore
+		from ViewStoreMngers as a 
+		left join
+		(
+			select DeptCode,StaffCode,isnull(SUM(YScore),0) YScore
+			from ViewScoreRecords 
+			where RecordTime>='2015-06-01 00:00' and   RecordTime<='2015-06-24 00:00'  and YScore is not null and AuditState='批准'
+			and StaffCode not in (select StaffCode from DeptStaffs where RelType='店长')
+			group by DeptCode,StaffCode
+		) as b
+		on a.DeptCode = b.DeptCode
+		group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName
+	) as c
+	left join 
+	(
+		select StaffCode,SUM(viewscorerecords.YScore) YScore	
+		from viewscorerecords
+		inner join [events] on ViewScoreRecords.eventcode = [events].eventcode
+		where RecordTime>='2015-06-01 00:00' and   RecordTime<='2015-06-24 00:00' and viewscorerecords.YScore is not null 
+and AuditState='批准'  and StaffCode  in (select StaffCode from DeptStaffs where RelType='店长')
+		group by StaffCode
+	) as d
+	on c.StaffCode = d.StaffCode
+) as e
+where RankOrder>(1-1)*1000 and RankOrder<=1*1000 [ RunTime:0.0035s ]
+
+[ 2015-06-24T19:12:54+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getVariousRanks
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000440s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sqllist' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [SQLCode] FROM [sqllist] WHERE ( SQLIndex='WBSQL_Ranker_StoreGARatio' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select e.StaffName,d.DeptSName,d.AGRatio,d.RankOrder,d.RankNum
+from 
+(
+	select a.DeptSName,a.DeptName,a.TotalTValueTarget,isnull(b.TValue,0) TValue,
+	isnull(b.TValue,0)/a.TotalTValueTarget AGRatio,
+	ROW_NUMBER() OVER (ORDER BY isnull(b.TValue,0)/a.TotalTValueTarget desc) RankOrder,
+	(select COUNT(1) from Depts where [ScoreMngEnabled]=1 and DeptType='店铺') RankNum
+	from
+	(
+		select DeptName,DeptSName,YearMonth,TotalTValueTarget
+		from dbo.DeptGoals inner join dbo.Depts on DeptGoals.DeptCode = Depts.DeptCode
+		where DeptType='店铺' and ScoreMngEnabled=1
+		and YearMonth='2015-05'
+	) as a
+	left join 
+	(
+		select  DeptName,RecordYM,SUM(Tvalue) TValue
+		from dbo.ViewScoreRecords
+		where TValue is not null and AuditState='批准'
+		and RecordYM='2015-05'
+		group by DeptName,RecordYM
+	) as b
+	on a.DeptName = b.DeptName
+) as d 
+left join dbo.ViewStoreMngers as e on d.DeptName = e.DeptName
+where RankOrder>(1-1)*1000 and RankOrder<=1*1000 [ RunTime:0.0512s ]
+
+[ 2015-06-24T19:15:24+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000835s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [IsAdmin] FROM [staffs] WHERE [StaffCode] = 'admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0003s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [VText] FROM [sysparameters] WHERE [Name] = 'wbmenu_admin') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000672s ]
+
+[ 2015-06-24T19:15:24+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+
+[ 2015-06-24T19:15:24+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getScoreCrossStructureColArray
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select EventScopeCode as colcode, EventScope as colname from EventScopes where EventScopeEnabled=1  union select EventTypeCode as colcode, EventType as colname from EventTypes where EventTypeEnabled=1  union select EventCode as colcode, [Event] as colname from [Events] where EventEnabled=1  [ RunTime:0.0005s ]
+
+[ 2015-06-24T19:15:26+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getPosHotSpots
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0007s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_posyscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0003s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_postscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_qtypersale' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0004s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: page D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBScoreMngController.class.php 第 22 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: limit D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db\Driver.class.php 第 945 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [recordcode],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[tsaleqty],[auditorcode],[auditorname] FROM [viewscorerecords] WHERE (  [YScore] >= '8' OR [TScore] >= '8' OR [TSaleQty] >= '10' ) AND [AuditState] <> '待审核' AND [EventScope] <> '固定得分') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 20) [ RunTime:0.0134s ]
+
+[ 2015-06-24T19:15:26+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+
+[ 2015-06-24T19:15:27+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getScoreCrossStructureColArray
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select EventScopeCode as colcode, EventScope as colname from EventScopes where EventScopeEnabled=1  union select EventTypeCode as colcode, EventType as colname from EventTypes where EventTypeEnabled=1  union select EventCode as colcode, [Event] as colname from [Events] where EventEnabled=1  [ RunTime:0.0004s ]
+
+[ 2015-06-24T19:15:27+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getPosHotSpots
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000467s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_posyscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_postscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_qtypersale' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: page D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBScoreMngController.class.php 第 22 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: limit D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db\Driver.class.php 第 945 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [recordcode],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[tsaleqty],[auditorcode],[auditorname] FROM [viewscorerecords] WHERE (  [YScore] >= '8' OR [TScore] >= '8' OR [TSaleQty] >= '10' ) AND [AuditState] <> '待审核' AND [EventScope] <> '固定得分') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 20) [ RunTime:0.0123s ]
+
+[ 2015-06-24T19:15:29+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getScoreCrossStructureColArray
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select EventScopeCode as colcode, EventScope as colname from EventScopes where EventScopeEnabled=1  union select EventTypeCode as colcode, EventType as colname from EventTypes where EventTypeEnabled=1  union select EventCode as colcode, [Event] as colname from [Events] where EventEnabled=1  [ RunTime:0.0004s ]
+
+[ 2015-06-24T19:15:30+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+
+[ 2015-06-24T19:15:30+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND ( ((NtBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtMateBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtChildBirthDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtChildBirthDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5)) or (NtWeddingAnniDate>=substring(CONVERT(varchar(10),GETDATE(),23),6,5) and NtWeddingAnniDate<=substring(CONVERT(varchar(10),GETDATE()+3,23),6,5))) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0030s ]
+
+[ 2015-06-24T19:15:30+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0004s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [_identify],[recordcode],[recordtype],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[atvalue],[vtvalue],[tsaleqty],[auditstate],[auditdate],[auditorname],(case when auditstate='批准' then 1 else case when auditstate='拒绝' then 0 else 2 end end) auditvalue FROM [viewscorerecords] WHERE ( AuditState = '待审核' and AuditorCode = 'admin' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0088s ]
+
+[ 2015-06-24T19:15:30+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND (  PlanInviteDate is not null and convert(varchar(10),PlanInviteDate,23)<=convert(varchar(10),GetDate()+7,23) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0140s ]
+
+[ 2015-06-24T19:15:30+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000804s ]
+NOTIC: [8] Undefined index: _Locked D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBVIPMngController.class.php 第 85 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'Customers' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'customers' [ RunTime:0.0008s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [CustomerCode],[CustomerName],[MobileNo],[MaintainerCode],[Staffname],[AnzBuyNearity],[AnzContNearity],[AnzMidTermBuyMoney],[AnzMidTermBuyFreq],case when  AnzTotalScore is null then  0 else AnzTotalScore end  AnzTotalScore,case when  AnzEmotionDegree is null then  0 else AnzEmotionDegree end  AnzEmotionDegree,[NtBirthDate],[NtMateBirthDate],[NtChildBirthDate],[NtWeddingAnniDate],[AnzImportantLevel],[AnzStateLevel],[AnzBuyHabitQuad] FROM [customers] left join VW_Staffs on MaintainerCode=StaffCode left join VW_Depts on BelongStoreCode=DeptCode  WHERE [MaintainerCode] = 'admin' AND ( NtContDate is not null and CONVERT(varchar(7),NtContDate,23)<=CONVERT(varchar(7),GETDATE()+7,23) )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0089s ]
+
+[ 2015-06-24T19:15:30+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000992s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [_identify],[recordcode],[recordtype],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[atvalue],[vtvalue],[tsaleqty],[auditstate],[auditdate],[auditorname],(case when auditstate='批准' then 1 else case when auditstate='拒绝' then 0 else 2 end end) auditvalue FROM [viewscorerecords] WHERE ( AppealState = '待仲裁' and AppealDealer = 'admin' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 5000) [ RunTime:0.0014s ]
+
+[ 2015-06-24T19:15:32+08:00 ] 127.0.0.1 /POAAdmin/index.php/Home/WBScoreMng/getPosHotSpots
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'sysparameters' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_posyscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_postscore' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [vinteger] FROM [sysparameters] WHERE ( name='globalthresh_qtypersale' )) AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0002s ]
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'score_object' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: page D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\WBScoreMngController.class.php 第 22 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'viewscorerecords' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: limit D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Db\Driver.class.php 第 945 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY RecordTime desc) AS ROW_NUMBER FROM (SELECT  [recordcode],convert(varchar(10),[recordtime],23) recordtime,[staffcode],[staffname],[deptcode],[deptname],[deptsname],[incenttype],[event],[eventcode],[eventtype],[eventscope],[eventremark],[yscore],[xscore],[tvalue],[tscore],[tsaleqty],[auditorcode],[auditorname] FROM [viewscorerecords] WHERE (  [YScore] >= '8' OR [TScore] >= '8' OR [TSaleQty] >= '10' ) AND [AuditState] <> '待审核' AND [EventScope] <> '固定得分') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 0 + 1 AND 0 + 20) [ RunTime:0.0124s ]
+

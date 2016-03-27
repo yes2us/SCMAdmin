@@ -1,0 +1,12 @@
+[ 2015-05-01T22:01:06+08:00 ] 127.0.0.1 /POAAdmin/index.php/HomeWBVIPMng/getMyVIPList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+ERR: 无法加载模块:HomeWBVIPMng
+
+[ 2015-05-01T22:02:01+08:00 ] 127.0.0.1 /POAAdmin/index.php/HomeWBVIPMng/getMyVIPList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+ERR: 无法加载模块:HomeWBVIPMng
+

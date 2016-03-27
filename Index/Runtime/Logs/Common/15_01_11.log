@@ -1,0 +1,69 @@
+[ 2015-01-11T10:07:13+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=show&updatedb
+ERR: 无法加载模块:Show
+
+[ 2015-01-11T10:07:46+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=show&a=updatedb
+ERR: 无法加载模块:Show
+
+[ 2015-01-11T10:09:25+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=index&a=Index
+ERR: 无法加载模块:Index
+
+[ 2015-01-11T10:15:43+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=show&a=updatedb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000738s ]
+ERR: 无法加载模块:Show
+
+[ 2015-01-11T10:16:28+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=dbop&a=updatedb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+ERR: 无法加载模块:Dbop
+
+[ 2015-01-11T10:20:00+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=dbop&a=updatedb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+ERR: 无法加载模块:Dbop
+
+[ 2015-01-11T10:21:29+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+ERR: 无法加载模块:Index
+
+[ 2015-01-11T10:30:38+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=index&c=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+ERR: 无法加载模块:Index
+
+[ 2015-01-11T10:32:30+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=Dbop&a=updatedb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+ERR: 无法加载模块:Dbop
+
+[ 2015-01-11T10:32:40+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=Dbop&a=updatedb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+ERR: 无法加载模块:Dbop
+
+[ 2015-01-11T10:32:42+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=Dbop&a=updatedb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+ERR: 无法加载模块:Dbop
+
+[ 2015-01-11T10:35:05+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+ERR: 无法加载模块:Index
+
+[ 2015-01-11T10:38:48+08:00 ] 127.0.0.1 /ThinkPHPTest/index.php?m=Dbop&a=updatedb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+ERR: 无法加载模块:Dbop
+

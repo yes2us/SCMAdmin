@@ -1,0 +1,309 @@
+[ 2015-07-14T09:01:21+08:00 ] ::1 /POAAdmin/index.php/Home/Test/Test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+NOTIC: [2] Missing argument 2 for importExcel2DB(), called in D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\TestController.class.php on line 9 and defined D:\phpStudy4IIS\WWW\POAAdmin\Index\Common\Common\function.php 第 189 行.
+NOTIC: [2] Missing argument 3 for importExcel2DB(), called in D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\TestController.class.php on line 9 and defined D:\phpStudy4IIS\WWW\POAAdmin\Index\Common\Common\function.php 第 189 行.
+NOTIC: [8] Undefined variable: fileName D:\phpStudy4IIS\WWW\POAAdmin\Index\Common\Common\function.php 第 198 行.
+
+[ 2015-07-14T09:01:43+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000440s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore, cast(max(case when a.StaffCode=c.StaffCode then 1 else 0 end) as bit) IsStoreMnger from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  left join ViewStoreMngers as c on a.deptcode = c.deptcode where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:10.4124s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0458s ]
+
+[ 2015-07-14T09:01:44+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore, cast(max(case when a.StaffCode=c.StaffCode then 1 else 0 end) as bit) IsStoreMnger from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  left join ViewStoreMngers as c on a.deptcode = c.deptcode where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.2580s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0081s ]
+
+[ 2015-07-14T09:01:44+08:00 ] ::1 /POAAdmin/index.php/Home/Test/Test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000722s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+NOTIC: [2] Missing argument 2 for importExcel2DB(), called in D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\TestController.class.php on line 9 and defined D:\phpStudy4IIS\WWW\POAAdmin\Index\Common\Common\function.php 第 189 行.
+NOTIC: [2] Missing argument 3 for importExcel2DB(), called in D:\phpStudy4IIS\WWW\POAAdmin\Index\Home\Controller\TestController.class.php on line 9 and defined D:\phpStudy4IIS\WWW\POAAdmin\Index\Common\Common\function.php 第 189 行.
+NOTIC: [8] Undefined variable: fileName D:\phpStudy4IIS\WWW\POAAdmin\Index\Common\Common\function.php 第 198 行.
+
+[ 2015-07-14T09:01:55+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore, cast(max(case when a.StaffCode=c.StaffCode then 1 else 0 end) as bit) IsStoreMnger from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  left join ViewStoreMngers as c on a.deptcode = c.deptcode where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.2475s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0092s ]
+
+[ 2015-07-14T09:02:25+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptStaffScoreInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000433s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select Event,sum(YScore) YScore from ScoreRecords where AuditState='批准' and Event<>'导购T分T值' and RecordTime>='2015-06-01' and RecordTime<='2015-06-30' and StaffCode = '47669' group by Event [ RunTime:0.0072s ]
+
+[ 2015-07-14T12:01:00+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore, cast(max(case when a.StaffCode=c.StaffCode then 1 else 0 end) as bit) IsStoreMnger from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  left join ViewStoreMngers as c on a.deptcode = c.deptcode where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.7315s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0402s ]
+
+[ 2015-07-14T12:32:16+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.3614s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0351s ]
+
+[ 2015-07-14T12:36:53+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.3693s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0415s ]
+
+[ 2015-07-14T12:39:37+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000399s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.3776s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0379s ]
+
+[ 2015-07-14T12:42:12+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000596s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.3660s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0406s ]
+
+[ 2015-07-14T14:06:27+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.4894s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0501s ]
+
+[ 2015-07-14T14:07:40+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.4019s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0473s ]
+
+[ 2015-07-14T14:13:41+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002722s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003135s ]
+
+[ 2015-07-14T14:14:02+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.4693s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0478s ]
+
+[ 2015-07-14T14:16:10+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000716s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.3651s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0375s ]
+
+[ 2015-07-14T14:21:37+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001462s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0))) TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.4639s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0469s ]
+
+[ 2015-07-14T14:38:37+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000995s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0)))/10000 TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.4589s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget/10000,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0483s ]
+
+[ 2015-07-14T14:39:16+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001833s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0)))/10000 TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.4655s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget/10000,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0495s ]
+
+[ 2015-07-14T14:41:17+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0)))/10000 TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.4075s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget/10000,-1) MonthTarget from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0444s ]
+
+[ 2015-07-14T15:01:00+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001006s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0)))/10000 TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.5809s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget/10000,-1) MonthTarget,c.StaffNum from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0512s ]
+
+[ 2015-07-14T15:01:40+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0)))/10000 TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.0613s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget/10000,-1) MonthTarget,c.StaffNum from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0117s ]
+
+[ 2015-07-14T15:24:08+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001345s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0)))/10000 TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.3982s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget/10000,-1) MonthTarget,c.StaffNum from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0447s ]
+
+[ 2015-07-14T15:46:09+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+
+[ 2015-07-14T15:46:22+08:00 ] ::1 /POAAdmin/index.php/Home/DeptMng/getDeptListInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName, convert(decimal(10,0),SUM(isnull(TValue,0)))/10000 TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore from ViewScoreRecords as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin'  where a.AuditState='批准' and a.RecordTime>='2015-06-01' and a.RecordTime<='2015-06-30' group by a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName [ RunTime:0.4117s ]
+NOTIC: [8] Array to string conversion D:\phpStudy4IIS\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: select distinct a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,ISNULL(c.TotalTValueTarget/10000,-1) MonthTarget,c.StaffNum from ViewStoreMngers as a inner join VW_DeptRelPersons as b on a.DeptCode = b.DeptCode and b.StaffCode='Admin' left join DeptGoals as c on a.DeptCode = c.DeptCode and c.YearMonth = '2015-06' [ RunTime:0.0391s ]
+

@@ -1,0 +1,1 @@
+a:7:{i:0;s:9:"_Identify";i:1;s:7:"_Locked";i:2;s:8:"_SortKey";i:3;s:8:"DeptCode";i:4;s:9:"StaffCode";i:5;s:7:"RelType";s:5:"_type";a:6:{s:9:"_Identify";s:3:"int";s:7:"_Locked";s:3:"bit";s:8:"_SortKey";s:7:"numeric";s:8:"DeptCode";s:8:"nvarchar";s:9:"StaffCode";s:8:"nvarchar";s:7:"RelType";s:8:"nvarchar";}}

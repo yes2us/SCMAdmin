@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Datatable: Loading with Connector</title>
+		<link rel="stylesheet" href="../../../codebase/webix.css" type="text/css" charset="utf-8">
+		<script src="../../../codebase/webix.js" type="text/javascript" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="../../common/samples.css">
+	</head>
+	<body>
+		<div class='header_comment'>Loading</div>
+		<div id='testA'></div>
+		
+		<script type="text/javascript" charset="utf-8">
+
+		webix.ready(function(){
+			grida = webix.ui({
+				id:"scoreData",
+				container:"testA",
+				view:"datatable",
+				columns:[
+					{ id:"recordcode",	header:"recordcode",width:200},
+					{ id:"staffcode",	header:"staffcode" , width:80},
+					{ id:"deptcode",	header:"deptcode", 	width:100}
+				],
+				autoheight:true,
+				autowidth:true,
+				select:"row",
+				ulr:"http://localhost/POAAdmin/index.php/Home/MyPage/getRecentTScoreItems"
+			});	
+			//$$('scoreData').load("http://localhost/POAAdmin/index.php/Home/MyPage/getRecentTScoreItems");
+		
+		});
+		
+
+		</script>
+	</body>
+</html>

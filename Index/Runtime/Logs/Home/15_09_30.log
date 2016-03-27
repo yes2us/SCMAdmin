@@ -1,0 +1,302 @@
+[ 2015-09-30T16:05:30+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/getDeptGoal/DeptCode/10025
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000965s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000748s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'basic_object' [ RunTime:0.0289s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'deptgoals' [ RunTime:0.0185s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY yearmonth desc) AS ROW_NUMBER FROM (SELECT  [deptcode],[yearmonth],[totaltvaluetarget] FROM [deptgoals] WHERE [DeptCode] = '10025') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 6) [ RunTime:0.0051s ]
+
+[ 2015-09-30T16:05:40+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/getDeptMember/DeptCode/10025
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'basic_object' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'deptstaffs' [ RunTime:0.0192s ]
+ERR: SQLSTATE[42S22]: [Microsoft][SQL Server Native Client 11.0][SQL Server]列名 'staffname' 无效。
+
+[ 2015-09-30T16:06:10+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/getDeptMember/DeptCode/10025
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'basic_object' [ RunTime:0.0234s ]
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0306s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  [staffcode],[staffname] FROM [staffs] WHERE [BelongDeptCode] = '10025' AND [IsOnJob] = 1 AND [IsLocked] = 0) AS thinkphp) AS T1  [ RunTime:0.0107s ]
+
+[ 2015-09-30T17:18:05+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveStaff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0216s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [staffs] WHERE [StaffCode] = 'xxx') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0059s ]
+SQL: INSERT INTO [staffs] ([StaffCode],[StaffName],[BelongDeptCode],[WageLevel],[IsOnJob]) VALUES ('xxx','XXX','yyy','1','1') [ RunTime:0.0087s ]
+
+[ 2015-09-30T17:26:33+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveStaff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0007s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [staffs] WHERE [StaffCode] = 'xxx') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0004s ]
+SQL: INSERT INTO [staffs] ([StaffCode],[StaffName],[BelongDeptCode],[WageLevel],[IsOnJob]) VALUES ('xxx','XXX','yyy','1','1') [ RunTime:0.0040s ]
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: update Staffs Set [Password]= pwdencrypt('123')  where StaffCode ='' [ RunTime:0.0029s ]
+
+[ 2015-09-30T17:29:10+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveStaff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [staffs] WHERE [StaffCode] = 'xxx') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0005s ]
+SQL: INSERT INTO [staffs] ([StaffCode],[StaffName],[BelongDeptCode],[WageLevel],[IsOnJob]) VALUES ('xxx','XXX','yyy','1','1') [ RunTime:0.0039s ]
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: update Staffs Set [Password]= pwdencrypt('eekabsc123')  where StaffCode ='xxx' [ RunTime:0.0034s ]
+
+[ 2015-09-30T17:30:41+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveStaff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [staffs] WHERE [StaffCode] = 'xxx') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0004s ]
+
+[ 2015-09-30T17:30:53+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveStaff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0005s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [staffs] WHERE [StaffCode] = 'xxx') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0003s ]
+SQL: INSERT INTO [staffs] ([StaffCode],[StaffName],[BelongDeptCode],[WageLevel],[IsOnJob]) VALUES ('xxx','XXX','yyy','1','1') [ RunTime:0.0043s ]
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: update Staffs Set [Password]= pwdencrypt('eekabsc.com123')  where StaffCode ='xxx' [ RunTime:0.0032s ]
+
+[ 2015-09-30T17:37:55+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveStaff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000709s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [staffs] WHERE [StaffCode] = 'xxx') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0004s ]
+SQL: INSERT INTO [staffs] ([StaffCode],[StaffName],[BelongDeptCode],[WageLevel],[IsOnJob]) VALUES ('xxx','XXX','10025','1','1') [ RunTime:0.0057s ]
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: update Staffs Set [Password]= pwdencrypt('eekabsc.com123'), PrefAuditorCode=(select max(StaffCode) from DeptStaffs where DeptCode='10025' and RelType = '店长')  where StaffCode ='xxx' [ RunTime:0.0055s ]
+
+[ 2015-09-30T17:40:16+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveYearMonthGoal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'deptgoals' [ RunTime:0.0194s ]
+NOTIC: [8] Undefined index: StaffNum D:\phpStudy\WWW\POAAdmin\Index\Home\Controller\SettingController.class.php 第 87 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [deptgoals] WHERE [DeptCode] = '10025' AND [YearMonth] = '2016-07') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0024s ]
+SQL: INSERT INTO [deptgoals] ([DeptCode],[YearMonth],[TotalTValueTarget]) VALUES ('10025','2016-07','30000') [ RunTime:0.0017s ]
+
+[ 2015-09-30T17:41:47+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveYearMonthGoal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'deptgoals' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: StaffNum D:\phpStudy\WWW\POAAdmin\Index\Home\Controller\SettingController.class.php 第 88 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [deptgoals] WHERE [DeptCode] = '10025' AND [YearMonth] = '2016-07') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0004s ]
+SQL: UPDATE [deptgoals] SET [DeptCode]='10025',[YearMonth]='2016-07',[TValuePerTScore]='1000',[TotalTValueTarget]='30000' WHERE [DeptCode] = '10025' AND [YearMonth] = '2016-07' [ RunTime:0.0070s ]
+
+[ 2015-09-30T19:49:00+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveYearMonthGoal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'deptgoals' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: StaffNum D:\phpStudy\WWW\POAAdmin\Index\Home\Controller\SettingController.class.php 第 88 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [deptgoals] WHERE [DeptCode] = '10024' AND [YearMonth] = '2016-07') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0023s ]
+SQL: INSERT INTO [deptgoals] ([DeptCode],[YearMonth],[TValuePerTScore],[TotalTValueTarget]) VALUES ('10024','2016-07','1000','30000') [ RunTime:0.0054s ]
+
+[ 2015-09-30T19:51:49+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveStaff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000744s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'staffs' [ RunTime:0.0006s ]
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [staffs] WHERE [StaffCode] = 'xxx') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0347s ]
+SQL: INSERT INTO [staffs] ([StaffCode],[StaffName],[BelongDeptCode],[WageLevel],[IsOnJob]) VALUES ('xxx','XXX','10025','1','1') [ RunTime:0.0007s ]
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Model.class.php 第 1392 行.
+SQL: update Staffs Set [Password]= pwdencrypt('eekabsc.com123'), PrefAuditorCode=(select max(StaffCode) from DeptStaffs where DeptCode='10025' and RelType = '店长')  where StaffCode ='xxx' [ RunTime:0.0060s ]
+
+[ 2015-09-30T19:51:54+08:00 ] ::1 /POAAdmin/index.php/Home/Setting/saveYearMonthGoal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+NOTIC: [2] session_start(): open(D:\phpStudy4IIS\tmp\tmp\sess_7ifdbfne3297pru107ovre9up4, O_RDWR) failed: No such file or directory (2) D:\phpStudy\WWW\POAAdmin\ThinkPHP\Common\functions.php 第 1261 行.
+NOTIC: [8] Undefined index: db_port D:\phpStudy\WWW\POAAdmin\ThinkPHP\Library\Think\Db.class.php 第 67 行.
+SQL: SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'deptgoals' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: StaffNum D:\phpStudy\WWW\POAAdmin\Index\Home\Controller\SettingController.class.php 第 88 行.
+SQL: SELECT T1.* FROM (SELECT thinkphp.*, ROW_NUMBER() OVER ( ORDER BY rand()) AS ROW_NUMBER FROM (SELECT  COUNT(*) AS tp_count FROM [deptgoals] WHERE [DeptCode] = '10024' AND [YearMonth] = '2016-07') AS thinkphp) AS T1 WHERE (T1.ROW_NUMBER BETWEEN 1 AND 1) [ RunTime:0.0004s ]
+SQL: UPDATE [deptgoals] SET [DeptCode]='10024',[YearMonth]='2016-07',[TValuePerTScore]='1000',[TotalTValueTarget]='30000' WHERE [DeptCode] = '10024' AND [YearMonth] = '2016-07' [ RunTime:0.0060s ]
+

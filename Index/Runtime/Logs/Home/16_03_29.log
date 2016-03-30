@@ -1,0 +1,250 @@
+[ 2016-03-29T13:47:09+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000926s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001357s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:36:00+08:00 ] 192.168.0.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000877s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:42:38+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:42:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:43:24+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:45:26+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000090s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:49:28+08:00 ] 127.0.0.1 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000719s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'49.222.27.42' (using password: YES)
+
+[ 2016-03-29T18:49:37+08:00 ] 127.0.0.1 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'49.222.27.42' (using password: YES)
+
+[ 2016-03-29T18:51:21+08:00 ] 127.0.0.1 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'49.222.27.42' (using password: YES)
+
+[ 2016-03-29T18:51:26+08:00 ] 127.0.0.1 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'49.222.27.42' (using password: YES)
+
+[ 2016-03-29T18:51:34+08:00 ] 127.0.0.1 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'49.222.27.42' (using password: YES)
+
+[ 2016-03-29T18:54:25+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001144s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001285s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:54:48+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000871s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000963s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:55:12+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001203s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:55:39+08:00 ] 192.168.0.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000873s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001069s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001204s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:55:50+08:00 ] 192.168.0.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T18:57:04+08:00 ] 192.168.0.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000959s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T19:01:14+08:00 ] 192.168.0.101 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000636s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'49.222.27.42' (using password: YES)
+
+[ 2016-03-29T19:01:24+08:00 ] 192.168.0.101 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'49.222.27.42' (using password: YES)
+
+[ 2016-03-29T20:42:20+08:00 ] 127.0.0.1 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'49.222.27.42' (using password: YES)
+
+[ 2016-03-29T21:02:14+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000779s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T21:02:48+08:00 ] 127.0.0.1 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'49.222.27.42' (using password: YES)
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Common/functions.php:848) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Common/functions.php:848) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-29T21:04:05+08:00 ] 127.0.0.1 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000789s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001717s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1049] Unknown database 'eekapoa'
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Common/functions.php:848) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Common/functions.php:848) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-29T21:04:51+08:00 ] 127.0.0.1 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+NOTIC: [8] Undefined index: db_port /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db.class.php 第 67 行.
+ERR: SQLSTATE[HY000] [1049] Unknown database 'tocdist'
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Common/functions.php:848) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Common/functions.php:848) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-29T21:11:06+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001187s ]
+ERR: 非法操作:index
+
+[ 2016-03-29T21:11:20+08:00 ] 127.0.0.1 /index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+

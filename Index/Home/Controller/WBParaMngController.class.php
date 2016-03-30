@@ -8,38 +8,27 @@ class WBParaMngController extends \Think\Controller {
 	 */
 	 public function getSysPara()
 	 {
-	 	$rs = M('sysparameters',"",getMyCon())->select();
+	 	//p(getMyCon());
+
+	 	$rs = M('bsyspara',"",getMyCon())->select();
 		return $this -> ajaxReturn($rs);
 	 }
 	 
 	 public function getWBMenu()
 	 {
-	 	$UserCode = I("UserCode");
-		$isAdmin = M("staffs","",getMyCon())->where(array("StaffCode"=>$UserCode))->getField("IsAdmin");
-		if($isAdmin)
-		{
+//	 	$UserCode = I("UserCode");
+//		$isAdmin = M("staffs","",getMyCon())->where(array("StaffCode"=>$UserCode))->getField("IsAdmin");
+//		if($isAdmin)
+//		{
 			$WBMenuType = "wbmenu_admin";
-		}
-		else 
-		{
-			$condition['StaffCode'] = $UserCode;
-			$condition['RelType'] = array('neq',"部门员工");
-			$isMnger = M("deptstaffs","",getMyCon())
-			->where($condition)
-			->Count("_Identify");
-//			dump($isMnger);
-			
-			if($isMnger>0)
-			{
-				$WBMenuType = "wbmenu_mnger";
-			}
-			else
-			{
-				$WBMenuType = "wbmenu_staffs";
-			}
-		}
+//		}
+//		else 
+//		{
+//
+//				$WBMenuType = "wbmenu_staffs";
+//		}
 
-	 	$rs = M('sysparameters',"",getMyCon())->where(array("Name"=>$WBMenuType))->getField("VText");
+	 	$rs = M('bsyspara',"",getMyCon())->where(array("Name"=>$WBMenuType))->getField("VText");
 		echo $rs;
 	 }
 	 

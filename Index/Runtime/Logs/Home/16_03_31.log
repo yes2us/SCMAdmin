@@ -1,0 +1,1822 @@
+[ 2016-03-31T00:34:11+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBCURDMng/saveParameter/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000900s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.1854s ]
+SQL: UPDATE `bsyspara` SET `Name`='WBMenu_Admin',`Type`='VText',`VInteger`='0',`VFloat`='0',`VDate`='',`VBool`='0',`VString`='',`VText`='[
+ { \"id\": \"tyscoremng\",  \"value\": \"门店管理\",  \"open\": true, \"data\":[
+ 	{  \"id\": \"mng_mytask\",  \"value\": \"目标库存\", \"icon\": \"tasks\", \"details\": \"查询和维护门店的目标库存\"},
+ 	{  \"id\": \"qry_ranker\",  \"value\": \"补货查询\", \"icon\": \"pencil-square-o\", \"details\": \"查询补货建议单\"},
+ 	{  \"id\": \"qry_hotspots\",  \"value\": \"退货查询\", \"icon\": \"star-o\", $css: \"orders\", \"details\":\"查询退货建议单\"},
+ 	{  \"id\": \"mng_score\",  \"value\": \"缓冲调整\", \"icon\": \"ticket\", \"details\": \"查询门店SKU缓冲调整记录\" }, 
+ 	{  \"id\": \"mng_attendance\",  \"value\": \"指标查询\", \"icon\": \"calendar\", \"details\": \"查询门店运营指标\"}
+]},
+
+//{ \"id\": \"vipmng\",  \"value\":\"会员管理\",  \"open\":true, \"data\":[
+// 	{  \"id\": \"mng_vipinviteplan\",  \"value\": \"邀约计划\", \"icon\": \"fax\", \"details\": \"制定邀约计划\" },
+ //	{  \"id\": \"mng_vipemotionplan\",  \"value\": \"维护计划\", \"icon\": \"weixin\", \"details\": \"制订维护计划\" },
+ //	{  \"id\": \"mng_vipmngbasicinfo\",  \"value\": \"我的会员\", \"icon\": \"book\", \"details\": \"管理我的会员\" }
+//]},
+
+ { \"id\": \"setting\",  \"value\":\"相关配置\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_dept\",  \"value\": \"部门管理\", \"icon\": \"sitemap\", \"details\": \"增加或修改部门资料,维护部门成员,部门工资,奖扣事件,月度目标\" },
+ 	{  \"id\": \"mng_staff\",  \"value\": \"员工管理\", \"icon\": \"users\", \"details\": \"增加或修改员工,维护员工角色,奖扣事件,订阅对象,维护会员\" },
+ 	{  \"id\": \"mng_role\",  \"value\": \"角色管理\", \"icon\": \"user\", \"details\": \"管理角色及其奖扣权限和任务\"},
+ 	{  \"id\": \"mng_event\",  \"value\": \"奖扣事件\", \"icon\": \"list-alt\", \"details\": \"维护奖扣事件\"},
+ 	{  \"id\": \"mng_para\",  \"value\": \"参数管理\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+       // {  \"id\": \"mng_impvipdata\",  \"value\": \"导入数据\", \"icon\": \"key\", \"details\": \"从excel导入会员数据\" },
+ 	{  \"id\": \"mng_configuration\",  \"value\": \"配置管理\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+ 	{  \"id\": \"mng_debuginfo\",  \"value\": \"测试信息\", \"icon\": \"cogs\", \"details\": \"查询调试信息\"} //,
+ 	//{  \"id\": \"usermng\",  \"value\": \"用户管理\", \"icon\": \"users\", \"details\": \"增加或修改员工,维护员工角色,奖扣事件,订阅对象,维护会员\" },
+ 	//{  \"id\": \"authmng\",  \"value\": \"权限管理\", \"icon\": \"key\", \"details\": \"管理用户的权限\" },
+ 	//{  \"id\": \"help\",  \"value\": \"帮助视频\", \"icon\": \"fa-question-circle\", \"details\": \"操作帮助\" }
+]}
+]',`Desc`='' WHERE ( _Identify=5 ) [ RunTime:0.0016s ]
+
+[ 2016-03-31T00:34:21+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000757s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001154s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0367s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001402s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001602s ]
+
+[ 2016-03-31T00:34:21+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001234s ]
+
+[ 2016-03-31T00:34:22+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001012s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001170s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0009s ]
+
+[ 2016-03-31T00:43:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBCURDMng/saveParameter/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001967s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0339s ]
+SQL: UPDATE `bsyspara` SET `Name`='WBMenu_Admin',`Type`='VText',`VInteger`='0',`VFloat`='0',`VDate`='0000-00-00 00:00:00',`VBool`='0',`VString`='',`VText`='[
+ { \"id\": \"tyscoremng\",  \"value\": \"门店管理\",  \"open\": true, \"data\":[
+ 	{  \"id\": \"mng_mytask\",  \"value\": \"目标库存\", \"icon\": \"tasks\", \"details\": \"查询和维护门店的目标库存\"},
+ 	{  \"id\": \"qry_ranker\",  \"value\": \"补货查询\", \"icon\": \"pencil-square-o\", \"details\": \"查询补货建议单\"},
+ 	{  \"id\": \"qry_hotspots\",  \"value\": \"退货查询\", \"icon\": \"star-o\", $css: \"orders\", \"details\":\"查询退货建议单\"},
+ 	{  \"id\": \"mng_score\",  \"value\": \"缓冲调整\", \"icon\": \"ticket\", \"details\": \"查询门店SKU缓冲调整记录\" }, 
+ 	{  \"id\": \"mng_attendance\",  \"value\": \"指标查询\", \"icon\": \"calendar\", \"details\": \"查询门店运营指标\"}
+]},
+
+{ \"id\": \"vipmng\",  \"value\":\"中央仓管理\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_vipinviteplan\",  \"value\": \"目标库存\", \"icon\": \"fax\", \"details\": \"制定邀约计划\" },
+ 	{  \"id\": \"mng_vipemotionplan\",  \"value\": \"缓冲调整\", \"icon\": \"weixin\", \"details\": \"制订维护计划\" },
+ 	{  \"id\": \"mng_vipmngbasicinfo\",  \"value\": \"补货建议\", \"icon\": \"book\", \"details\": \"管理我的会员\" }
+]},
+
+{ \"id\":\"mechandisemng\",\"value\":\"商品管理\",\"open\":true,\"data\":[
+       {  \"id\": \"mng_role\",  \"value\": \"款色管理\", \"icon\": \"user\", \"details\": \"管理角色及其奖扣权限和任务\"},
+ 	{  \"id\": \"mng_event\",  \"value\": \"门店调拨\", \"icon\": \"list-alt\", \"details\": \"维护奖扣事件\"},
+ 	{  \"id\": \"mng_para\",  \"value\": \"拉式换款\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+       {  \"id\": \"mng_impvipdata\",  \"value\": \"门店退货\", \"icon\": \"key\", \"details\": \"从excel导入会员数据\" },
+ 	{  \"id\": \"mng_configuration\",  \"value\": \"款色指标查询\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+ 	{  \"id\": \"mng_debuginfo\",  \"value\": \"门店指标查询\", \"icon\": \"cogs\", \"details\": \"查询调试信息\"} 
+]},
+
+ { \"id\": \"setting\",  \"value\":\"相关配置\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_dept\",  \"value\": \"部门管理\", \"icon\": \"sitemap\", \"details\": \"增加或修改部门资料,维护部门成员,部门工资,奖扣事件,月度目标\" },
+ 	{  \"id\": \"mng_staff\",  \"value\": \"款色管理\", \"icon\": \"users\", \"details\": \"增加或修改员工,维护员工角色,奖扣事件,订阅对象,维护会员\" }
+]}
+]',`Desc`='' WHERE ( _Identify=5 ) [ RunTime:0.0012s ]
+
+[ 2016-03-31T00:43:57+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001247s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0018s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000766s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000853s ]
+
+[ 2016-03-31T00:43:57+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000975s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001124s ]
+
+[ 2016-03-31T00:43:57+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001489s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0006s ]
+
+[ 2016-03-31T00:47:37+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBCURDMng/saveParameter/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001382s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0426s ]
+SQL: UPDATE `bsyspara` SET `Name`='WBMenu_Admin',`Type`='VText',`VInteger`='0',`VFloat`='0',`VDate`='0000-00-00 00:00:00',`VBool`='0',`VString`='',`VText`='[
+ { \"id\": \"tyscoremng\",  \"value\": \"门店管理\",  \"open\": true, \"data\":[
+ 	{  \"id\": \"mng_storets\",  \"value\": \"目标库存\", \"icon\": \"tasks\", \"details\": \"查询和维护门店的目标库存\"},
+ 	{  \"id\": \"qry_storerepbills\",  \"value\": \"补货查询\", \"icon\": \"pencil-square-o\", \"details\": \"查询补货建议单\"},
+ 	{  \"id\": \"qry_storeretbills\",  \"value\": \"退货查询\", \"icon\": \"star-o\", $css: \"orders\", \"details\":\"查询退货建议单\"},
+ 	{  \"id\": \"qry_storetsadj\",  \"value\": \"缓冲调整\", \"icon\": \"ticket\", \"details\": \"查询门店SKU缓冲调整记录\" }, 
+ 	{  \"id\": \"qry_storeindicators\",  \"value\": \"指标查询\", \"icon\": \"calendar\", \"details\": \"查询门店运营指标\"}
+]},
+
+{ \"id\": \"vipmng\",  \"value\":\"中央仓管理\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_vipinviteplan\",  \"value\": \"目标库存\", \"icon\": \"fax\", \"details\": \"制定邀约计划\" },
+ 	{  \"id\": \"mng_vipemotionplan\",  \"value\": \"缓冲调整\", \"icon\": \"weixin\", \"details\": \"制订维护计划\" },
+ 	{  \"id\": \"mng_vipmngbasicinfo\",  \"value\": \"补货建议\", \"icon\": \"book\", \"details\": \"管理我的会员\" }
+]},
+
+{ \"id\":\"mechandisemng\",\"value\":\"商品管理\",\"open\":true,\"data\":[
+       {  \"id\": \"mng_role\",  \"value\": \"款色管理\", \"icon\": \"user\", \"details\": \"管理角色及其奖扣权限和任务\"},
+ 	{  \"id\": \"mng_event\",  \"value\": \"门店调拨\", \"icon\": \"list-alt\", \"details\": \"维护奖扣事件\"},
+ 	{  \"id\": \"mng_para\",  \"value\": \"拉式换款\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+       {  \"id\": \"mng_impvipdata\",  \"value\": \"门店退货\", \"icon\": \"key\", \"details\": \"从excel导入会员数据\" },
+ 	{  \"id\": \"mng_configuration\",  \"value\": \"款色指标查询\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+ 	{  \"id\": \"mng_debuginfo\",  \"value\": \"门店指标查询\", \"icon\": \"cogs\", \"details\": \"查询调试信息\"} 
+]},
+
+ { \"id\": \"setting\",  \"value\":\"相关配置\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_dept\",  \"value\": \"部门管理\", \"icon\": \"sitemap\", \"details\": \"增加或修改部门资料,维护部门成员,部门工资,奖扣事件,月度目标\" },
+ 	{  \"id\": \"mng_staff\",  \"value\": \"款色管理\", \"icon\": \"users\", \"details\": \"增加或修改员工,维护员工角色,奖扣事件,订阅对象,维护会员\" }
+]}
+]',`Desc`='' WHERE ( _Identify=5 ) [ RunTime:0.0008s ]
+
+[ 2016-03-31T00:47:52+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000709s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001061s ]
+
+[ 2016-03-31T00:47:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+NOTIC: [8] Undefined index: _Locked /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBVIPMngController.class.php 第 85 行.
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T00:47:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+[ 2016-03-31T00:47:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001880s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001072s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001229s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+[ 2016-03-31T00:47:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+NOTIC: [8] Undefined index: _Locked /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBVIPMngController.class.php 第 85 行.
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T00:47:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001649s ]
+NOTIC: [8] Undefined index: _Locked /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBVIPMngController.class.php 第 85 行.
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T00:49:11+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+
+[ 2016-03-31T00:49:11+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBScoreMng/getScoreCrossStructureColArray
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000904s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001040s ]
+NOTIC: [8] Array to string conversion /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Model.class.php 第 1392 行.
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+[ 2016-03-31T00:49:12+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+
+[ 2016-03-31T00:49:12+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBScoreMng/getPosHotSpots
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000092s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001957s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001056s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.sysparameters' doesn't exist
+
+[ 2016-03-31T00:49:14+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001063s ]
+
+[ 2016-03-31T00:49:14+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/ScoreMngEnabled/1/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001060s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T00:49:15+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/ScoreMngEnabled/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003354s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T00:49:15+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001566s ]
+
+[ 2016-03-31T00:49:15+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBAttendanceMng/queryAttendanceRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000984s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffattendance' doesn't exist
+
+[ 2016-03-31T00:49:18+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+
+[ 2016-03-31T00:49:18+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001093s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003979s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T00:49:22+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000709s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001007s ]
+
+[ 2016-03-31T00:49:22+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000984s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001100s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T00:49:22+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T00:49:52+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000831s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001215s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0011s ]
+
+[ 2016-03-31T00:49:55+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBRoleMng/getAllRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001800s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.roles' doesn't exist
+
+[ 2016-03-31T00:49:55+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001131s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001153s ]
+
+[ 2016-03-31T00:49:55+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStaffMng/getAllStaffs/IsOnJob/1/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001654s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001398s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T00:49:59+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getTypeSelectList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000878s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000998s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventtypes' doesn't exist
+
+[ 2016-03-31T00:49:59+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001151s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001459s ]
+
+[ 2016-03-31T00:49:59+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getEvent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001689s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.events' doesn't exist
+
+[ 2016-03-31T00:49:59+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getEventType
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002403s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventtypes' doesn't exist
+
+[ 2016-03-31T00:49:59+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000963s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006098s ]
+
+[ 2016-03-31T00:49:59+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getEventScope
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001925s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventscopes' doesn't exist
+
+[ 2016-03-31T00:49:59+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getScopeSelectList/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001812s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventscopes' doesn't exist
+
+[ 2016-03-31T00:50:16+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001180s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001377s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0336s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0006s ]
+
+[ 2016-03-31T00:50:17+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000915s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+
+[ 2016-03-31T00:50:17+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000922s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001152s ]
+SQL: SHOW COLUMNS FROM `sqllist` [ RunTime:0.0015s ]
+SQL: SELECT `SQLCode` FROM `sqllist` WHERE ( SQLIndex='WBSQL_ImpSaleData' ) LIMIT 1   [ RunTime:0.0004s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[渠道四级名称] RegionCode,[渠道五级名称] DeptName ,[会员名称] Cu' at line 4
+
+[ 2016-03-31T00:50:21+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001064s ]
+
+[ 2016-03-31T00:50:21+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSQLList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001220s ]
+SQL: SHOW COLUMNS FROM `sqllist` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sqllist` ORDER BY _identify  [ RunTime:0.0023s ]
+
+[ 2016-03-31T00:50:24+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+
+[ 2016-03-31T00:50:24+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getDebugRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001155s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001432s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.debug' doesn't exist
+
+[ 2016-03-31T00:50:28+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+SQL: SHOW COLUMNS FROM `sqllist` [ RunTime:0.0017s ]
+SQL: SELECT `SQLCode` FROM `sqllist` WHERE ( SQLIndex='WBSQL_ImpSaleData' ) LIMIT 1   [ RunTime:0.0004s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[渠道四级名称] RegionCode,[渠道五级名称] DeptName ,[会员名称] Cu' at line 4
+
+[ 2016-03-31T00:50:29+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0005s ]
+
+[ 2016-03-31T00:50:30+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSQLList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000792s ]
+SQL: SHOW COLUMNS FROM `sqllist` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `sqllist` ORDER BY _identify  [ RunTime:0.0017s ]
+
+[ 2016-03-31T00:50:31+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+SQL: SHOW COLUMNS FROM `sqllist` [ RunTime:0.0031s ]
+SQL: SELECT `SQLCode` FROM `sqllist` WHERE ( SQLIndex='WBSQL_ImpSaleData' ) LIMIT 1   [ RunTime:0.0004s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[渠道四级名称] RegionCode,[渠道五级名称] DeptName ,[会员名称] Cu' at line 4
+
+[ 2016-03-31T00:50:33+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002326s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T00:50:33+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001650s ]
+
+[ 2016-03-31T00:50:33+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStaffMng/getAllStaffs/IsOnJob/1/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000704s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001444s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T00:50:33+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptEvents/ShowType/AllEvent/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000988s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001134s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.vw_events' doesn't exist
+
+[ 2016-03-31T00:50:33+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000102s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002157s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T00:50:41+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000983s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001129s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0005s ]
+
+[ 2016-03-31T00:50:41+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+SQL: SHOW COLUMNS FROM `sqllist` [ RunTime:0.0016s ]
+SQL: SELECT `SQLCode` FROM `sqllist` WHERE ( SQLIndex='WBSQL_ImpSaleData' ) LIMIT 1   [ RunTime:0.0005s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[渠道四级名称] RegionCode,[渠道五级名称] DeptName ,[会员名称] Cu' at line 4
+
+[ 2016-03-31T00:50:43+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSQLList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000957s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001014s ]
+SQL: SHOW COLUMNS FROM `sqllist` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sqllist` ORDER BY _identify  [ RunTime:0.0022s ]
+
+[ 2016-03-31T00:50:44+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getDebugRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.debug' doesn't exist
+
+[ 2016-03-31T00:50:46+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001239s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0005s ]
+
+[ 2016-03-31T00:50:50+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getScopeSelectList/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001021s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventscopes' doesn't exist
+
+[ 2016-03-31T00:50:50+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getTypeSelectList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001935s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventtypes' doesn't exist
+
+[ 2016-03-31T00:50:50+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getEvent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.events' doesn't exist
+
+[ 2016-03-31T00:50:50+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getEventScope
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventscopes' doesn't exist
+
+[ 2016-03-31T00:50:50+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getEventType
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000876s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001539s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventtypes' doesn't exist
+
+[ 2016-03-31T00:51:40+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000834s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+[ 2016-03-31T00:51:40+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+NOTIC: [8] Undefined index: _Locked /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBVIPMngController.class.php 第 85 行.
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T00:51:40+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000675s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001060s ]
+NOTIC: [8] Undefined index: _Locked /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBVIPMngController.class.php 第 85 行.
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T00:51:40+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBScoreMng/queryScoreRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010485s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+[ 2016-03-31T00:51:40+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getCurMonthPlan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006778s ]
+NOTIC: [8] Undefined index: _Locked /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBVIPMngController.class.php 第 85 行.
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T00:51:50+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBScoreMng/getScoreCrossStructureColArray
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001368s ]
+NOTIC: [8] Array to string conversion /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Model.class.php 第 1392 行.
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+[ 2016-03-31T00:51:51+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBScoreMng/getPosHotSpots
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000358s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001565s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.sysparameters' doesn't exist
+
+[ 2016-03-31T00:51:52+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/ScoreMngEnabled/1/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001135s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T00:51:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/ScoreMngEnabled/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000082s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001137s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002030s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T00:51:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBAttendanceMng/queryAttendanceRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001432s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffattendance' doesn't exist
+
+[ 2016-03-31T00:51:54+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001355s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T00:51:55+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000729s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001068s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T00:51:55+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001136s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:04:47+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000962s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000789s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0024s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001166s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001322s ]
+
+[ 2016-03-31T01:04:47+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001219s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:04:47+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000994s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:04:47+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001540s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001509s ]
+
+[ 2016-03-31T01:04:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:04:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001042s ]
+
+[ 2016-03-31T01:04:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000944s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:09:35+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000888s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001192s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0337s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001139s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001273s ]
+
+[ 2016-03-31T01:09:35+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:09:35+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000863s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000955s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:09:35+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001335s ]
+
+[ 2016-03-31T01:10:20+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001765s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002185s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002810s ]
+
+[ 2016-03-31T01:10:21+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004338s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T01:10:22+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001060s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:10:22+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+
+[ 2016-03-31T01:10:22+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001037s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:10:25+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001012s ]
+
+[ 2016-03-31T01:10:25+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000134s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001158s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0008s ]
+
+[ 2016-03-31T01:10:28+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000846s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000907s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001064s ]
+
+[ 2016-03-31T01:10:28+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBRoleMng/getAllRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001268s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001249s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.roles' doesn't exist
+
+[ 2016-03-31T01:10:28+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStaffMng/getAllStaffs/IsOnJob/1/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001909s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002900s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T01:10:31+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getEvent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000700s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001099s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.events' doesn't exist
+
+[ 2016-03-31T01:10:31+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getTypeSelectList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001125s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventtypes' doesn't exist
+
+[ 2016-03-31T01:10:31+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001234s ]
+
+[ 2016-03-31T01:10:31+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001082s ]
+
+[ 2016-03-31T01:10:32+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getScopeSelectList/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000844s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001460s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventscopes' doesn't exist
+
+[ 2016-03-31T01:10:32+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getEventScope
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001561s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventscopes' doesn't exist
+
+[ 2016-03-31T01:10:32+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBEventMng/getEventType
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001718s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.eventtypes' doesn't exist
+
+[ 2016-03-31T01:10:35+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001119s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001287s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0005s ]
+
+[ 2016-03-31T01:10:37+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001176s ]
+
+[ 2016-03-31T01:10:37+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001934s ]
+SQL: SHOW COLUMNS FROM `sqllist` [ RunTime:0.0021s ]
+SQL: SELECT `SQLCode` FROM `sqllist` WHERE ( SQLIndex='WBSQL_ImpSaleData' ) LIMIT 1   [ RunTime:0.0011s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[渠道四级名称] RegionCode,[渠道五级名称] DeptName ,[会员名称] Cu' at line 4
+
+[ 2016-03-31T01:10:59+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001269s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T01:11:02+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001939s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002077s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:11:02+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000981s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001118s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:11:03+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000653s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T01:11:08+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000779s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001471s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.1280s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000996s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001149s ]
+
+[ 2016-03-31T01:11:08+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000914s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001042s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T01:11:08+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+
+[ 2016-03-31T01:11:10+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
+
+[ 2016-03-31T01:11:10+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001087s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:11:10+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:18:25+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001553s ]
+
+[ 2016-03-31T01:18:25+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSQLList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+SQL: SHOW COLUMNS FROM `sqllist` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `sqllist` ORDER BY _identify  [ RunTime:0.0016s ]
+
+[ 2016-03-31T01:18:27+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
+
+[ 2016-03-31T01:18:27+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001040s ]
+SQL: SHOW COLUMNS FROM `sqllist` [ RunTime:0.0039s ]
+SQL: SELECT `SQLCode` FROM `sqllist` WHERE ( SQLIndex='WBSQL_ImpSaleData' ) LIMIT 1   [ RunTime:0.0005s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[渠道四级名称] RegionCode,[渠道五级名称] DeptName ,[会员名称] Cu' at line 4
+
+[ 2016-03-31T01:18:29+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+
+[ 2016-03-31T01:18:29+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000794s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001202s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0006s ]
+
+[ 2016-03-31T01:21:35+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBCURDMng/saveParameter/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001246s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0028s ]
+SQL: UPDATE `bsyspara` SET `Name`='WBMenu_Admin',`Type`='VText',`VInteger`='0',`VFloat`='0',`VDate`='0000-00-00 00:00:00',`VBool`='0',`VString`='',`VText`='[
+ { \"id\": \"tyscoremng\",  \"value\": \"门店管理\",  \"open\": true, \"data\":[
+ 	{  \"id\": \"mng_storets\",  \"value\": \"目标库存\", \"icon\": \"tasks\", \"details\": \"查询和维护门店的目标库存\"},
+ 	{  \"id\": \"qry_storerepbills\",  \"value\": \"补货查询\", \"icon\": \"pencil-square-o\", \"details\": \"查询补货建议单\"},
+ 	{  \"id\": \"qry_storeretbills\",  \"value\": \"退货查询\", \"icon\": \"star-o\", $css: \"orders\", \"details\":\"查询退货建议单\"},
+ 	{  \"id\": \"qry_storetsadj\",  \"value\": \"缓冲调整\", \"icon\": \"ticket\", \"details\": \"查询门店SKU缓冲调整记录\" }, 
+ 	{  \"id\": \"qry_storeindicators\",  \"value\": \"指标查询\", \"icon\": \"calendar\", \"details\": \"查询门店运营指标\"},
+        {  \"id\":\"mng_uploadstorets\",\"value\":\"导入数据\",\"icon\":\"calendar\", \"details\":\"导入门店目标库存\"}
+]},
+
+{ \"id\": \"vipmng\",  \"value\":\"中央仓管理\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_vipinviteplan\",  \"value\": \"目标库存\", \"icon\": \"fax\", \"details\": \"制定邀约计划\" },
+ 	{  \"id\": \"mng_vipemotionplan\",  \"value\": \"缓冲调整\", \"icon\": \"weixin\", \"details\": \"制订维护计划\" },
+ 	{  \"id\": \"mng_vipmngbasicinfo\",  \"value\": \"补货建议\", \"icon\": \"book\", \"details\": \"管理我的会员\" }
+]},
+
+{ \"id\":\"mechandisemng\",\"value\":\"商品管理\",\"open\":true,\"data\":[
+       {  \"id\": \"mng_role\",  \"value\": \"款色管理\", \"icon\": \"user\", \"details\": \"管理角色及其奖扣权限和任务\"},
+ 	{  \"id\": \"mng_event\",  \"value\": \"门店调拨\", \"icon\": \"list-alt\", \"details\": \"维护奖扣事件\"},
+ 	{  \"id\": \"mng_para\",  \"value\": \"拉式换款\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+       {  \"id\": \"mng_impvipdata\",  \"value\": \"门店退货\", \"icon\": \"key\", \"details\": \"从excel导入会员数据\" },
+ 	{  \"id\": \"mng_configuration\",  \"value\": \"款色指标查询\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+ 	{  \"id\": \"mng_debuginfo\",  \"value\": \"门店指标查询\", \"icon\": \"cogs\", \"details\": \"查询调试信息\"} 
+]},
+
+ { \"id\": \"setting\",  \"value\":\"相关配置\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_dept\",  \"value\": \"部门管理\", \"icon\": \"sitemap\", \"details\": \"增加或修改部门资料,维护部门成员,部门工资,奖扣事件,月度目标\" },
+ 	{  \"id\": \"mng_staff\",  \"value\": \"款色管理\", \"icon\": \"users\", \"details\": \"增加或修改员工,维护员工角色,奖扣事件,订阅对象,维护会员\" }
+]}
+]',`Desc`='' WHERE ( _Identify=5 ) [ RunTime:0.0012s ]
+
+[ 2016-03-31T01:22:30+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBCURDMng/saveParameter/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000747s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001348s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0027s ]
+SQL: UPDATE `bsyspara` SET `Name`='WBMenu_Admin',`Type`='VText',`VInteger`='0',`VFloat`='0',`VDate`='0000-00-00 00:00:00',`VBool`='0',`VString`='',`VText`='[
+ { \"id\": \"tyscoremng\",  \"value\": \"门店管理\",  \"open\": true, \"data\":[
+ 	{  \"id\": \"mng_storets\",  \"value\": \"目标库存\", \"icon\": \"tasks\", \"details\": \"查询和维护门店的目标库存\"},
+ 	{  \"id\": \"qry_storerepbills\",  \"value\": \"补货查询\", \"icon\": \"pencil-square-o\", \"details\": \"查询补货建议单\"},
+ 	{  \"id\": \"qry_storeretbills\",  \"value\": \"退货查询\", \"icon\": \"star-o\", $css: \"orders\", \"details\":\"查询退货建议单\"},
+ 	{  \"id\": \"qry_storetsadj\",  \"value\": \"缓冲调整\", \"icon\": \"ticket\", \"details\": \"查询门店SKU缓冲调整记录\" }, 
+ 	{  \"id\": \"qry_storeindicators\",  \"value\": \"指标查询\", \"icon\": \"calendar\", \"details\": \"查询门店运营指标\"},
+        {  \"id\":\"mng_importstorets\",\"value\":\"导入数据\",\"icon\":\"calendar\", \"details\":\"导入门店目标库存\"}
+]},
+
+{ \"id\": \"vipmng\",  \"value\":\"中央仓管理\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_vipinviteplan\",  \"value\": \"目标库存\", \"icon\": \"fax\", \"details\": \"制定邀约计划\" },
+ 	{  \"id\": \"mng_vipemotionplan\",  \"value\": \"缓冲调整\", \"icon\": \"weixin\", \"details\": \"制订维护计划\" },
+ 	{  \"id\": \"mng_vipmngbasicinfo\",  \"value\": \"补货建议\", \"icon\": \"book\", \"details\": \"管理我的会员\" },
+ {  \"id\":\"mng_importcwhts\",\"value\":\"导入数据\",\"icon\":\"calendar\", \"details\":\"导入中央仓目标库存\"}
+]},
+
+{ \"id\":\"mechandisemng\",\"value\":\"商品管理\",\"open\":true,\"data\":[
+       {  \"id\": \"mng_role\",  \"value\": \"款色管理\", \"icon\": \"user\", \"details\": \"管理角色及其奖扣权限和任务\"},
+ 	{  \"id\": \"mng_event\",  \"value\": \"门店调拨\", \"icon\": \"list-alt\", \"details\": \"维护奖扣事件\"},
+ 	{  \"id\": \"mng_para\",  \"value\": \"拉式换款\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+       {  \"id\": \"mng_impvipdata\",  \"value\": \"门店退货\", \"icon\": \"key\", \"details\": \"从excel导入会员数据\" },
+ 	{  \"id\": \"mng_configuration\",  \"value\": \"款色指标查询\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+ 	{  \"id\": \"mng_debuginfo\",  \"value\": \"门店指标查询\", \"icon\": \"cogs\", \"details\": \"查询调试信息\"} 
+]},
+
+ { \"id\": \"setting\",  \"value\":\"相关配置\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_dept\",  \"value\": \"部门管理\", \"icon\": \"sitemap\", \"details\": \"增加或修改部门资料,维护部门成员,部门工资,奖扣事件,月度目标\" },
+ 	{  \"id\": \"mng_staff\",  \"value\": \"款色管理\", \"icon\": \"users\", \"details\": \"增加或修改员工,维护员工角色,奖扣事件,订阅对象,维护会员\" }
+]}
+]',`Desc`='' WHERE ( _Identify=5 ) [ RunTime:0.0006s ]
+
+[ 2016-03-31T01:22:33+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001026s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0054s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001121s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001263s ]
+
+[ 2016-03-31T01:22:33+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001110s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001549s ]
+
+[ 2016-03-31T01:22:33+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0007s ]
+
+[ 2016-03-31T01:23:55+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBCURDMng/saveParameter/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001007s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001150s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0341s ]
+SQL: UPDATE `bsyspara` SET `Name`='WBMenu_Admin',`Type`='VText',`VInteger`='0',`VFloat`='0',`VDate`='0000-00-00 00:00:00',`VBool`='0',`VString`='',`VText`='[
+ { \"id\": \"tyscoremng\",  \"value\": \"门店管理\",  \"open\": true, \"data\":[
+ 	{  \"id\": \"mng_storets\",  \"value\": \"目标库存\", \"icon\": \"tasks\", \"details\": \"查询和维护门店的目标库存\"},
+ 	{  \"id\": \"qry_storerepbills\",  \"value\": \"补货查询\", \"icon\": \"pencil-square-o\", \"details\": \"查询补货建议单\"},
+ 	{  \"id\": \"qry_storeretbills\",  \"value\": \"退货查询\", \"icon\": \"star-o\", $css: \"orders\", \"details\":\"查询退货建议单\"},
+ 	{  \"id\": \"qry_storetsadj\",  \"value\": \"缓冲调整\", \"icon\": \"ticket\", \"details\": \"查询门店SKU缓冲调整记录\" }, 
+ 	{  \"id\": \"qry_storeindicators\",  \"value\": \"指标查询\", \"icon\": \"calendar\", \"details\": \"查询门店运营指标\"},
+        {  \"id\":\"mng_importstorets\",\"value\":\"导入数据\",\"icon\":\"calendar\", \"details\":\"导入门店目标库存\"}
+]},
+
+{ \"id\": \"vipmng\",  \"value\":\"中央仓管理\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_vipinviteplan\",  \"value\": \"目标库存\", \"icon\": \"fax\", \"details\": \"制定邀约计划\" },
+ 	{  \"id\": \"mng_vipemotionplan\",  \"value\": \"缓冲调整\", \"icon\": \"weixin\", \"details\": \"制订维护计划\" },
+ 	{  \"id\": \"mng_vipmngbasicinfo\",  \"value\": \"补货建议\", \"icon\": \"book\", \"details\": \"管理我的会员\" },
+ {  \"id\":\"mng_importcwhts\",\"value\":\"导入数据\",\"icon\":\"calendar\", \"details\":\"导入中央仓目标库存\"}
+]},
+
+{ \"id\":\"mechandisemng\",\"value\":\"商品管理\",\"open\":false,\"data\":[
+       {  \"id\": \"mng_role\",  \"value\": \"款色管理\", \"icon\": \"user\", \"details\": \"管理角色及其奖扣权限和任务\"},
+ 	{  \"id\": \"mng_event\",  \"value\": \"门店调拨\", \"icon\": \"list-alt\", \"details\": \"维护奖扣事件\"},
+ 	{  \"id\": \"mng_para\",  \"value\": \"拉式换款\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+       {  \"id\": \"mng_impvipdata\",  \"value\": \"门店退货\", \"icon\": \"key\", \"details\": \"从excel导入会员数据\" },
+ 	{  \"id\": \"mng_configuration\",  \"value\": \"款色指标\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+ 	{  \"id\": \"mng_debuginfo\",  \"value\": \"门店指标\", \"icon\": \"cogs\", \"details\": \"查询调试信息\"} 
+]},
+
+ { \"id\": \"setting\",  \"value\":\"相关配置\",  \"open\":false, \"data\":[
+ 	{  \"id\": \"mng_dept\",  \"value\": \"部门管理\", \"icon\": \"sitemap\", \"details\": \"增加或修改部门资料,维护部门成员,部门工资,奖扣事件,月度目标\" },
+ 	{  \"id\": \"mng_staff\",  \"value\": \"款色管理\", \"icon\": \"users\", \"details\": \"增加或修改员工,维护员工角色,奖扣事件,订阅对象,维护会员\" }
+]}
+]',`Desc`='' WHERE ( _Identify=5 ) [ RunTime:0.0009s ]
+
+[ 2016-03-31T01:23:58+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0038s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000778s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000869s ]
+
+[ 2016-03-31T01:23:58+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001769s ]
+
+[ 2016-03-31T01:23:59+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001079s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001519s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0011s ]
+
+[ 2016-03-31T01:26:41+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000931s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001058s ]
+
+[ 2016-03-31T01:26:41+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001050s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:26:41+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000974s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:27:17+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001468s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0005s ]
+
+[ 2016-03-31T01:28:42+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBCURDMng/saveParameter/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000829s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0351s ]
+SQL: UPDATE `bsyspara` SET `Name`='WBMenu_Admin',`Type`='VText',`VInteger`='0',`VFloat`='0',`VDate`='0000-00-00 00:00:00',`VBool`='0',`VString`='',`VText`='[
+ { \"id\": \"tyscoremng\",  \"value\": \"门店管理\",  \"open\": true, \"data\":[
+ 	{  \"id\": \"mng_storets\",  \"value\": \"目标库存\", \"icon\": \"tasks\", \"details\": \"查询和维护门店的目标库存\"},
+	{  \"id\": \"qry_storetsadj\",  \"value\": \"缓冲调整\", \"icon\": \"ticket\", \"details\": \"查询门店SKU缓冲调整记录\" }, 
+ 	{  \"id\": \"qry_storerepretbills\",  \"value\": \"补货退货\", \"icon\": \"pencil-square-o\", \"details\": \"查询补货和退货建议单\"},
+ 	{  \"id\": \"qry_storeindicators\",  \"value\": \"指标查询\", \"icon\": \"calendar\", \"details\": \"查询门店运营指标\"},
+        {  \"id\":\"mng_importstorets\",\"value\":\"导入数据\",\"icon\":\"calendar\", \"details\":\"导入门店目标库存\"}
+]},
+
+{ \"id\": \"vipmng\",  \"value\":\"中央仓管理\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_vipinviteplan\",  \"value\": \"目标库存\", \"icon\": \"fax\", \"details\": \"制定邀约计划\" },
+ 	{  \"id\": \"mng_vipemotionplan\",  \"value\": \"缓冲调整\", \"icon\": \"weixin\", \"details\": \"制订维护计划\" },
+ 	{  \"id\": \"mng_vipmngbasicinfo\",  \"value\": \"补货建议\", \"icon\": \"book\", \"details\": \"管理我的会员\" },
+ {  \"id\":\"mng_importcwhts\",\"value\":\"导入数据\",\"icon\":\"calendar\", \"details\":\"导入中央仓目标库存\"}
+]},
+
+{ \"id\":\"mechandisemng\",\"value\":\"商品管理\",\"open\":false,\"data\":[
+       {  \"id\": \"mng_role\",  \"value\": \"款色管理\", \"icon\": \"user\", \"details\": \"管理角色及其奖扣权限和任务\"},
+ 	{  \"id\": \"mng_event\",  \"value\": \"门店调拨\", \"icon\": \"list-alt\", \"details\": \"维护奖扣事件\"},
+ 	{  \"id\": \"mng_para\",  \"value\": \"拉式换款\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+       {  \"id\": \"mng_impvipdata\",  \"value\": \"门店退货\", \"icon\": \"key\", \"details\": \"从excel导入会员数据\" },
+ 	{  \"id\": \"mng_configuration\",  \"value\": \"款色指标\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+ 	{  \"id\": \"mng_debuginfo\",  \"value\": \"门店指标\", \"icon\": \"cogs\", \"details\": \"查询调试信息\"} 
+]},
+
+ { \"id\": \"setting\",  \"value\":\"相关配置\",  \"open\":false, \"data\":[
+ 	{  \"id\": \"mng_dept\",  \"value\": \"部门管理\", \"icon\": \"sitemap\", \"details\": \"增加或修改部门资料,维护部门成员,部门工资,奖扣事件,月度目标\" },
+ 	{  \"id\": \"mng_staff\",  \"value\": \"款色管理\", \"icon\": \"users\", \"details\": \"增加或修改员工,维护员工角色,奖扣事件,订阅对象,维护会员\" }
+]}
+]',`Desc`='' WHERE ( _Identify=5 ) [ RunTime:0.0008s ]
+
+[ 2016-03-31T01:28:45+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0015s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000750s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000834s ]
+
+[ 2016-03-31T01:28:45+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000916s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+
+[ 2016-03-31T01:28:45+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000760s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0006s ]
+
+[ 2016-03-31T01:29:11+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001046s ]
+
+[ 2016-03-31T01:29:11+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:29:11+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000952s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001084s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:29:14+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+
+[ 2016-03-31T01:29:14+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001066s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.staffs' doesn't exist
+
+[ 2016-03-31T01:29:15+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:29:15+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001040s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:29:17+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000796s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001170s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0004s ]
+
+[ 2016-03-31T01:32:13+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBCURDMng/saveParameter/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000799s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001989s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0444s ]
+SQL: UPDATE `bsyspara` SET `Name`='WBMenu_Admin',`Type`='VText',`VInteger`='0',`VFloat`='0',`VDate`='0000-00-00 00:00:00',`VBool`='0',`VString`='',`VText`='[
+ { \"id\": \"tyscoremng\",  \"value\": \"门店管理\",  \"open\": true, \"data\":[
+ 	{  \"id\": \"mng_storets\",  \"value\": \"目标库存\", \"icon\": \"tasks\", \"details\": \"查询和维护门店的目标库存\"},
+	{  \"id\": \"qry_storetsadj\",  \"value\": \"缓冲调整\", \"icon\": \"ticket\", \"details\": \"查询门店SKU缓冲调整记录\" }, 
+ 	{  \"id\": \"qry_storerepretbills\",  \"value\": \"补货退货\", \"icon\": \"pencil-square-o\", \"details\": \"查询补货和退货建议单\"},
+ 	{  \"id\": \"qry_storeindicators\",  \"value\": \"指标查询\", \"icon\": \"calendar\", \"details\": \"查询门店运营指标\"},
+        {  \"id\":\"mng_importstorets\",\"value\":\"导入数据\",\"icon\":\"calendar\", \"details\":\"导入门店目标库存\"}
+]},
+
+{ \"id\": \"vipmng\",  \"value\":\"中央仓管理\",  \"open\":true, \"data\":[
+ 	{  \"id\": \"mng_vipinviteplan\",  \"value\": \"目标库存\", \"icon\": \"fax\", \"details\": \"制定邀约计划\" },
+ 	{  \"id\": \"mng_vipemotionplan\",  \"value\": \"缓冲调整\", \"icon\": \"weixin\", \"details\": \"制订维护计划\" },
+ 	{  \"id\": \"mng_vipmngbasicinfo\",  \"value\": \"补货建议\", \"icon\": \"book\", \"details\": \"管理我的会员\" },
+ {  \"id\":\"mng_importcwhts\",\"value\":\"导入数据\",\"icon\":\"calendar\", \"details\":\"导入中央仓目标库存\"}
+]},
+
+{ \"id\":\"mechandisemng\",\"value\":\"商品管理\",\"open\":false,\"data\":[
+       {  \"id\": \"mng_role\",  \"value\": \"款色管理\", \"icon\": \"user\", \"details\": \"管理角色及其奖扣权限和任务\"},
+ 	{  \"id\": \"mng_event\",  \"value\": \"门店调拨\", \"icon\": \"list-alt\", \"details\": \"维护奖扣事件\"},
+ 	{  \"id\": \"mng_storeskcinout\",  \"value\": \"拉式换款\", \"icon\": \"cogs\", \"details\": \"管理门店拉式换款\"},
+       {  \"id\": \"mng_impvipdata\",  \"value\": \"门店退货\", \"icon\": \"key\", \"details\": \"从excel导入会员数据\" },
+ 	{  \"id\": \"mng_configuration\",  \"value\": \"款色指标\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"},
+ 	{  \"id\": \"mng_debuginfo\",  \"value\": \"门店指标\", \"icon\": \"cogs\", \"details\": \"查询调试信息\"} 
+]},
+
+ { \"id\": \"setting\",  \"value\":\"相关配置\",  \"open\":false, \"data\":[
+ 	{  \"id\": \"mng_dept\",  \"value\": \"部门管理\", \"icon\": \"sitemap\", \"details\": \"增加或修改部门资料,维护部门成员,部门工资,奖扣事件,月度目标\" },
+        {  \"id\": \"mng_para\",  \"value\": \"系统参数\", \"icon\": \"cogs\", \"details\": \"管理系统参数\"}
+]}
+]',`Desc`='' WHERE ( _Identify=5 ) [ RunTime:0.0006s ]
+
+[ 2016-03-31T01:32:16+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000726s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0015s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000763s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000851s ]
+
+[ 2016-03-31T01:32:16+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000762s ]
+
+[ 2016-03-31T01:32:16+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0005s ]
+
+[ 2016-03-31T01:34:14+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0350s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001022s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001154s ]
+
+[ 2016-03-31T01:34:14+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000122s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001248s ]
+
+[ 2016-03-31T01:34:14+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0007s ]
+
+[ 2016-03-31T01:34:16+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001108s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T01:34:16+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+
+[ 2016-03-31T01:34:16+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001125s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:36:07+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara?DSSuffix=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001195s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0362s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0008s ]
+
+[ 2016-03-31T01:36:10+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T01:36:10+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001012s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+

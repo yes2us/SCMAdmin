@@ -77,12 +77,11 @@ class WBStaffMngController extends \Think\Controller {
 	 }
 	 
 	public function getRawUrl() {
-		$DSSuffix = $_POST['DSSuffix'];
-//		setTag('DSSuffix', $DSSuffix);
+	
+		$dbm = M('bsyspara',"",getMyCon());
+		$rs = $dbm -> where(array("Name"=> 'DSSuffix')) -> getField('vtext');
 		
-		$dbm = M('sysparameters',"",getMyCon());
-		$rs = $dbm -> where("[name]='" . $DSSuffix . "'") -> getField('vtext');
-		//		dump($rs);
+//		dump($dbm->_sql());
 //		setTag('sql1', $dbm->_sql());
 				
 		return $this -> ajaxReturn($rs);
@@ -110,16 +109,16 @@ class WBStaffMngController extends \Think\Controller {
 	}
 	
 		public function checkUserPWD() {
+			return $this -> ajaxReturn('OK');
+			
 		$UserID = $_POST['UserID'];
 		$PWD = $_POST['PWD'];
-//		setTag('UserID', $UserID);
-//		setTag('PWD', $PWD);
 		
 		$Model = new \Think\Model("",getMyCon());
 		$sqlstr = "select pwdcompare('" . $PWD . "',[Password])  cmprs from Staffs where LOWER(StaffCode) ='" . $UserID . "'";
-
+p($sqlstr);
 		$rs = $Model -> query($sqlstr);
-//		setTag('sql2', $Model->_sql());
+
 		
 		
 		$response = null;

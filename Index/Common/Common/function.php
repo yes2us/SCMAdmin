@@ -22,107 +22,18 @@ function getthemonth($date) {
 	return array($firstday, $lastday);
 }
 
-function getVIPConnectionInfo()
-{
-	return array(	'DB_TYPE' => 'sqlsrv',
-	'DB_CHARSET'=> 'utf8', // 字符集
-	'DB_Host' => 'Localhost\SQL2008',
-//	'DB_Host' => '120.24.229.218\SQL2008',
-	'DB_User' => 'sa',
-	'DB_PWD'  => 'Rickywang9',
-	'DB_NAME' => 'eekavip');
-}
 
-//function getMyCon($POST,$GET,$DSNo=1)
 function getMyCon($DSNo=1)
 {
-	$DSSuffix = null;
-		
-  			
-	switch ($_SERVER['REQUEST_METHOD']) {
-		case "POST":
-				if(isset($_POST['DSSuffix']))
-				{
-					$DSSuffix = strtolower(trim($_POST['DSSuffix']));
-				}
-			break;
-			
-		case "GET":
-				if(isset($_GET['DSSuffix']))
-				{
-					$DSSuffix = strtolower(trim($_GET['DSSuffix']));
-				}
-			break;
-			
-		default:
-			break;
-	}
-
-					
-	switch ($DSSuffix) {
-		case 'linesoul.com':
-				if($DSNo==1)
-			  {
-			  		return array(	'DB_TYPE' => 'sqlsrv',
+	
+			  		return array(	'DB_TYPE' => 'mysql',
+			  		'DB_PORT' =>3306,
 					'DB_CHARSET'=> 'utf8', // 字符集
-					'DB_Host' => 'Localhost\SQL2008',
-					'DB_User' => 'sa',
-					'DB_PWD'  => 'Rickywang9',
-					'DB_NAME' => 'linesoulpoa');
-			  }
-			  else
-			  {
-			  		return array(	'DB_TYPE' => 'sqlsrv',
-					'DB_CHARSET'=> 'utf8', // 字符集
-					'DB_Host' => 'Localhost\SQL2008',
-					'DB_User' => 'sa',
-					'DB_PWD'  => 'Rickywang9',
-					'DB_NAME' => 'linesoulvip');
-			  }
-			break;
-
-		case 'eekabsc.com':
-				if($DSNo==1)
-			  {
-			  		return array(	'DB_TYPE' => 'sqlsrv',
-					'DB_CHARSET'=> 'utf8', // 字符集
-					'DB_Host' => 'Localhost\SQL2008',
-					'DB_User' => 'sa',
-					'DB_PWD'  => 'Rickywang9',
-					'DB_NAME' => 'eekapoa');
-			  }
-			  else
-			  {
-			  		return array(	'DB_TYPE' => 'sqlsrv',
-					'DB_CHARSET'=> 'utf8', // 字符集
-					'DB_Host' => 'Localhost\SQL2008',
-					'DB_User' => 'sa',
-					'DB_PWD'  => 'Rickywang9',
-					'DB_NAME' => 'eekavip');
-			  }
-			break;
-		
-		default:
-			  if($DSNo==1)
-			  {
-			  		return array(	'DB_TYPE' => 'sqlsrv',
-					'DB_CHARSET'=> 'utf8', // 字符集
-					'DB_Host' => 'Localhost\SQL2008',
-					'DB_User' => 'sa',
-					'DB_PWD'  => 'Rickywang9',
-					'DB_NAME' => 'eekapoa');
-			  }
-			  else
-			  {
-			  		return array(	'DB_TYPE' => 'sqlsrv',
-					'DB_CHARSET'=> 'utf8', // 字符集
-					'DB_Host' => 'Localhost\SQL2008',
-					'DB_User' => 'sa',
-					'DB_PWD'  => 'Rickywang9',
-					'DB_NAME' => 'eekavip');
-			  }
-			break;
-	}
+					'DB_Host' => '127.0.0.1', //mac下不能使用localhost!
+					'DB_User' => 'root',
+					'DB_PWD'  => 'root',
+					'DB_NAME' => 'tocdist',
+					'DB_DEBUG'  =>  TRUE);
 
 }
 

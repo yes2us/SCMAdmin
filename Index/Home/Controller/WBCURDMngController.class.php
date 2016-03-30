@@ -85,7 +85,7 @@ class WBCURDMngController extends \Think\Controller {
 	  {
 	  	if(stripos("insert|update|delete",$_POST['webix_operation'])===false)  return $this -> ajaxReturn("not permit");
 		
-	  	$tableName = "SysParameters";
+	  	$tableName = "bsyspara";
 		$attArray = array('Name','Type','VInteger','VFloat','VDate','VBool','VString','VText','Desc');
 		$uniqArray = array("Name");
 		$status = $this->_CURDOperation($tableName,1,$_POST,$attArray,$uniqArray);

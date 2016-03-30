@@ -1,7 +1,7 @@
 <?php
 return array(
 	//'配置项'
-	'DB_TYPE' => 'sqlsrv',
+	'DB_TYPE' => 'mysql',
 	'DB_CHARSET'=> 'utf8', // 字符集
 	'DB_Host' => 'Localhost\SQL2008',
 //	'DB_Host' => '120.24.229.218\SQL2008',

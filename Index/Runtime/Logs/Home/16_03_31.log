@@ -1820,3 +1820,353 @@ INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001012s ]
 ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
 
+[ 2016-03-31T12:41:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStaffMng/getRawUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0054s ]
+SQL: SELECT `vtext` FROM `bsyspara` WHERE `Name` = 'DSSuffix' LIMIT 1   [ RunTime:0.0033s ]
+
+[ 2016-03-31T12:41:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStaffMng/checkUserPWD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+
+[ 2016-03-31T12:41:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getWBMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0016s ]
+SQL: SELECT `VText` FROM `bsyspara` WHERE `Name` = 'wbmenu_admin' LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000860s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000958s ]
+
+[ 2016-03-31T12:41:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+
+[ 2016-03-31T12:41:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000944s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001172s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001315s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0005s ]
+
+[ 2016-03-31T12:42:08+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000957s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001243s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T12:42:08+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000846s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001166s ]
+
+[ 2016-03-31T12:42:12+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T12:43:09+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000945s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001243s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0008s ]
+
+[ 2016-03-31T12:43:10+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBVIPMng/getVIPTEMPTrend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001033s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/VIPObjectModel.class.php:225) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T12:43:10+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBDeptMng/getDeptSNameList/VIPMngEnabled/1/StaffCode/admin/DSSuffix/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000775s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001200s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.depts' doesn't exist
+
+[ 2016-03-31T14:10:17+08:00 ] ::1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000808s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0005s ]
+
+[ 2016-03-31T14:10:33+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0026s ]
+NOTIC: [8] Undefined variable: fieldstr /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBPartyMngController.class.php 第 28 行.
+SQL: SELECT * FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,10000   [ RunTime:0.0009s ]
+
+[ 2016-03-31T14:10:57+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000891s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0027s ]
+NOTIC: [8] Undefined variable: fieldstr /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBPartyMngController.class.php 第 28 行.
+SQL: SELECT * FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,10000   [ RunTime:0.0009s ]
+
+[ 2016-03-31T15:19:09+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getStoreList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:20:48+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getStoreList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001253s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:24:51+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getStoreList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:27:46+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getStoreList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001245s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:28:30+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getStoreList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002150s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:29:02+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000838s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000952s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0042s ]
+SQL: SELECT `PartyCode`,`PartyName` FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0009s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:29:27+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000677s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000997s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0024s ]
+SQL: SELECT `PartyCode`,`PartyName` FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0008s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:29:31+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0031s ]
+SQL: SELECT `PartyCode`,`PartyName` FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0011s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:31:38+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0038s ]
+SQL: SELECT `PartyCode`,`PartyName` FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0011s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:32:13+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001174s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001338s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0047s ]
+SQL: SELECT `PartyCode`,`PartyName` FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0007s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:32:18+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000980s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000914s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0027s ]
+SQL: SELECT `PartyCode`,`PartyName` FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0007s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:184) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T15:32:41+08:00 ] ::1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000914s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0005s ]
+
+[ 2016-03-31T16:03:16+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getStoreTSInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001594s ]
+ERR: 非法操作:getStoreTSInfo
+
+[ 2016-03-31T16:06:11+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getStoreTSInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000899s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001177s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001326s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:144) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:144) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T16:10:59+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getStoreTSInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001102s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001141s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001311s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:58) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:58) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-03-31T16:11:17+08:00 ] ::1 /SCMAdmin/index.php/Home/WBParaMng/getSysPara
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000738s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000944s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `bsyspara`  [ RunTime:0.0004s ]
+
+[ 2016-03-31T16:11:20+08:00 ] ::1 /SCMAdmin/index.php/Home/WBPartyMng/getStoreTSInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001269s ]
+NOTIC: [2] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Db/Driver.class.php 第 103 行.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:58) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/Ricky/Dev/SCMAdmin/Index/Home/Model/PartyObjectModel.class.php:58) /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+

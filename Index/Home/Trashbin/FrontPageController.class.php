@@ -23,7 +23,7 @@ class FrontPageController extends \Think\Controller{
 	
 	public function getTeamRecentScores(){
 		$dbtmodel = D('Scores');
-		if(isset(_POST['page']))
+		if(isset($_POST['page']))
 		{
 			$pagestr = I('page');
 			$rs = $dbtmodel->relation(true)->where(I('filter'))->page($pagestr)->Select();

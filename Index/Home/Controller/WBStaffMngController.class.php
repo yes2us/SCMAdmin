@@ -7,7 +7,7 @@ class WBStaffMngController extends \Think\Controller {
 	 */
 	 public function getAllStaffs()
 	 {
-	 	$condition = [];
+//	 	$condition = [];
 		
 	 	if(isset($_POST['StaffCode']))
 		{

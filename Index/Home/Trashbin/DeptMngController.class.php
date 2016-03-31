@@ -118,29 +118,9 @@ class DeptMngController extends \Think\Controller {
 		$Model = new \Think\Model("",getMyCon());
 				
 		$viewercode = getInputValue("ViewerCode",'Admin');
-		$startdate = getInputValue("StartDate",'2015-09-01');
-		$enddate = getInputValue("EndDate",'2015-09-30');	
-		$yearmonth = substr(I('StartDate'),0,7);	
-		
-		$ytype = getInputValue("YType",'行为Y分');
-		$ratio1 = 1;
-		$ratio2= 0;
-		switch ($ytype) {
-			case '行为Y分':
-				$ratio1 = 1;
-				$ratio2= 0;
-				break;
-			case '业绩Y分':
-				$ratio1 = 0;
-				$ratio2= 1;
-				break;
-			case '综合Y分':
-				$ratio1 = 1;
-				$ratio2= 1;
-				break;
-			default:				
-				break;
-		}
+		$startdate = getInputValue("StartDate",'2015-08-01');
+		$enddate = getInputValue("EndDate",'2015-08-31');	
+		$yearmonth = getInputValue("YearMonth",'2015-08');	
 		
 		$sqlstr = "select a.DeptCode,a.DeptSName,a.StaffCode,a.StaffName,";
 		$sqlstr = $sqlstr . " convert(decimal(10,0),SUM(isnull(TValue,0)))/10000 TValue,convert(decimal(10,0),SUM(isnull(YScore,0))) YScore";
@@ -163,9 +143,6 @@ class DeptMngController extends \Think\Controller {
 		for ($i=0; $i<count($StoreInfo); $i++) {
 			
 		  $DeptCode = $StoreInfo[$i]['deptcode'];
-		  $StaffTTargetScore = M('Depts','',getMyCon())->where("DeptCode='" . $DeptCode . "'")->getField("StaffTTagetScore");
-		  $MngerTTargetScore = M('Depts','',getMyCon())->where("DeptCode='" . $DeptCode . "'")->getField("MngerTTargetScore");
-		  
 		  $MonthTarget = $StoreInfo[$i]['monthtarget'];
 		  $MngerCode = $StoreInfo[$i]['staffcode'];
 //		  $StaffCount = $StoreInfo[$i]['staffnum']-1;
@@ -185,7 +162,7 @@ class DeptMngController extends \Think\Controller {
 		  $TotalTValue = 0;
 		  $TotalYScore = 0;
 		  
-		  $StoreInfo[$i]['staffs']=[];
+//		  $StoreInfo[$i]['staffs']=[];
 		  
 		  $k = 0;	
 		  for($j=0; $j<count($StaffItem); $j++)
@@ -209,8 +186,6 @@ class DeptMngController extends \Think\Controller {
 				   }
 					else
 					{
-						//计算店员的（非店长的）Y分
-						$StaffItem[$j]['yscore'] = round($ratio1*(int)$StaffItem[$j]['yscore']+$ratio2*(int)$StaffTTargetScore*(float)$StaffItem[$j]['tvalue']/$PersonalMonthTarget,0);
 						$TotalYScore = $TotalYScore + (int)$StaffItem[$j]['yscore'];
 					}
 					
@@ -218,6 +193,13 @@ class DeptMngController extends \Think\Controller {
 			   }
 		  }
 		  
+//		  	usort($StoreInfo[$i], function($a, $b) {
+//          $al = (int)$a['tvalueprog'];
+//          $bl = (int)$b['tvalueprog'];
+//          if ($al == $bl)
+//              return 0;
+//          return ($al > $bl) ? -1 : 1;
+//      	});
 			
 		  $StoreInfo[$i]['totaltvalue'] = str_pad((string)round($TotalTValue,1),5,' ',STR_PAD_LEFT);
 		  if($MonthTarget>1)
@@ -230,22 +212,10 @@ class DeptMngController extends \Think\Controller {
 		}
 		  
 		  $StoreInfo[$i]['mngercode'] = $MngerCode;
-		  
-		  //计算店长的三种Y分和店员的平均Y分
-		  $StoreInfo[$i]['mngeryscore'] = $ratio1*$MngerYScore+$ratio2*round((int)$MngerTTargetScore*$StoreInfo[$i]['totaltvalueprog']/100,0);
+		  $StoreInfo[$i]['mngeryscore'] = $MngerYScore;
 		  $StoreInfo[$i]['avstaffyscore'] = ceil($TotalYScore/$StaffCount);
 		
 		}
-		
-		//将统计的店长Y分回写到店员Y分中
-		for ($i=0; $i<count($StoreInfo); $i++) {
-			$MngerCode = $StoreInfo[$i]['staffcode'];
-		  for($j=0; $j<count($StoreInfo[$i]['staffs']); $j++){
-		  	 if($MngerCode===$StoreInfo[$i]['staffs'][$j]['staffcode'])
-			 $StoreInfo[$i]['staffs'][$j]['yscore'] = $StoreInfo[$i]['mngeryscore'];			 
-		  }				
-		}	
-		
 		
 		usort($StoreInfo, function($a, $b) {
             $al = $a['totaltvalueprog'];

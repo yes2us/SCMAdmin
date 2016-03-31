@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin:*');
+    header('Access-Control-Allow-Origin:*');
 	header("Content-type: text/html;charset=utf-8");
 	define('APP_NAME', 'Index');
 	define('APP_PATH', './Index/');

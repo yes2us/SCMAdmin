@@ -12,7 +12,7 @@ class WBPartyMngController extends \Think\Controller {
 		$condition['PartyEnabled'] = 1;			
 
 		$pagestr = getInputValue("Page","1,1000");
-		$fieldstr  = getInputValue("FieldStr","PartyCode,PartyName");
+		$fieldstr  = getInputValue("FieldStr","PartyCode as id,PartyName as value");
 		
 		$rs = M("bparty","",getMyCon())
 		->field($fieldstr)
@@ -20,7 +20,6 @@ class WBPartyMngController extends \Think\Controller {
 		->where(array("PartyType"=>"分仓","PartyEnabled"=>1))
 		->select();
 
-		$rs = D("PartyObject")->getRegionList($condition,$pagestr,$fieldstr);
 		return $this -> ajaxReturn($rs);
 	}
 	
@@ -39,14 +38,36 @@ class WBPartyMngController extends \Think\Controller {
 			$fieldstr = $fieldstr . "AdjParaUpErodeLmt,AdjParaDnChkPeriod,AdjParaDnFreezePeriod,AdjParaDnErodeLmt";
 		
 			$fieldstr = getInputValue("FieldStr",$fieldstr);
-			$rs = D("PartyObject")->getStoreList($condition,$pagestr,$fieldstr);
+			
+			
+			$dbt = M('vwp2partyrel','',getMyCon());
+			
+			$rs = $dbt
+			->field($fieldstr)
+			->where($condition)
+			->page($pagestr)
+			->select();
+		
 		return $this -> ajaxReturn($rs);
 	}
 	
-		public function getStoreTSInfo(){
-			$storecode = getInputValue("StoreCode","D03A");
-			$rs = D("PartyObject")->getStoreTSInfo($storecode);
-			return $this -> ajaxReturn($rs);
-		}
+//获得门店运作指标
+	public function getStoreIndicator() {
+		$condition['PartyCode'] = getInputValue("StoreCode","A00Z003");
+		$pagestr = getInputValue("Page","1,1000");
+		$fieldstr = "_Identify,ParentCode,ParentName,PartyCode,PartyName,PartyType,PartyLevel,YearName,SeasonName,SeasonStageName,SeriesName,MiddleSizeNum,ShortNum,";
+		$fieldstr = $fieldstr . "ShortRatio,ReplenishRatio,HotSKCNumInParent,HotSKCNumInParty,HotSKCRatioPartyCover,StockOnHandQty,StockOnRoadQty,StockTotalQty,StockDayOfInventory,StockStoreDeadGlobalHot,";
+		$fieldstr = $fieldstr . "StockOverInStores,StockShortInStores,StockDailyIDD,SaleYesterday,Sale14Days,SaleTotal,SaleCompletePer,SaleDailyTDD";
+		
+		$fieldstr = getInputValue("FieldStr",$fieldstr);
+		$rs = M('dpartyindicator','',getMyCon())
+		->field($fieldstr)
+		->where($condition)
+		->page($pagestr)
+		->select();
+//		setTag('sql123', $dbt->_sql());
+
+		return $this -> ajaxReturn($rs);;
+	}
 }
 ?>

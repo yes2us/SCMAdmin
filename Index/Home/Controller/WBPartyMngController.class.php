@@ -53,7 +53,9 @@ class WBPartyMngController extends \Think\Controller {
 	
 //获得门店运作指标
 	public function getStoreIndicator() {
-		$condition['PartyCode'] = getInputValue("StoreCode","A00Z003");
+		if(isset($_POST['RegionCode'])) $condition['ParentCode'] = getInputValue("RegionCode","D03A");
+		if(isset($_POST['StoreCode'])) $condition['PartyCode'] = getInputValue("StoreCode","A00Z003");
+		
 		$pagestr = getInputValue("Page","1,1000");
 		$fieldstr = "_Identify,ParentCode,ParentName,PartyCode,PartyName,PartyType,PartyLevel,YearName,SeasonName,SeasonStageName,SeriesName,MiddleSizeNum,ShortNum,";
 		$fieldstr = $fieldstr . "ShortRatio,ReplenishRatio,HotSKCNumInParent,HotSKCNumInParty,HotSKCRatioPartyCover,StockOnHandQty,StockOnRoadQty,StockTotalQty,StockDayOfInventory,StockStoreDeadGlobalHot,";
@@ -67,7 +69,10 @@ class WBPartyMngController extends \Think\Controller {
 		->select();
 //		setTag('sql123', $dbt->_sql());
 
-		return $this -> ajaxReturn($rs);;
+		return $this -> ajaxReturn($rs);
 	}
+
+  
+	 
 }
 ?>

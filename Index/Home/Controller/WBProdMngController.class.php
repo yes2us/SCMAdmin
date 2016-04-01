@@ -79,5 +79,6 @@ class WBProdMngController extends \Think\Controller {
 //		dump($rs);
 		return $this -> ajaxReturn($rs);
 	}
+
 }
 ?>

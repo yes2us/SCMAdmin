@@ -105,20 +105,20 @@ class WBUpLoadFileController extends \Think\Controller {
 		$fieldArray = array("渠道四级名称","会员名称","会员编号","渠道五级名称","会员手机号码","会员归属品牌","产品编号",
 		"吊牌价","产品年代","产品波段","产品主题","产品系列","零售单号","总销售金额","总销售数量","消费日期");		
 		$tableName = 'TempSaleBill';
-		importExcel2DB(getMyCon(2),$tableName,$fullSaveName,$fieldArray);	
+		importExcel2DB(getMyCon(),$tableName,$fullSaveName,$fieldArray);	
 		}	
 	}
 
 	public function getImportData(){
-		$PageIndex = $_POST['PageIndex'];
-		$PageLen = $_POST['PageLen'];
-
-		$Model = new \Think\Model("","",getMyCon(2));
-		$sqlstring = M('sqllist','',getMyCon())->where("SQLIndex='WBSQL_ImpSaleData'")->getField("SQLCode");
-		$sqlstring = str_replace('@parm1', $PageIndex, $sqlstring);
-		$sqlstring = str_replace('@parm2', $PageLen, $sqlstring);
-		
-		$rs = $Model -> query($sqlstring);
+//		$PageIndex = $_POST['PageIndex'];
+//		$PageLen = $_POST['PageLen'];
+//
+//		$Model = new \Think\Model("","",getMyCon(2));
+//		$sqlstring = M('sqllist','',getMyCon())->where("SQLIndex='WBSQL_ImpSaleData'")->getField("SQLCode");
+//		$sqlstring = str_replace('@parm1', $PageIndex, $sqlstring);
+//		$sqlstring = str_replace('@parm2', $PageLen, $sqlstring);
+//		
+//		$rs = $Model -> query($sqlstring);
 		
 		return $this -> ajaxReturn($rs);
 	}

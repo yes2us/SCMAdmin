@@ -26,7 +26,8 @@ class WBPartyMngController extends \Think\Controller {
 		public function getStoreList() {
 
 			$condition['ParentCode'] = getInputValue("RegionCode","D03A");
-			$condition['RelationType'] = "归属关系";
+			$condition['RelationType'] = getInputValue("RelationType","归属关系");
+			$condition['IsReplenish']=1;
 			
 			$pagestr = getInputValue("Page","1,1000");
 
@@ -62,7 +63,7 @@ class WBPartyMngController extends \Think\Controller {
 		$fieldstr = $fieldstr . "StockOverInStores,StockShortInStores,StockDailyIDD,SaleYesterday,Sale14Days,SaleTotal,SaleCompletePer,SaleDailyTDD";
 		
 		$fieldstr = getInputValue("FieldStr",$fieldstr);
-		$rs = M('dpartyindicator','',getMyCon())
+		$rs = M('zdimparty','',getMyCon())
 		->field($fieldstr)
 		->where($condition)
 		->page($pagestr)

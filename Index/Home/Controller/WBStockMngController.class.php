@@ -9,7 +9,7 @@ class WBStockMngController extends \Think\Controller {
 			
 		$Model = new \Think\Model("","",getMyCon());
 		
-		$sqlstr = "SELECT dstock._Identify,PartyCode,dstock.SKUCode,productcolorcode,colorname,SizeName,brandname,yearname,seasonname,seasonstagename,";
+		$sqlstr = "SELECT dstock._Identify,PartyCode,dstock.SKUCode,SKCCode,colorname,SizeName,brandname,yearname,seasonname,seasonstagename,";
 		$sqlstr = $sqlstr . " maintypename,subtypename,TargetQty,ifnull(OnHandQty,0)+ifnull(OnRoadQty,0) as StockQty,";
 		$sqlstr = $sqlstr . " (ifnull(TargetQty,0)-ifnull(OnHandQty,0)-ifnull(OnRoadQty,0)) as RepRetQty";
 		$sqlstr = $sqlstr . " FROM dstock left join bsku on dstock.SKUCode = bsku.skucode";
@@ -101,7 +101,7 @@ class WBStockMngController extends \Think\Controller {
 		if(getInputValue("OrderType","Rep")=='Rep'){$tablename='dreporder';}else{$tablename='dretorder';};
 		if(isset($_POST['OrderCode']))  $condition['OrderCode'] = getInputValue("OrderCode","ZZ27001@2014-05-03");			
 		
-		$fieldstr = "p1.PartyName,p2.PartyName as ParentName,d1.OrderCode,d1.SKUCode,ProductColorCode,ProductName,ColorName,";
+		$fieldstr = "p1.PartyName,p2.PartyName as ParentName,d1.OrderCode,d1.SKUCode,SKCCode,ProductName,ColorName,";
 		$fieldstr = $fieldstr . "SizeName,BrandName,YearName,SeasonName,SeasonStageName,MainTypeName,SubTypeName,OrderType,OrderQty,MakeDate";
 		$fieldstr  = getInputValue("FieldStr",$fieldstr);
 		
@@ -117,7 +117,7 @@ class WBStockMngController extends \Think\Controller {
 		return $this -> ajaxReturn($rs);
 	}
 
-    //获得一个目标仓的退货计划
+    //获得退货计划
     public function getRetPlanOrder(){
 		if(isset($_POST['RetTargetWHCode']))  $condition['d1.ParentCode'] = getInputValue("RetTargetWHCode","D03A");			
 		if(isset($_POST['SubWHCode']))  $condition['p1.PartyCode'] = getInputValue("SubWHCode");			
@@ -126,7 +126,7 @@ class WBStockMngController extends \Think\Controller {
 		if(isset($_POST['SKCCode']))  $condition['d1.SKUCode'] = array("like","%".getInputValue("SKCCode")."%");			
 		$pagestr = "1,1000";
 		
-		$fieldstr = "d1.partycode,p1.PartyName,p2.PartyName as ParentName,d1.OrderCode,d1.SKUCode,ProductColorCode,ProductName,ColorName,";
+		$fieldstr = "d1.partycode,p1.PartyName,p2.PartyName as ParentName,d1.OrderCode,d1.SKUCode,SKCCode,ProductName,ColorName,";
 		$fieldstr = $fieldstr . "SizeName,BrandName,YearName,SeasonName,SeasonStageName,MainTypeName,SubTypeName,OrderType,OrderQty,MakeDate";
 		$fieldstr  = getInputValue("FieldStr",$fieldstr);
 		
@@ -144,7 +144,61 @@ class WBStockMngController extends \Think\Controller {
 		return $this -> ajaxReturn($rs);
     }
     
-    		
+  //获得调拨计划
+    public function getMovSKCPlan(){
+    		if(isset($_POST['SKCCode']))  $condition['d1.SKCCode'] = getInputValue("SKCCode");			
+		if(isset($_POST['SrcPartyCode']))  $condition['d1.SrcPartyCode'] = getInputValue("SrcPartyCode");			
+		if(isset($_POST['TrgPartyCode']))  $condition['d1.TrgPartyCode'] = getInputValue("TrgPartyCode");			
+		if(isset($_POST['ParentCode']))  
+     	$condition['d1.SrcPartyCode'] = array("exp","in (select partycode from bparty2partyrelation where relationtype='补货关系' and parentcode='".  getInputValue("ParentCode",'D03A') ."')");
+		
+		$pagestr = "1,1000";
+		
+		$fieldstr = "d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrPartyName,d1.SKCCode,ProductName,ColorName,";
+		$fieldstr = $fieldstr . "BrandName,YearName,SeasonName,SeasonStageName,MainTypeName,SubTypeName,MovQty,MakeDate,DealState";
+		$fieldstr  = getInputValue("FieldStr",$fieldstr);
+		
+        $rs = M("dmovskcplan as d1","",getMyCon())
+        ->join("left join bparty as p1 on d1.srcpartycode = p1.partycode")
+        ->join("left join bparty as p2 on d1.trgpartycode = p2.partycode")
+		->join("left join vwskc as p3 on d1.SKCCode = p3.SKCCode")
+        ->field($fieldstr)
+        ->where($condition)
+		->page($pagestr)
+        ->select();
+		
+//		$rs= M("dmovskcplan as d1","",getMyCon())->_sql();
+//		p($rs);
+		return $this -> ajaxReturn($rs);
+    }  		
+    
+    
+	//拉式换款计划
+    public function getRefrSKCPlan(){
+    		if(isset($_POST['SKCCode']))  $condition['d1.SKCCode'] = getInputValue("SKCCode");		
+		$condition['_string'] = "(d1.SrcPartyCode=' ". getInputValue("WHCode") . "' or d1.TrgPartyCode='". getInputValue("WHCode") ."') ";
+		
+		$pagestr = "1,1000";
+		
+		$fieldstr = "d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrPartyName,d1.SKCCode,ProductName,ColorName,";
+		$fieldstr = $fieldstr . "BrandName,YearName,SeasonName,SeasonStageName,MainTypeName,SubTypeName,MovQty,MakeDate,DealState";
+		$fieldstr  = getInputValue("FieldStr",$fieldstr);
+		
+        $rs = M("dmovskcplan as d1","",getMyCon())
+        ->join("left join bparty as p1 on d1.srcpartycode = p1.partycode")
+        ->join("left join bparty as p2 on d1.trgpartycode = p2.partycode")
+		->join("left join vwskc as p3 on d1.SKCCode = p3.SKCCode")
+        ->field($fieldstr)
+        ->where($condition)
+		->page($pagestr)
+        ->select();
+		
+//		$rs= M("dmovskcplan as d1","",getMyCon())->_sql();
+//		p($rs);
+		return $this -> ajaxReturn($rs);
+    } 
+    
+    
 	//获得产品的历史库存
 	public function getProdHSStock() {
 		$condition['PartyCode'] = getInputValue("WHCode","D03A");			
@@ -170,7 +224,7 @@ class WBStockMngController extends \Think\Controller {
      	if(isset($_POST['RetTargetWHCode'])) 
      	{
      			$retTargetcode = getInputValue("RetTargetWHCode","D03A");
-     			$wherestr = $wherestr . " and exists( select 1 from bparty2partyrelation as a where parentcode='" . $retTargetcode ."' and a.partycode =dskcanalysis.partycode and relationtype='退货关系')";
+     			$wherestr = $wherestr . " and exists( select 1 from bparty2partyrelation as a where parentcode='" . $retTargetcode ."' and a.partycode =zdimpartyskc.partycode and relationtype='退货关系')";
 		}
 		
 		$sqlstr = "select PartyCode,partyname,yearname,SeasonName,seriesname,count(1) as 'SKCNum',";
@@ -178,7 +232,7 @@ class WBStockMngController extends \Think\Controller {
 		$sqlstr = $sqlstr . " sum(ifnull(StoreOverStockQty,0) )as 'OverStockQty',sum(ifnull(StoreShortStockQty,0)) as 'ShortStockQty',";
 		$sqlstr = $sqlstr . " sum(if(IsDeadProduct,0,ifnull(OnHandQty,0)+ifnull(OnRoadQty,0))) as 'DeadStockQty',";
 		$sqlstr = $sqlstr . " sum(if(IsDeadProduct,0,1)) as 'DeadSKCNum',sum(if(SaleType='畅销款',1,0)) as 'FastRunnerSKCNum'";
-		$sqlstr = $sqlstr . " from dskcanalysis ";
+		$sqlstr = $sqlstr . " from zdimpartyskc ";
 		$sqlstr = $sqlstr . $wherestr;
 		$sqlstr = $sqlstr . " group by PartyCode,partyname,yearname,SeasonName,seriesname";
 		
@@ -186,6 +240,56 @@ class WBStockMngController extends \Think\Controller {
 		$rs = $dbt->query($sqlstr);
 		
 		return $this -> ajaxReturn($rs);
+     }
+     
+     public function getWHSKCInfo(){
+     		if(isset($_POST['WHCode']))  $condition['PartyCode'] = getInputValue("WHCode");
+     		if(isset($_POST['ParentWHCode']))  
+     		$condition['PartyCode'] = array("exp","in (select partycode from bparty2partyrelation where relationtype='补货关系' and parentcode='".  getInputValue("ParentWHCode",'A00Z003') ."')");
+			
+     		if(isset($_POST['SKCCode']))  $condition['SKCCode'] =getInputValue("SKCCode",'1326723019');
+     		
+			$condition['_string'] = "ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)+ifnull(TargetQty,0)+ifnull(SaleTotalQty,0)>0";
+     		$pageStr = getInputValue("Page","1,1000");
+		
+     		$fieldStr = "PartyCode,PartyName,PartyLevel,SKCCode,ColorName,YearName,seasonname,seasonstagename,";
+			$fieldStr = $fieldStr . " seriesName,MaintypeName,SubTypeName,OnShelfDays,SaleType,TargetQty,";
+			$fieldStr = $fieldStr . " if(ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)>0,ifnull(OnHandQty,0)+ifnull(OnRoadQty,0),null) as 'StockQty',ShortStockQty,Sale30Qty,SaleTotalQty,";
+			$fieldStr = $fieldStr . " if(ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)+ifnull(TargetQty,0)<1,0,1) InStore";
+     		$fieldStr = getInputValue("fieldStr",$fieldStr);
+			
+     		$rs = M("zdimpartyskc","",getMyCon())
+     		->field($fieldStr)
+			->where($condition)
+			->page($pageStr)
+			->select();
+			
+     		return $this->ajaxReturn($rs);
+     }
+
+//查询一个门店没有的款色
+    public function getWHSKCInfoNewSKC(){
+    			
+     		$storecode = getInputValue("WHCode","AZ00003");
+     		$parentcode = getInputValue("ParentCode","D03A");
+     		
+     		$sqlstr = " select PartyCode,PartyName,PartyLevel,SKCCode,ColorName,YearName,seasonname,seasonstagename,";
+			$sqlstr = $sqlstr . " seriesName,MaintypeName,SubTypeName,OnShelfDays,SaleType,TargetQty,";
+			$sqlstr = $sqlstr . " if(ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)>0,ifnull(OnHandQty,0)+ifnull(OnRoadQty,0),null) as 'StockQty',";
+			$sqlstr = $sqlstr . " ShortStockQty,Sale30Qty,SaleTotalQty ";
+			$sqlstr = $sqlstr . " from  zdimpartyskc as a";
+			$sqlstr = $sqlstr . " where  ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)+ifnull(TargetQty,0)+ifnull(SaleTotalQty,0)>0 ";
+			$sqlstr = $sqlstr . " and PartyCode='" . $parentcode . "' and not exists(";
+			$sqlstr = $sqlstr . " SELECT 1 FROM zdimpartyskc  as b";
+			$sqlstr = $sqlstr . " WHERE b.PartyCode = '" . $storecode . "'  and b.SKCCode=a.SKCCode";
+			$sqlstr = $sqlstr . " AND ( ifnull(b.OnHandQty,0)+ifnull(b.OnRoadQty,0)+ifnull(b.TargetQty,0)+ifnull(SaleTotalQty,0)>0)) ";
+			
+//			dump($sqlstr);
+			
+			$dbt = new \Think\Model("","",getMyCon());
+			$rs = $dbt->query($sqlstr);
+			
+     		return $this->ajaxReturn($rs);
      }
 }
 ?>

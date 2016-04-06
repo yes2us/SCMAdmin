@@ -52,7 +52,7 @@ class WBStockMngController extends \Think\Controller {
 		
 		$pagestr = getInputValue("Page","1,100");
 		
-		$fieldstr = "PartyName,SKUCode,RecordDate,OldTargetQty,SugTargetQty,AdjustReason,operator";
+		$fieldstr = "dadjusttsrecord.partycode,PartyName,SKUCode,RecordDate,OldTargetQty,SugTargetQty,AdjustReason,operator";
 		$fieldstr  = getInputValue("FieldStr",$fieldstr);
 		
         $rs = M("dadjusttsrecord","",getMyCon())
@@ -200,15 +200,23 @@ class WBStockMngController extends \Think\Controller {
     
     
 	//获得产品的历史库存
-	public function getProdHSStock() {
+	public function getSKUHSStock() {
 		$condition['PartyCode'] = getInputValue("WHCode","D03A");			
-		$condition['SKUCode'] = getInputValue("SKUCode","133680012016573");
-		$rs = M("dhisstock","",getMyCon())
-		->order("HSRecordDate desc")
+		$condition['SKUCode'] = getInputValue("SKUCode","133680012016570");
+		$fieldstr = "date_format(HSRecordDate,'%c/%d') as Date,HSTargetQty as GreenZone,round(2*HSTargetQty/3,1) as YellowZone,";
+		$fieldstr = $fieldstr . " round(HSTargetQty/3,1) as RedZone,HSOnHandQty as HandQty";
+		
+		$rs['imgData'] = M("dhisstock","",getMyCon())
+		->field($fieldstr)
 		->limit(30)
 		->where($condition)
 		->select();
 
+		$rs['yValueLimit']= M("dhisstock","",getMyCon())
+		->field("max(if(HSTargetQty>HSOnHandQty,HSTargetQty,HSOnHandQty)) as YUpLimit")
+		->where($condition)
+		->select();
+		
 		return $this -> ajaxReturn($rs);
 	}
 

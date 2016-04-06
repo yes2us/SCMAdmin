@@ -3,9 +3,8 @@ namespace Home\Controller;
 
 class WBPartyMngController extends \Think\Controller {
 
-	/**
- * 获得当月的行动计划
- */
+
+ 
 	public function getRegionList() {
 		if(isset($_POST['MaintainerCode']))	$condition['MaintainerCode'] = $_POST['MaintainerCode'];	
 		$condition['PartyType'] = '分仓';			
@@ -17,13 +16,33 @@ class WBPartyMngController extends \Think\Controller {
 		$rs = M("bparty","",getMyCon())
 		->field($fieldstr)
 		->page($pagestr)
-		->where(array("PartyType"=>"分仓","PartyEnabled"=>1))
+		->where($condition)
+		->select();
+
+		array_push($rs,array('id'=>'all','value'=>'所有'));
+		$rs = array_reverse($rs);
+		return $this -> ajaxReturn($rs);
+	}
+	
+	public function getCWHList() {
+		if(isset($_POST['MaintainerCode']))	$condition['MaintainerCode'] = $_POST['MaintainerCode'];	
+		$condition['PartyType'] = '总仓';			
+		$condition['PartyEnabled'] = 1;			
+
+		$pagestr = getInputValue("Page","1,1000");
+		$fieldstr  = getInputValue("FieldStr","PartyCode as id,PartyName as value");
+		
+		$rs = M("bparty","",getMyCon())
+		->field($fieldstr)
+		->page($pagestr)
+		->where($condition)
 		->select();
 
 		return $this -> ajaxReturn($rs);
 	}
-	
-		public function getStoreList() {
+
+
+		public function getRelPartyList() {
 
 			$condition['ParentCode'] = getInputValue("RegionCode","D03A");
 			$condition['RelationType'] = getInputValue("RelationType","归属关系");
@@ -53,7 +72,7 @@ class WBPartyMngController extends \Think\Controller {
 	}
 	
 //获得门店运作指标
-	public function getStoreIndicator() {
+	public function getPartyIndex() {
 		if(isset($_POST['RegionCode'])) $condition['ParentCode'] = getInputValue("RegionCode","D03A");
 		if(isset($_POST['StoreCode'])) $condition['PartyCode'] = getInputValue("StoreCode","A00Z003");
 		

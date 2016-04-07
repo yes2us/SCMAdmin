@@ -5,6 +5,7 @@ class WBStockMngController extends \Think\Controller {
 
 		// 获得门店、分仓和中央仓的目标库存及库存
 		public function getFGWarehouseTSInfo(){
+//			die();
 		$whcode = getInputValue("WHCode","A00Z003");
 			
 		$Model = new \Think\Model("","",getMyCon());
@@ -13,7 +14,7 @@ class WBStockMngController extends \Think\Controller {
 		$sqlstr = $sqlstr . " maintypename,subtypename,TargetQty,ifnull(OnHandQty,0)+ifnull(OnRoadQty,0) as StockQty,";
 		$sqlstr = $sqlstr . " (ifnull(TargetQty,0)-ifnull(OnHandQty,0)-ifnull(OnRoadQty,0)) as RepRetQty";
 		$sqlstr = $sqlstr . " FROM dstock left join bsku on dstock.SKUCode = bsku.skucode";
-		$sqlstr = $sqlstr . " where PartyCode='" . $whcode . "' and (ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0))>0";
+		$sqlstr = $sqlstr . " where PartyCode='" . $whcode . "' and (ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0))>0   limit 0,10000";
 
 		$rs=$Model->query($sqlstr);
 
@@ -24,20 +25,23 @@ class WBStockMngController extends \Think\Controller {
 		// 获得目标退货仓下属退货仓（门店或分仓）的目标库存及库存
 		public function getRetTargetWHSubWHTSInfo(){
 		$rettargetwhcode = getInputValue("RetTargetWHCode","D03A");
-		if(isset($_POST['SKUCode']))  $skucodestr = " SKUCode='" . getInputValue("SKUCode") ."' ";			
-		if(isset($_POST['SKCCode']))  $skucodestr = " SKUCode like '%".getInputValue("SKCCode")."%' ";	
-			
-		$Model = new \Think\Model("","",getMyCon());
+		if(isset($_POST['SKUCode']))  $skucodestr = " and SKUCode='" . getInputValue("SKUCode") ."' ";			
+		if(isset($_POST['SKCCode']))  $skucodestr = " and SKUCode like '%".getInputValue("SKCCode")."%' ";	
+
 		
 		$sqlstr = "SELECT dstock._Identify,dstock.PartyCode,bparty.PartyName,SKUCode,";
 		$sqlstr = $sqlstr . " TargetQty,ifnull(OnHandQty,0)+ifnull(OnRoadQty,0) as StockQty,";
 		$sqlstr = $sqlstr . " (-ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)) as SugRetQty";
 		$sqlstr = $sqlstr . " FROM dstock left join bparty on dstock.partycode = bparty.partycode";
 		$sqlstr = $sqlstr . " left join bparty2partyrelation on dstock.partycode = bparty2partyrelation.partycode and RelationType='退货关系'";
-		$sqlstr = $sqlstr . " where ParentCode='" . $rettargetwhcode . "' and " . $skucodestr . " and (ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0))>0";
-		$sqlstr = $sqlstr . " order by (-ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)) desc";
+		$sqlstr = $sqlstr . " where ParentCode='" . $rettargetwhcode . "' " . $skucodestr . " and (ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0))>0";
+		$sqlstr = $sqlstr . " order by (-ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)) desc limit 0,10000";
 
 //		$rs = $sqlstr;
+//dump($sqlstr);
+
+
+		$Model = new \Think\Model("","",getMyCon());
 		$rs=$Model->query($sqlstr);
 
 //		return $rs;
@@ -70,6 +74,7 @@ class WBStockMngController extends \Think\Controller {
 		
 	//获得补货退货单
 	public function getRepRetOrder() {
+	
 		if(getInputValue("OrderType","Rep")=='Rep'){$tablename='dreporder';}else{$tablename='dretorder';};
 		if(isset($_POST['RegionCode']))  $condition['d1.ParentCode'] = getInputValue("RegionCode","D03A");			
 		if(isset($_POST['WHCode']))  $condition['d1.PartyCode'] = getInputValue("WHCode","ZZ27097");			
@@ -220,32 +225,31 @@ class WBStockMngController extends \Think\Controller {
 		return $this -> ajaxReturn($rs);
 	}
 
-	//显示门店的库存结构
-	   public function getStoreStockStruct(){
-	   	$wherestr = "where ifnull(OnHandQty,0)+ifnull(OnRoadQty,0) >0 ";
-	   	 if(isset($_POST['StoreCode'])) 
-     	{
-     		    	$partycode = getInputValue("StoreCode","A00Z003");
-     		    $wherestr = $wherestr . " and 	PartyCode='" . $partycode ."'";
-     	}
-     	
-     	if(isset($_POST['RetTargetWHCode'])) 
-     	{
-     			$retTargetcode = getInputValue("RetTargetWHCode","D03A");
-     			$wherestr = $wherestr . " and exists( select 1 from bparty2partyrelation as a where parentcode='" . $retTargetcode ."' and a.partycode =zdimpartyskc.partycode and relationtype='退货关系')";
+	//显示门店的库存结构:此函数需要优化
+	   public function getPartyIndex(){
+//	   	die();
+		
+		if(isset($_POST['StoreCode']))
+	   	$condition['PartyCode'] = getInputValue("StoreCode","A00Z003");
+	   	
+	   	if(isset($_POST['ParentCode']))
+	   	{
+	   		$parentcode = getInputValue("ParentCode","D03A");
+	   		$relationtype = getInputValue("RelationType","补货关系");
+	   		$condition['_string'] =  "exists( select 1 from bparty2partyrelation as a where parentcode='" . $parentcode ."' and a.partycode =zdimparty.partycode and relationtype='" . $relationtype. "')";
 		}
+
+		$fieldStr = "PartyCode,partyname,yearname,SeasonName,seriesname,SKCNum,";
+		$fieldStr = $fieldStr . " StockTargetQty,StockTotalQty,StockOverInStores,StockShortInStores,";
+		$fieldStr = $fieldStr . " StockDeadQty,DeadSKCNum,FRSKCNumInParty";
 		
-		$sqlstr = "select PartyCode,partyname,yearname,SeasonName,seriesname,count(1) as 'SKCNum',";
-		$sqlstr = $sqlstr . " sum(ifnull(TargetQty,0)) as 'TargetQty',sum(ifnull(OnHandQty,0)+ifnull(OnRoadQty,0) )as 'TotalQty',";
-		$sqlstr = $sqlstr . " sum(ifnull(StoreOverStockQty,0) )as 'OverStockQty',sum(ifnull(StoreShortStockQty,0)) as 'ShortStockQty',";
-		$sqlstr = $sqlstr . " sum(if(IsDeadProduct,0,ifnull(OnHandQty,0)+ifnull(OnRoadQty,0))) as 'DeadStockQty',";
-		$sqlstr = $sqlstr . " sum(if(IsDeadProduct,0,1)) as 'DeadSKCNum',sum(if(SaleType='畅销款',1,0)) as 'FastRunnerSKCNum'";
-		$sqlstr = $sqlstr . " from zdimpartyskc ";
-		$sqlstr = $sqlstr . $wherestr;
-		$sqlstr = $sqlstr . " group by PartyCode,partyname,yearname,SeasonName,seriesname";
+		$fieldStr = getInputValue("fieldStr",$fieldStr);
 		
-		$dbt = new \Think\Model("","",getMyCon());
-		$rs = $dbt->query($sqlstr);
+		$rs = M("zdimparty","",getMyCon())
+//		->field($fieldStr)
+		->where($condition)
+		->select();
+		
 		
 		return $this -> ajaxReturn($rs);
      }

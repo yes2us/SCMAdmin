@@ -49,7 +49,7 @@ class WBParaMngController extends \Think\Controller {
 	 */
 	 public function getDebugRecord()
 	 {
-	 	$rs = M('debug',"",getMyCon())->order("_identify desc")->select();
+	 	$rs = M('boperationrecord',"",getMyCon())->order("_identify desc")->limit(3000)->select();
 		return $this -> ajaxReturn($rs);
 	 }
 	 

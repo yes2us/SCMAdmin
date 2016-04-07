@@ -3,7 +3,13 @@ namespace Home\Controller;
 
 class WBPartyMngController extends \Think\Controller {
 
-
+	public function getPartyList(){
+		$rs = M("bparty","",getMyCon())
+		->page("1,10000")
+		->select();
+		
+		return $this -> ajaxReturn($rs);
+	}
  
 	public function getRegionList() {
 		if(isset($_POST['MaintainerCode']))	$condition['MaintainerCode'] = $_POST['MaintainerCode'];	
@@ -41,7 +47,17 @@ class WBPartyMngController extends \Think\Controller {
 		return $this -> ajaxReturn($rs);
 	}
 
+		public function getPartyRelation(){
+			$condition['a.PartyCode'] = getInputValue("PartyCode","D03A");
+			$rs = M('bparty2partyrelation as a','',getMyCon())
+			->join(" left join bparty as c on a.parentcode=c.partycode")
+			->field("a._identify,a.parentcode,c.partyname as parentname,relationtype,relationorder")
+			->where($condition)
+			->select();
 
+		
+		return $this -> ajaxReturn($rs);
+		}
 		public function getRelPartyList() {
 
 			$condition['ParentCode'] = getInputValue("RegionCode","D03A");
@@ -51,11 +67,11 @@ class WBPartyMngController extends \Think\Controller {
 			$pagestr = getInputValue("Page","1,1000");
 
 			$fieldstr = "_Identify,ParentCode,ParentName,RelationType,PartyCode,PartyName,";
-			$fieldstr = $fieldstr . "PartyType,PartyLevel,PartyEnabled,RepBatchSize,RepParaNextDate,RepParaOrderCycle,";
-			$fieldstr = $fieldstr . "RepParaSupplyTime,RepParaRollSpan,IsReturnStock,RetBatchSize,IsRetOverStock,";
+			$fieldstr = $fieldstr . "PartyType,PartyLevel,PartyEnabled,RepBatchSize,RepNextDate,RepOrderCycle,";
+			$fieldstr = $fieldstr . "RepSupplyTime,RepRollSpan,IsReturnStock,RetBatchSize,IsRetOverStock,";
 			$fieldstr = $fieldstr . "RetOverStockNextDate,RetOverStockCycle,IsRetDeadStock,RetDeadStockNextDate,";
-			$fieldstr = $fieldstr . "RetDeadStockCycle,IsAdjustTarget,IsUseSKUAdjPara,AdjParaUpChkPeriod,AdjParaUpFreezePeriod,";
-			$fieldstr = $fieldstr . "AdjParaUpErodeLmt,AdjParaDnChkPeriod,AdjParaDnFreezePeriod,AdjParaDnErodeLmt";
+			$fieldstr = $fieldstr . "RetDeadStockCycle,IsAdjustTarget,IsUseSKUAdjPara,AdjUpChkPeriod,AdjUpFreezePeriod,";
+			$fieldstr = $fieldstr . "AdjUpErodeLmt,AdjDnChkPeriod,AdjDnFreezePeriod,AdjDnErodeLmt";
 		
 			$fieldstr = getInputValue("FieldStr",$fieldstr);
 			
@@ -68,27 +84,6 @@ class WBPartyMngController extends \Think\Controller {
 			->page($pagestr)
 			->select();
 		
-		return $this -> ajaxReturn($rs);
-	}
-	
-//获得门店运作指标
-	public function getPartyIndex() {
-		if(isset($_POST['RegionCode'])) $condition['ParentCode'] = getInputValue("RegionCode","D03A");
-		if(isset($_POST['StoreCode'])) $condition['PartyCode'] = getInputValue("StoreCode","A00Z003");
-		
-		$pagestr = getInputValue("Page","1,1000");
-		$fieldstr = "_Identify,ParentCode,ParentName,PartyCode,PartyName,PartyType,PartyLevel,YearName,SeasonName,SeasonStageName,SeriesName,MiddleSizeNum,ShortNum,";
-		$fieldstr = $fieldstr . "ShortRatio,ReplenishRatio,HotSKCNumInParent,HotSKCNumInParty,HotSKCRatioPartyCover,StockOnHandQty,StockOnRoadQty,StockTotalQty,StockDayOfInventory,StockStoreDeadGlobalHot,";
-		$fieldstr = $fieldstr . "StockOverInStores,StockShortInStores,StockDailyIDD,SaleYesterday,Sale14Days,SaleTotal,SaleCompletePer,SaleDailyTDD";
-		
-		$fieldstr = getInputValue("FieldStr",$fieldstr);
-		$rs = M('zdimparty','',getMyCon())
-		->field($fieldstr)
-		->where($condition)
-		->page($pagestr)
-		->select();
-//		setTag('sql123', $dbt->_sql());
-
 		return $this -> ajaxReturn($rs);
 	}
 

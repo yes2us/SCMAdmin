@@ -23,41 +23,51 @@ class WBUserMngController extends \Think\Controller {
 		return $this -> ajaxReturn($rs);
 	}
 	
+		public function getRawUrl() {
 	
-	//获得staff信息：基本资料，部门，角色，相关人，事件
+		$dbm = M('bsyspara',"",getMyCon());
+		$rs = $dbm -> where(array("Name"=> 'DSSuffix')) -> getField('vtext');
+		
+//		dump($dbm->_sql());
+//		setTag('sql1', $dbm->_sql());
+				
+		return $this -> ajaxReturn($rs);
+	}
+		
+		
+	//获得user信息：基本资料，角色，相关人，事件
 	public function getUserInfo() {
-		$dbm = D('StaffObject');
+		$condition["UserCode"] = getInputValue("UserCode","Admin");
+		$userObject['MyBasic'] = M('buser',"",getMyCon())->where($condition)->select();
+		$userObject['MyRole'] = M('buserrole',"",getMyCon())->where($condition)->select();
 
-		$condition['StaffCode'] = $_POST['StaffCode'];
-		//'Ricky';
-		$userObject['mybasic'] = $dbm -> getStaffBasicInfo($condition);
-		$userObject['mydepts'] = $dbm -> getStaffRelDepts($condition);
-		//$userObject['mydeptwagecfg'] = D('WageObject') -> getStaffDeptWagePolicy($condition);
+		$sqlstr = "select distinct a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName,";
+	    $sqlstr = $sqlstr . " b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel,";
+	    $sqlstr = $sqlstr . " max(b.Operation) as Operation,max(b.Open) as Open";
+	    $sqlstr = $sqlstr . " from buserrole as a inner join bprevilege as b on a.RoleName = b.RoleName";
+	    $sqlstr = $sqlstr . " inner join vwmodule as c on b.ModuleID = c.ModuleID";
+	    $sqlstr = $sqlstr . " where UserCode='" . getInputValue('UserCode','Admin') . "'";
+		$sqlstr = $sqlstr . " group by a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName,";
+		$sqlstr = $sqlstr . " b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel";
 
-		$staffcode = $_POST['StaffCode'];
-		//'Ricky';		
-//		$userObject['mymenus'] = $dbm -> getStaffModules($staffcode);
-		$userObject['myroles'] = $dbm -> getStaffRoles($staffcode);
-		$userObject['myrelpersons'] = $dbm -> getStaffRelPersons($staffcode);
-		$userObject['myevents'] = $dbm -> getStaffEvents($staffcode);
-
-		//		  dump($staffObject);
+	    	$Model = new \Think\Model("","",getMyCon());
+		$userObject['MyPrevilege']=$Model->query($sqlstr);
+//		dump($userObject);
 		return $this -> ajaxReturn($userObject);
 	}
 	
 		public function checkUserPWD() {
 			return $this -> ajaxReturn('OK');
 			
-		$UserID = $_POST['UserID'];
+		$UserCode = $_POST['UserCode'];
 		$PWD = $_POST['PWD'];
 		
 		$Model = new \Think\Model("",getMyCon());
-		$sqlstr = "select pwdcompare('" . $PWD . "',[Password])  cmprs from Staffs where LOWER(StaffCode) ='" . $UserID . "'";
-p($sqlstr);
+		$sqlstr = "select pwdcompare('" . $PWD . "',[Password])  cmprs from buser where LOWER(UserCode) ='" . $UserCode . "'";
+//		p($sqlstr);
+		
 		$rs = $Model -> query($sqlstr);
 
-		
-		
 		$response = null;
 		if (count($rs) > 0) {
 			if ($rs[0]['cmprs'] == 1)
@@ -67,18 +77,18 @@ p($sqlstr);
 	}
 
 	public function reviseUserPWD() {
-		$UserID = $_POST['UserID'];
+		$UserCode = $_POST['UserCode'];
 		$OldPWD = $_POST['OldPWD'];
 		$NewPWD = $_POST['NewPWD'];
 
 		$Model = new \Think\Model("",getMyCon());
-		$sqlstr = "select pwdcompare('" . $OldPWD . "',[Password])  cmprs from Staffs where StaffCode ='" . $UserID . "'";
+		$sqlstr = "select pwdcompare('" . $OldPWD . "',[Password])  cmprs from buser where UserCode ='" . $UserCode . "'";
 
 		$rs = $Model -> query($sqlstr);
 		$response = null;
 		if (count($rs) > 0) {
 			if ($rs[0]['cmprs'] == 1) {
-				$sqlstr = "update Staffs Set [Password]= pwdencrypt('" . $NewPWD . "')  where StaffCode ='" . $UserID . "'";
+				$sqlstr = "update buser Set [Password]= pwdencrypt('" . $NewPWD . "')  where UserCode ='" . $UserCode . "'";
 				$rs = $Model -> execute($sqlstr);
 				$response = "OK";
 			}

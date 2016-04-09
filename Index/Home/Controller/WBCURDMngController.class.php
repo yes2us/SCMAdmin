@@ -30,7 +30,7 @@ class WBCURDMngController extends \Think\Controller {
 
 				$recordid = $dbm -> add($data);
 				
-				//setTag('Sql',$dbm ->_sql());			
+//				dump($dbm ->_sql());			
 				if($recordid<1) return 'fail';
 				
 				return $recordid;
@@ -276,8 +276,9 @@ class WBCURDMngController extends \Think\Controller {
 		$attArray = array("OrderCode","OrderItemCode","PartyCode","ParentCode",
 								"SKUCode","MakeDate","OrderType","OrderQty","Operator","DealState");
 		$uniqArray = array("MakeDate","PartyCode","SKUCode","OrderType");
+	
 		$status = $this->_CURDOperation($tableName,$_POST,$attArray,$uniqArray);
-				
+			
 		return $this -> ajaxReturn($status);
 	  }
 	  
@@ -292,9 +293,26 @@ class WBCURDMngController extends \Think\Controller {
 								"SupplyTime","OrderCycle","AdjUpChkPeriod","AdjUpFreezePeriod",
 								"AdjUpErodeLmt","AdjUpErodePer","AdjUpMoniterDate","AdjDnChkPeriod",
 								"AdjDnFreezePeriod","AdjDnErodeLmt","AdjDnErodeTimes","AdjDnMoniterDate");
+		$uniqArray = array("PartyCode","SKUCode");
 		$status = $this->_CURDOperation($tableName,$_POST,$attArray,$uniqArray);
 				
 		return $this -> ajaxReturn($status);
 	  }
+	  
+	   /* ***************操作调整记录表***************************
+	  */ 
+	    public function saveBMRecord()
+	  {
+	    if(stripos("insert|update|delete",$_POST['webix_operation'])===false)  return $this -> ajaxReturn("not permit");
+	  		  	
+	  	$tableName = "dadjusttsrecord";
+		$attArray = array("PartyCode","SKUCode","RecordDate","OldTargetQty","SugTargetQty","AdjustReason","Operator","DealState");
+		
+		$status = $this->_CURDOperation($tableName,$_POST,$attArray,null);
+				
+		return $this -> ajaxReturn($status);
+	  }
+	    
+	  
 }
 ?>

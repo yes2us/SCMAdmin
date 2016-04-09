@@ -31,7 +31,7 @@ function getMyCon($DSNo=1)
 					'DB_CHARSET'=> 'utf8', // 字符集
 					'DB_Host' => '127.0.0.1', //mac下不能使用localhost!
 					'DB_User' => 'root',
-					'DB_PWD'  => 'root',
+					'DB_PWD'  => 'Rickywang9',
 					'DB_NAME' => 'tocdist',
 					'DB_DEBUG'  =>  TRUE);
 
@@ -60,6 +60,31 @@ function getInputValue($attName,$default=null)
 			break;
 	}	
 	return $attValue;
+}
+
+function hasInput($attName)
+{
+	$hasInput = false;
+	
+	switch ($_SERVER['REQUEST_METHOD']) {
+		case "POST":
+				if(isset($_POST[$attName]))
+				{
+					$hasInput = true;
+				}
+			break;
+			
+		case "GET":
+				if(isset($_GET[$attName]))
+				{
+					 $hasInput = true;
+				}
+			break;
+			
+		default:
+			break;
+	}	
+	return $hasInput;
 }
 
 function upload2OSS($bucket,$key,$filepath)

@@ -138,7 +138,7 @@ class WBBillMngController extends \Think\Controller {
 		
 		$pagestr = "1,1000";
 		
-		$fieldstr = "d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrgPartyName,d1.SKCCode,ProductName,ColorName,";
+		$fieldstr = "d1._Identify,d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrgPartyName,d1.SKCCode,ProductName,ColorName,";
 		$fieldstr = $fieldstr . "BrandName,YearName,SeasonName,SeasonStageName,MainTypeName,SubTypeName,MovQty,MakeDate,DealState";
 		$fieldstr  = getInputValue("FieldStr",$fieldstr);
 		
@@ -160,11 +160,11 @@ class WBBillMngController extends \Think\Controller {
 	//拉式换款计划
     public function getRefrSKCPlan(){
     		if(hasInput('SKCCode'))  $condition['d1.SKCCode'] = getInputValue("SKCCode");		
-		$condition['_string'] = "(d1.SrcPartyCode=' ". getInputValue("WHCode") . "' or d1.TrgPartyCode='". getInputValue("WHCode") ."') ";
+		$condition['_string'] = "(d1.SrcPartyCode='". getInputValue("WHCode") . "' or d1.TrgPartyCode='". getInputValue("WHCode") ."') ";
 		
 		$pagestr = "1,1000";
 		
-		$fieldstr = "d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrPartyName,d1.SKCCode,ProductName,ColorName,";
+		$fieldstr = "d1._Identify,d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrgPartyName,d1.SKCCode,ProductName,ColorName,";
 		$fieldstr = $fieldstr . "BrandName,YearName,SeasonName,SeasonStageName,MainTypeName,SubTypeName,MovQty,MakeDate,DealState";
 		$fieldstr  = getInputValue("FieldStr",$fieldstr);
 		
@@ -182,30 +182,30 @@ class WBBillMngController extends \Think\Controller {
 		return $this -> ajaxReturn($rs);
     } 
     
-    	 public function getMovPlanRESTful(){
-    	 	$condition['DealState'] = '未处理';
-		$condition['PlanType'] = $_GET["PlanType"];
-	 	if(hasInput('SrcPartyCode')) $condition['SrcPartyCode'] =$_GET["SrcPartyCode"];
-	 	if(hasInput('TrgPartyCode')) $condition['TrgPartyCode'] =$_GET["TrgPartyCode"];
-	 	if(hasInput('TrgPartyCode')) $condition['TrgPartyCode'] =$_GET["TrgPartyCode"];
-	 	if(hasInput('TrgPartyCode')) $condition['TrgPartyCode'] =$_GET["TrgPartyCode"];
-	 	
-	 	if(hasInput('SKCCode')) $condition['SKCCode'] =$_GET["SKCCode"];
-		if(hasInput('RetRegionCode')) 
-		$condition['SrcPartyCode'] = array("exp","in (select partycode from bparty2partyrelation where relationtype='补货关系' and parentcode='".  $_GET['RetRegionCode'] ."')");
-		
-		$fieldStr = "a._Identify,SrcPartyCode,b.PartyName as SrcPartyName,TrgPartyCode,c.PartyName as TrgPartyName,";
-		$fieldStr = $fieldStr . "MakeDate,MovQty,DealState";
-		
-	   $rs = M("dmovskcplan as a","",getMyCon())
-        ->join("left join bparty as b on a.srcpartycode = b.partycode")
-        ->join("left join bparty as c on a.trgpartycode = c.partycode")
-        ->field($fieldStr)
-        ->where($condition)
-        ->select();
-		
-		return $this -> ajaxReturn($rs);
-	 }
+//  	 public function getMovPlanRESTful(){
+//  	 	$condition['DealState'] = '未处理';
+//		$condition['PlanType'] = $_GET["PlanType"];
+//	 	if(hasInput('SrcPartyCode')) $condition['SrcPartyCode'] =$_GET["SrcPartyCode"];
+//	 	if(hasInput('TrgPartyCode')) $condition['TrgPartyCode'] =$_GET["TrgPartyCode"];
+//	 	if(hasInput('TrgPartyCode')) $condition['TrgPartyCode'] =$_GET["TrgPartyCode"];
+//	 	if(hasInput('TrgPartyCode')) $condition['TrgPartyCode'] =$_GET["TrgPartyCode"];
+//	 	
+//	 	if(hasInput('SKCCode')) $condition['SKCCode'] =$_GET["SKCCode"];
+//		if(hasInput('RetRegionCode')) 
+//		$condition['SrcPartyCode'] = array("exp","in (select partycode from bparty2partyrelation where relationtype='补货关系' and parentcode='".  $_GET['RetRegionCode'] ."')");
+//		
+//		$fieldStr = "a._Identify,SrcPartyCode,b.PartyName as SrcPartyName,TrgPartyCode,c.PartyName as TrgPartyName,";
+//		$fieldStr = $fieldStr . "MakeDate,MovQty,DealState";
+//		
+//	   $rs = M("dmovskcplan as a","",getMyCon())
+//      ->join("left join bparty as b on a.srcpartycode = b.partycode")
+//      ->join("left join bparty as c on a.trgpartycode = c.partycode")
+//      ->field($fieldStr)
+//      ->where($condition)
+//      ->select();
+//		
+//		return $this -> ajaxReturn($rs);
+//	 }
      
 
 }

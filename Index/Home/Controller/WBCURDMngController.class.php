@@ -180,8 +180,8 @@ class WBCURDMngController extends \Think\Controller {
 		$attArray = array("PartyCode","PartyName","PartyType","PartyLevel","PartyEnabled","IsReplenish","RepPriority",
 						"RepBatchSize","RepNextDate","RepOrderCycle","RepSupplyTime","RepRollSpan","IsReturnStock",
 						"RetBatchSize","IsRetOverStock","RetOverStockNextDate","RetOverStockCycle","IsRetDeadStock",
-						"RetDeadStockNextDate","RetDeadStockCycle","IsAdjustTarget","IsUseSKUAdjPara","AdjUpChkPeriod",
-						"AdjUpFreezePeriod","AdjUpErodeLmt","AdjDnChkPeriod","AdjDnFreezePeriod","AdjDnErodeLmt");
+						"RetDeadStockNextDate","RetDeadStockCycle","IsBM","IsUseSKUBMPara","BMUpChkPeriod",
+						"BMUpFreezePeriod","BMUpErodeLmt","BMDnChkPeriod","BMDnFreezePeriod","BMDnErodeLmt");
 		$uniqArray = array("PartyCode");
 		$status = $this->_CURDOperation($tableName,$_POST,$attArray,$uniqArray);
 				
@@ -235,7 +235,7 @@ class WBCURDMngController extends \Think\Controller {
 	  }
 	  
 	    /**
-	  * ***************操作调拨计划表 ***************************
+	  * ***************操作调拨计划表 :SKC***************************
 	  */ 
 	  public function saveMovSKCPlan()
 	  {
@@ -243,44 +243,28 @@ class WBCURDMngController extends \Think\Controller {
 	  		  	
 	  	$tableName = "dmovskcplan";
 		$attArray = array("PlanType","MakeDate","SrcPartyCode","TrgPartyCode","SKCCode","MovQty","Operator","DealState");
-		$uniqArray = array("MakeDate","SrcPartyCode","TrgPartyCode","SKCCode");
+		$uniqArray = array("PlanType","MakeDate","SrcPartyCode","TrgPartyCode","SKCCode");
+		$status = $this->_CURDOperation($tableName,$_POST,$attArray,$uniqArray);
+				
+		return $this -> ajaxReturn($status);
+	  }
+	  
+	  	    /**
+	  * ***************操作调拨计划表 :SKU***************************
+	  */ 
+	  public function saveMovSKUPlan()
+	  {
+	    if(stripos("insert|update|delete",$_POST['webix_operation'])===false)  return $this -> ajaxReturn("not permit");
+	  		  	
+	  	$tableName = "dmovskuplan";
+		$attArray = array("PlanType","MakeDate","SrcPartyCode","TrgPartyCode","SKUCode","MovQty","Operator","DealState");
+		$uniqArray = array("PlanType","MakeDate","SrcPartyCode","TrgPartyCode","SKUCode");
 		$status = $this->_CURDOperation($tableName,$_POST,$attArray,$uniqArray);
 				
 		return $this -> ajaxReturn($status);
 	  }
 	  
 	  
-	  
-	  /* ***************操作补货表 ***************************
-	  */ 
-	  public function saveRepOrder()
-	  {
-	    if(stripos("insert|update|delete",$_POST['webix_operation'])===false)  return $this -> ajaxReturn("not permit");
-	  		  	
-	  	$tableName = "dreporder";
-		$attArray = array("OrderCode","OrderItemCode","PartyCode","ParentCode",
-								"SKUCode","MakeDate","OrderType","OrderQty","Operator","DealState");
-		$uniqArray = array("MakeDate","PartyCode","SKUCode");
-		$status = $this->_CURDOperation($tableName,$_POST,$attArray,$uniqArray);
-				
-		return $this -> ajaxReturn($status);
-	  }
-	  
-	   /* ***************操作退货表 ***************************
-	  */ 
-	  public function saveRetOrder()
-	  {
-	    if(stripos("insert|update|delete",$_POST['webix_operation'])===false)  return $this -> ajaxReturn("not permit");
-	  		  	
-	  	$tableName = "dretorder";
-		$attArray = array("OrderCode","OrderItemCode","PartyCode","ParentCode",
-								"SKUCode","MakeDate","OrderType","OrderQty","Operator","DealState");
-		$uniqArray = array("MakeDate","PartyCode","SKUCode","OrderType");
-	
-		$status = $this->_CURDOperation($tableName,$_POST,$attArray,$uniqArray);
-			
-		return $this -> ajaxReturn($status);
-	  }
 	  
 	   /* ***************操作库存表 ***************************
 	  */ 
@@ -289,10 +273,10 @@ class WBCURDMngController extends \Think\Controller {
 	    if(stripos("insert|update|delete",$_POST['webix_operation'])===false)  return $this -> ajaxReturn("not permit");
 	  		  	
 	  	$tableName = "dstock";
-		$attArray = array("IsSKURep","IsSKURet","IsAdjust","SugTarget","TargetQty",
-								"SupplyTime","OrderCycle","AdjUpChkPeriod","AdjUpFreezePeriod",
-								"AdjUpErodeLmt","AdjUpErodePer","AdjUpMoniterDate","AdjDnChkPeriod",
-								"AdjDnFreezePeriod","AdjDnErodeLmt","AdjDnErodeTimes","AdjDnMoniterDate");
+		$attArray = array("IsSKURep","IsSKURet","IsBM","SugTarget","TargetQty",
+								"SupplyTime","OrderCycle","BMUpChkPeriod","BMUpFreezePeriod",
+								"BMUpErodeLmt","BMUpErodePer","BMUpMoniterDate","BMDnChkPeriod",
+								"BMDnFreezePeriod","BMDnErodeLmt","BMDnErodeTimes","BMDnMoniterDate");
 		$uniqArray = array("PartyCode","SKUCode");
 		$status = $this->_CURDOperation($tableName,$_POST,$attArray,$uniqArray);
 				
@@ -305,14 +289,13 @@ class WBCURDMngController extends \Think\Controller {
 	  {
 	    if(stripos("insert|update|delete",$_POST['webix_operation'])===false)  return $this -> ajaxReturn("not permit");
 	  		  	
-	  	$tableName = "dadjusttsrecord";
-		$attArray = array("PartyCode","SKUCode","RecordDate","OldTargetQty","SugTargetQty","AdjustReason","Operator","DealState");
+	  	$tableName = "dbmrecord";
+		$attArray = array("PartyCode","SKUCode","RecordDate","OldTargetQty","SugTargetQty","BMReason","Operator","DealState");
 		
 		$status = $this->_CURDOperation($tableName,$_POST,$attArray,null);
 				
 		return $this -> ajaxReturn($status);
 	  }
-	    
-	  
+	    	  
 }
 ?>

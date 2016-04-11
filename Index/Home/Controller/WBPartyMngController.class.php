@@ -70,8 +70,8 @@ class WBPartyMngController extends \Think\Controller {
 			$fieldstr = $fieldstr . "PartyType,PartyLevel,PartyEnabled,RepBatchSize,RepNextDate,RepOrderCycle,";
 			$fieldstr = $fieldstr . "RepSupplyTime,RepRollSpan,IsReturnStock,RetBatchSize,IsRetOverStock,";
 			$fieldstr = $fieldstr . "RetOverStockNextDate,RetOverStockCycle,IsRetDeadStock,RetDeadStockNextDate,";
-			$fieldstr = $fieldstr . "RetDeadStockCycle,IsAdjustTarget,IsUseSKUAdjPara,AdjUpChkPeriod,AdjUpFreezePeriod,";
-			$fieldstr = $fieldstr . "AdjUpErodeLmt,AdjDnChkPeriod,AdjDnFreezePeriod,AdjDnErodeLmt";
+			$fieldstr = $fieldstr . "RetDeadStockCycle,IsBM,IsUseSKUBMPara,BMUpChkPeriod,BMUpFreezePeriod,";
+			$fieldstr = $fieldstr . "BMUpErodeLmt,BMDnChkPeriod,BMDnFreezePeriod,BMDnErodeLmt";
 		
 			$fieldstr = getInputValue("FieldStr",$fieldstr);
 			

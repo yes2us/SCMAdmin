@@ -57,13 +57,13 @@ class WBUserMngController extends \Think\Controller {
 	}
 	
 		public function checkUserPWD() {
-			return $this -> ajaxReturn('OK');
+//			return $this -> ajaxReturn('OK');
 			
 		$UserCode = $_POST['UserCode'];
 		$PWD = $_POST['PWD'];
 		
 		$Model = new \Think\Model("",getMyCon());
-		$sqlstr = "select pwdcompare('" . $PWD . "',[Password])  cmprs from buser where LOWER(UserCode) ='" . $UserCode . "'";
+		$sqlstr = "select SHA('" . $PWD . "')=UserPassword as  cmprs from buser where LOWER(UserCode) ='" . $UserCode . "'";
 //		p($sqlstr);
 		
 		$rs = $Model -> query($sqlstr);

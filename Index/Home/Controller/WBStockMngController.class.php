@@ -12,7 +12,8 @@ class WBStockMngController extends \Think\Controller {
 		
 		$sqlstr = "SELECT dstock._Identify,PartyCode,dstock.SKUCode,SKCCode,colorname,SizeName,brandname,yearname,seasonname,seasonstagename,";
 		$sqlstr = $sqlstr . " maintypename,subtypename,TargetQty,ifnull(OnHandQty,0)+ifnull(OnRoadQty,0) as StockQty,";
-		$sqlstr = $sqlstr . " (ifnull(TargetQty,0)-ifnull(OnHandQty,0)-ifnull(OnRoadQty,0)) as RepRetQty";
+		$sqlstr = $sqlstr . " (ifnull(TargetQty,0)-ifnull(OnHandQty,0)-ifnull(OnRoadQty,0)) as SugRepQty,";
+		$sqlstr = $sqlstr . " (-ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)) as SugRetQty";
 		$sqlstr = $sqlstr . " FROM dstock left join bsku on dstock.SKUCode = bsku.skucode";
 		$sqlstr = $sqlstr . " where PartyCode='" . $whcode . "' and (ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0))>0   limit 0,10000";
 
@@ -31,6 +32,7 @@ class WBStockMngController extends \Think\Controller {
 		
 		$sqlstr = "SELECT dstock._Identify,dstock.PartyCode,bparty.PartyName,SKUCode,";
 		$sqlstr = $sqlstr . " TargetQty,ifnull(OnHandQty,0)+ifnull(OnRoadQty,0) as StockQty,";
+		$sqlstr = $sqlstr . " (ifnull(TargetQty,0)-ifnull(OnHandQty,0)-ifnull(OnRoadQty,0)) as SugRepQty,";
 		$sqlstr = $sqlstr . " (-ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)) as SugRetQty";
 		$sqlstr = $sqlstr . " FROM dstock left join bparty on dstock.partycode = bparty.partycode";
 		$sqlstr = $sqlstr . " left join bparty2partyrelation on dstock.partycode = bparty2partyrelation.partycode and RelationType='退货关系'";

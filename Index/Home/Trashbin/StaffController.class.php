@@ -18,7 +18,7 @@ class StaffController extends \Think\Controller {
 	public function getStaffRelDepts() {
 		$dbtmodel = D('StaffDepts');
 		$condition['StaffCode'] = I("staffcode");
-		$filedarray=['staffcode','reltype','deptcode']; //必须选择关联的外键，否则关联项不显示
+//		$filedarray=['staffcode','reltype','deptcode']; //必须选择关联的外键，否则关联项不显示
 		$rs = $dbtmodel ->Relation(true)->field($filedarray)-> where($condition) -> select();
 		//dump($rs);
 		$this->ajaxReturn($rs);
@@ -36,7 +36,7 @@ class StaffController extends \Think\Controller {
 
 		unset($condition);		
 		$condition['DeptCode'] = $deptcode;
-		$fielddarray=['staffcode','reltype','deptcode'];//必须选择关联的外键，否则关联项不显示
+//		$fielddarray=['staffcode','reltype','deptcode'];//必须选择关联的外键，否则关联项不显示
 		$rs = $dbtmodel ->Relation(true)->field($fielddarray)-> where($condition) -> select();
 		dump($rs);
 //		$this->ajaxReturn($rs);
@@ -47,7 +47,7 @@ class StaffController extends \Think\Controller {
 	public function getStaffSubscribe() {
 		$dbtmodel = D('StaffSubscribe');
 		$condition['SubcriberCode'] = I("staffcode");
-		$filedarray=['subcribercode','staffname','IsOnJob'];
+//		$filedarray=['subcribercode','staffname','IsOnJob'];
 		$rs = $dbtmodel ->Relation(true)-> where($condition) -> select();
 		dump($rs);
 //		$this->ajaxReturn($rs);

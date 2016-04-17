@@ -8,9 +8,9 @@ function p($info) {
 }
 
 function setTag($label, $context) {
-	$debug = D("Debug");
+	$debug = M("boperationrecord");
 	// 实例化User对象
-	$debug -> tag($label, $context);
+	//$debug -> tag($label, $context);
 }
 
 //$today = date("Y-m-d");
@@ -31,7 +31,7 @@ function getMyCon($DSNo=1)
 					'DB_CHARSET'=> 'utf8', // 字符集
 					'DB_Host' => '127.0.0.1', //mac下不能使用localhost!
 					'DB_User' => 'root',
-					'DB_PWD'  => 'root',
+					'DB_PWD'  => 'Rickywang9',
 					'DB_NAME' => 'tocdist',
 					'DB_DEBUG'  =>  TRUE);
 
@@ -60,6 +60,31 @@ function getInputValue($attName,$default=null)
 			break;
 	}	
 	return $attValue;
+}
+
+function hasInput($attName)
+{
+	$hasInput = false;
+	
+	switch ($_SERVER['REQUEST_METHOD']) {
+		case "POST":
+				if(isset($_POST[$attName]))
+				{
+					$hasInput = true;
+				}
+			break;
+			
+		case "GET":
+				if(isset($_GET[$attName]))
+				{
+					 $hasInput = true;
+				}
+			break;
+			
+		default:
+			break;
+	}	
+	return $hasInput;
 }
 
 function upload2OSS($bucket,$key,$filepath)
@@ -105,20 +130,19 @@ function getOSSFilePath($bucket,$key)
 	 $data->setOutputEncoding('UTF-8');
 //	 $data->setOutputEncoding('gbk');
 //	$data->setUTFEncoder('mb');
-	
+	$startTime = microtime(true);
 	 $data->read($fileName);
 	 error_reporting(E_ALL ^ E_NOTICE);
 
+	 
 	 if($data->sheets[0]['numRows']>0)
  {
- 		$colArray = array();
+ 		$colArray = [];
  	//1.生成insert header语句：insert into #temp(排名,店长,店名,Y分)
     	for ($j = 1; $j <= $data->sheets[0]['numCols']; $j++) 
     	{
     		$cellvalue = $data->sheets[0]['cells'][1][$j];
 				
-			if($cellvalue=='消费日期')		$dateColIndex = $j;
-			
 			if($cellvalue>"")
 			{
 				if($fieldArray)
@@ -149,41 +173,50 @@ function getOSSFilePath($bucket,$key)
 				}
 			}
 		}
-		
+
 		//如果最后一个有效列名不是最后一列,那么加上反括号
 		if(count($colArray)>0)
 		{
 			if($j-1 != $colArray[count($colArray)-1]) 
 			 $sqlInsertCode = $sqlInsertCode . ")";
 		}
-		
-//		p($colArray);
-	//2.生成插值语句
-	
-		    for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) 
-	    	for ($j = 0; $j < count($colArray); $j++) 
-    	{
-    		$cellvalue = $data->sheets[0]['cells'][$i][$colArray[$j]];
-			
-				if($j==0)
-				{
-					$sqlCode = $sqlInsertCode . "values('" . $cellvalue ."'";
-				}
-				else if($j == count($colArray)-1)
-				{
-					$sqlCode = $sqlCode . ",'" . $cellvalue . "') \n";
-//					echo $sqlCode;
-//					setTag('sql',$sqlCode);
-					$dbmodel -> execute($sqlCode);
-				}
-				else
-				{
-					$sqlCode = $sqlCode . ",'" . $cellvalue . "'";
-				}
 
+	//2.生成插值语句
+	for($k=0;$k<count($data->sheets);$k++)
+	 for ($i = 2; $i <= $data->sheets[$k]['numRows']; $i++) 
+	 {
+	 	if($i==2) $valueCode = " values";
+	 	if($i%1000==0)
+		{
+			$sqlString = $sqlInsertCode . $valueCode;
+			$dbmodel->execute($sqlString);
+//			echo $sqlString;
+			$valueCode = " values";
 		}
+		
+	    	for ($j = 0; $j < count($colArray); $j++) 
+	    	{
+	    		$cellvalue = $data->sheets[$k]['cells'][$i][$colArray[$j]];	
+			if($j==0)	
+			{
+				if($valueCode==" values") $valueCode = $valueCode ."('" . $cellvalue ."'";
+				else $valueCode = $valueCode .",\n('" . $cellvalue ."'";
+			}
+			else if($j == count($colArray)-1)	$valueCode = $valueCode . ",'" . $cellvalue . "') ";
+			else	$valueCode = $valueCode . ",'" . $cellvalue . "'";
+		}
+			
+		if($i==$data->sheets[$k]['numRows'])
+		{
+			$sqlString = $sqlInsertCode . $valueCode;
+			$dbmodel->execute($sqlString);
+//			echo $sqlString;
+		}
+	 }
  }
 
   }
   
+ 
+
 ?>

@@ -8,8 +8,8 @@ use Think\Model;
 class BasicObjectModel extends Model {
 	// 获得参数
 	public function getSysPara() {
-		$dbtmodel = M('sysparameters',"",getMyCon());
-		$rs = $dbtmodel -> where("[desc]='timespan'") -> getField('name,vinterger');
+		$dbtmodel = M('bsyspara',"",getMyCon());
+		$rs = $dbtmodel -> getField('name');
 //		dump($rs);
 		return $rs;
 	}

@@ -1,0 +1,85 @@
+[ 2016-04-17T22:43:04+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `importsale` [ RunTime:0.0034s ]
+NOTIC: [8] Undefined variable: condition /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBUpLoadFileController.class.php 第 123 行.
+SQL: SELECT * FROM `importsale` LIMIT 0,200   [ RunTime:0.0022s ]
+
+[ 2016-04-17T23:10:07+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000924s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001042s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0027s ]
+SQL: SELECT PartyCode as id,PartyName as value FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0013s ]
+
+[ 2016-04-17T23:10:07+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000854s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001304s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tocdist.1' doesn't exist
+
+[ 2016-04-17T23:10:07+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000913s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001149s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001354s ]
+
+[ 2016-04-17T23:10:07+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000929s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001593s ]
+
+[ 2016-04-17T23:10:10+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBPartyMng/getRelPartyList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000863s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000960s ]
+SQL: SHOW COLUMNS FROM `vwp2partyrel` [ RunTime:0.0033s ]
+SQL: SELECT `PartyCode`,`PartyName` FROM `vwp2partyrel` WHERE `ParentCode` = 'ZZZ' AND `RelationType` = '归属关系' AND `IsReplenish` = 1 LIMIT 0,1000   [ RunTime:0.0146s ]
+
+[ 2016-04-17T23:10:12+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStockMng/getFGWarehouseTSInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+SQL: SELECT dstock._Identify,PartyCode,dstock.SKUCode,SKCCode,colorname,SizeName,brandname,yearname,seasonname,seasonstagename, maintypename,subtypename,TargetQty,ifnull(OnHandQty,0)+ifnull(OnRoadQty,0) as StockQty, (ifnull(TargetQty,0)-ifnull(OnHandQty,0)-ifnull(OnRoadQty,0)) as SugRepQty, (-ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0)) as SugRetQty FROM dstock left join bsku on dstock.SKUCode = bsku.skucode where PartyCode='B01J001' and (ifnull(TargetQty,0)+ifnull(OnHandQty,0)+ifnull(OnRoadQty,0))>0   limit 0,10000 [ RunTime:0.2095s ]
+
+[ 2016-04-17T23:10:12+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getPartyBMRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001036s ]
+SQL: SHOW COLUMNS FROM `dbmrecord` [ RunTime:0.0017s ]
+SQL: SELECT dbmrecord._identify,dbmrecord.partycode,`PartyName`,`SKUCode`,`RecordDate`,`OldTargetQty`,`SugTargetQty`,`BMReason`,`operator` FROM `dbmrecord` left join bparty as p1 on dbmrecord.partycode = p1.partycode  WHERE dbmrecord.PartyCode = 'B01J001' AND `RecordDate` <= '2016-01-01' ORDER BY dbmrecord._Identify desc LIMIT 0,100   [ RunTime:0.0138s ]
+
+[ 2016-04-17T23:10:12+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStockMng/getPartyIndex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001234s ]
+SQL: SHOW COLUMNS FROM `zdimparty` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `zdimparty` WHERE `PartyCode` = 'B01J001'  [ RunTime:0.0021s ]
+

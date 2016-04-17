@@ -1,0 +1,615 @@
+[ 2016-04-12T00:12:45+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001280s ]
+
+[ 2016-04-12T00:12:45+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001457s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0038s ]
+SQL: SELECT PartyCode as id,PartyName as value FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0012s ]
+
+[ 2016-04-12T00:12:47+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/getRawUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0024s ]
+SQL: SELECT `vtext` FROM `bsyspara` WHERE `Name` = 'DSSuffix' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-04-12T00:12:47+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/checkUserPWD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+
+[ 2016-04-12T00:12:47+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+SQL: SHOW COLUMNS FROM `buser` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `buser` WHERE `UserCode` = 'admin'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `buserrole` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `buserrole` WHERE `UserCode` = 'admin'  [ RunTime:0.0003s ]
+SQL: select distinct a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel, max(b.Operation) as Operation,max(b.Open) as Open from buserrole as a inner join bprevilege as b on a.RoleName = b.RoleName inner join vwmodule as c on b.ModuleID = c.ModuleID where UserCode='admin' group by a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel [ RunTime:0.0014s ]
+
+[ 2016-04-12T00:12:48+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBModuleMng/getMyMenuTree/UserCode/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002435s ]
+SQL: select distinct a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel, max(b.Operation) as Operation,max(b.Open) as Open from buserrole as a inner join bprevilege as b on a.RoleName = b.RoleName inner join vwmodule as c on b.ModuleID = c.ModuleID where UserCode='Admin' group by a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel order by c.ModuleLevel [ RunTime:0.0026s ]
+
+[ 2016-04-12T00:12:48+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+
+[ 2016-04-12T00:12:48+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+
+[ 2016-04-12T00:12:48+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001208s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0040s ]
+SQL: SELECT PartyCode as id,PartyName as value FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0009s ]
+
+[ 2016-04-12T00:12:48+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001515s ]
+NOTIC: [8] Undefined variable: rs /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBUpLoadFileController.class.php 第 123 行.
+
+[ 2016-04-12T00:12:51+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000684s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000952s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+
+[ 2016-04-12T00:12:51+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001092s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0026s ]
+SQL: SELECT PartyCode as id,PartyName as value FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0014s ]
+
+[ 2016-04-12T00:12:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKUPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000843s ]
+SQL: SHOW COLUMNS FROM `dmovskuplan` [ RunTime:0.0028s ]
+SQL: SELECT a._Identify,a.SrcPartyCode,p1.PartyName as SrcPartyName,a.TrgPartyCode,p2.PartyName as TrgPartyName,`MakeDate`,a.SKUCode,`SKCCode`,`ProductName`,`ColorName`,`SizeName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`PlanType`,`MovQty`,`DealState` FROM dmovskuplan as a inner join bparty as p1 on a.SrcPartyCode = p1.PartyCode inner join bparty as p2 on a.TrgPartyCode = p2.PartyCode left join bsku as p3 on a.SKUCode = p3.SKUCode  WHERE a.PlanType LIKE '%人工退货%' AND a.DealState = '未处理' AND a.TrgPartyCode = 'ZYCK' LIMIT 0,100   [ RunTime:0.9681s ]
+
+[ 2016-04-12T00:12:54+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStockMng/getPartyIndex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `zdimparty` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `zdimparty` WHERE ( exists( select 1 from bparty2partyrelation as a where parentcode='ZYCK' and a.partycode =zdimparty.partycode and relationtype='退货关系') )  [ RunTime:0.3443s ]
+
+[ 2016-04-12T00:12:54+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKCPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SHOW COLUMNS FROM `dmovskcplan` [ RunTime:0.0016s ]
+SQL: SELECT d1._Identify,d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrgPartyName,d1.SKCCode,`ProductName`,`ColorName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`MovQty`,`MakeDate`,`DealState` FROM dmovskcplan as d1 left join bparty as p1 on d1.srcpartycode = p1.partycode left join bparty as p2 on d1.trgpartycode = p2.partycode left join vwskc as p3 on d1.SKCCode = p3.SKCCode  WHERE d1.PlanType = '人工退货' AND d1.DealState = '未处理' AND d1.TrgPartyCode = 'ZYCK' LIMIT 0,1000   [ RunTime:0.1186s ]
+
+[ 2016-04-12T00:14:41+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStockMng/getPartyIndex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `zdimparty` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `zdimparty` WHERE ( exists( select 1 from bparty2partyrelation as a where parentcode='J18A' and a.partycode =zdimparty.partycode and relationtype='退货关系') )  [ RunTime:0.3700s ]
+
+[ 2016-04-12T00:14:41+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKUPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000076s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001400s ]
+SQL: SHOW COLUMNS FROM `dmovskuplan` [ RunTime:0.0018s ]
+SQL: SELECT a._Identify,a.SrcPartyCode,p1.PartyName as SrcPartyName,a.TrgPartyCode,p2.PartyName as TrgPartyName,`MakeDate`,a.SKUCode,`SKCCode`,`ProductName`,`ColorName`,`SizeName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`PlanType`,`MovQty`,`DealState` FROM dmovskuplan as a inner join bparty as p1 on a.SrcPartyCode = p1.PartyCode inner join bparty as p2 on a.TrgPartyCode = p2.PartyCode left join bsku as p3 on a.SKUCode = p3.SKUCode  WHERE a.PlanType LIKE '%人工退货%' AND a.DealState = '未处理' AND a.TrgPartyCode = 'J18A' LIMIT 0,100   [ RunTime:0.0008s ]
+
+[ 2016-04-12T00:14:41+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKCPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+SQL: SHOW COLUMNS FROM `dmovskcplan` [ RunTime:0.0026s ]
+SQL: SELECT d1._Identify,d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrgPartyName,d1.SKCCode,`ProductName`,`ColorName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`MovQty`,`MakeDate`,`DealState` FROM dmovskcplan as d1 left join bparty as p1 on d1.srcpartycode = p1.partycode left join bparty as p2 on d1.trgpartycode = p2.partycode left join vwskc as p3 on d1.SKCCode = p3.SKCCode  WHERE d1.PlanType = '人工退货' AND d1.DealState = '未处理' AND d1.TrgPartyCode = 'J18A' LIMIT 0,1000   [ RunTime:0.1047s ]
+
+[ 2016-04-12T00:15:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKUPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000718s ]
+SQL: SHOW COLUMNS FROM `dmovskuplan` [ RunTime:0.0347s ]
+SQL: SELECT a._Identify,a.SrcPartyCode,p1.PartyName as SrcPartyName,a.TrgPartyCode,p2.PartyName as TrgPartyName,`MakeDate`,a.SKUCode,`SKCCode`,`ProductName`,`ColorName`,`SizeName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`PlanType`,`MovQty`,`DealState` FROM dmovskuplan as a inner join bparty as p1 on a.SrcPartyCode = p1.PartyCode inner join bparty as p2 on a.TrgPartyCode = p2.PartyCode left join bsku as p3 on a.SKUCode = p3.SKUCode  WHERE a.PlanType LIKE '%人工退货%' AND a.DealState = '未处理' AND a.TrgPartyCode = 'ZYCK' LIMIT 0,100   [ RunTime:0.9390s ]
+
+[ 2016-04-12T00:15:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStockMng/getPartyIndex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000779s ]
+SQL: SHOW COLUMNS FROM `zdimparty` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `zdimparty` WHERE ( exists( select 1 from bparty2partyrelation as a where parentcode='ZYCK' and a.partycode =zdimparty.partycode and relationtype='退货关系') )  [ RunTime:0.3601s ]
+
+[ 2016-04-12T00:15:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKCPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `dmovskcplan` [ RunTime:0.0015s ]
+SQL: SELECT d1._Identify,d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrgPartyName,d1.SKCCode,`ProductName`,`ColorName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`MovQty`,`MakeDate`,`DealState` FROM dmovskcplan as d1 left join bparty as p1 on d1.srcpartycode = p1.partycode left join bparty as p2 on d1.trgpartycode = p2.partycode left join vwskc as p3 on d1.SKCCode = p3.SKCCode  WHERE d1.PlanType = '人工退货' AND d1.DealState = '未处理' AND d1.TrgPartyCode = 'ZYCK' LIMIT 0,1000   [ RunTime:0.1000s ]
+
+[ 2016-04-12T00:15:53+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStockMng/getPartyIndex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000718s ]
+SQL: SHOW COLUMNS FROM `zdimparty` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `zdimparty` WHERE ( exists( select 1 from bparty2partyrelation as a where parentcode='F01A' and a.partycode =zdimparty.partycode and relationtype='退货关系') )  [ RunTime:0.3450s ]
+
+[ 2016-04-12T00:15:54+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKUPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000940s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001070s ]
+SQL: SHOW COLUMNS FROM `dmovskuplan` [ RunTime:0.0015s ]
+SQL: SELECT a._Identify,a.SrcPartyCode,p1.PartyName as SrcPartyName,a.TrgPartyCode,p2.PartyName as TrgPartyName,`MakeDate`,a.SKUCode,`SKCCode`,`ProductName`,`ColorName`,`SizeName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`PlanType`,`MovQty`,`DealState` FROM dmovskuplan as a inner join bparty as p1 on a.SrcPartyCode = p1.PartyCode inner join bparty as p2 on a.TrgPartyCode = p2.PartyCode left join bsku as p3 on a.SKUCode = p3.SKUCode  WHERE a.PlanType LIKE '%人工退货%' AND a.DealState = '未处理' AND a.TrgPartyCode = 'F01A' LIMIT 0,100   [ RunTime:1.2555s ]
+
+[ 2016-04-12T00:15:54+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKCPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+SQL: SHOW COLUMNS FROM `dmovskcplan` [ RunTime:0.0016s ]
+SQL: SELECT d1._Identify,d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrgPartyName,d1.SKCCode,`ProductName`,`ColorName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`MovQty`,`MakeDate`,`DealState` FROM dmovskcplan as d1 left join bparty as p1 on d1.srcpartycode = p1.partycode left join bparty as p2 on d1.trgpartycode = p2.partycode left join vwskc as p3 on d1.SKCCode = p3.SKCCode  WHERE d1.PlanType = '人工退货' AND d1.DealState = '未处理' AND d1.TrgPartyCode = 'F01A' LIMIT 0,1000   [ RunTime:0.1026s ]
+
+[ 2016-04-12T00:16:13+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKUPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `dmovskuplan` [ RunTime:0.0018s ]
+SQL: SELECT a._Identify,a.SrcPartyCode,p1.PartyName as SrcPartyName,a.TrgPartyCode,p2.PartyName as TrgPartyName,`MakeDate`,a.SKUCode,`SKCCode`,`ProductName`,`ColorName`,`SizeName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`PlanType`,`MovQty`,`DealState` FROM dmovskuplan as a inner join bparty as p1 on a.SrcPartyCode = p1.PartyCode inner join bparty as p2 on a.TrgPartyCode = p2.PartyCode left join bsku as p3 on a.SKUCode = p3.SKUCode  WHERE a.PlanType LIKE '%人工退货%' AND a.DealState = '未处理' AND a.TrgPartyCode = 'HNNK' LIMIT 0,100   [ RunTime:1.3240s ]
+
+[ 2016-04-12T00:16:13+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStockMng/getPartyIndex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SHOW COLUMNS FROM `zdimparty` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `zdimparty` WHERE ( exists( select 1 from bparty2partyrelation as a where parentcode='HNNK' and a.partycode =zdimparty.partycode and relationtype='退货关系') )  [ RunTime:0.3066s ]
+
+[ 2016-04-12T00:16:13+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKUPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+SQL: SHOW COLUMNS FROM `dmovskuplan` [ RunTime:0.0015s ]
+SQL: SELECT a._Identify,a.SrcPartyCode,p1.PartyName as SrcPartyName,a.TrgPartyCode,p2.PartyName as TrgPartyName,`MakeDate`,a.SKUCode,`SKCCode`,`ProductName`,`ColorName`,`SizeName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`PlanType`,`MovQty`,`DealState` FROM dmovskuplan as a inner join bparty as p1 on a.SrcPartyCode = p1.PartyCode inner join bparty as p2 on a.TrgPartyCode = p2.PartyCode left join bsku as p3 on a.SKUCode = p3.SKUCode  WHERE a.PlanType LIKE '%人工退货%' AND a.DealState = '未处理' AND a.TrgPartyCode = 'J18A' LIMIT 0,100   [ RunTime:0.0007s ]
+
+[ 2016-04-12T00:16:13+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStockMng/getPartyIndex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+SQL: SHOW COLUMNS FROM `zdimparty` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `zdimparty` WHERE ( exists( select 1 from bparty2partyrelation as a where parentcode='J18A' and a.partycode =zdimparty.partycode and relationtype='退货关系') )  [ RunTime:0.3350s ]
+
+[ 2016-04-12T00:16:14+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKCPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000678s ]
+SQL: SHOW COLUMNS FROM `dmovskcplan` [ RunTime:0.0015s ]
+SQL: SELECT d1._Identify,d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrgPartyName,d1.SKCCode,`ProductName`,`ColorName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`MovQty`,`MakeDate`,`DealState` FROM dmovskcplan as d1 left join bparty as p1 on d1.srcpartycode = p1.partycode left join bparty as p2 on d1.trgpartycode = p2.partycode left join vwskc as p3 on d1.SKCCode = p3.SKCCode  WHERE d1.PlanType = '人工退货' AND d1.DealState = '未处理' AND d1.TrgPartyCode = 'HNNK' LIMIT 0,1000   [ RunTime:0.0993s ]
+
+[ 2016-04-12T00:16:14+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKCPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `dmovskcplan` [ RunTime:0.0017s ]
+SQL: SELECT d1._Identify,d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrgPartyName,d1.SKCCode,`ProductName`,`ColorName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`MovQty`,`MakeDate`,`DealState` FROM dmovskcplan as d1 left join bparty as p1 on d1.srcpartycode = p1.partycode left join bparty as p2 on d1.trgpartycode = p2.partycode left join vwskc as p3 on d1.SKCCode = p3.SKCCode  WHERE d1.PlanType = '人工退货' AND d1.DealState = '未处理' AND d1.TrgPartyCode = 'J18A' LIMIT 0,1000   [ RunTime:0.1017s ]
+
+[ 2016-04-12T00:16:14+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBStockMng/getPartyIndex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `zdimparty` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `zdimparty` WHERE ( exists( select 1 from bparty2partyrelation as a where parentcode='ZYCK' and a.partycode =zdimparty.partycode and relationtype='退货关系') )  [ RunTime:0.3417s ]
+
+[ 2016-04-12T00:16:15+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKUPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `dmovskuplan` [ RunTime:0.0016s ]
+SQL: SELECT a._Identify,a.SrcPartyCode,p1.PartyName as SrcPartyName,a.TrgPartyCode,p2.PartyName as TrgPartyName,`MakeDate`,a.SKUCode,`SKCCode`,`ProductName`,`ColorName`,`SizeName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`PlanType`,`MovQty`,`DealState` FROM dmovskuplan as a inner join bparty as p1 on a.SrcPartyCode = p1.PartyCode inner join bparty as p2 on a.TrgPartyCode = p2.PartyCode left join bsku as p3 on a.SKUCode = p3.SKUCode  WHERE a.PlanType LIKE '%人工退货%' AND a.DealState = '未处理' AND a.TrgPartyCode = 'ZYCK' LIMIT 0,100   [ RunTime:0.9195s ]
+
+[ 2016-04-12T00:16:16+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBBillMng/getMovSKCPlanItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `dmovskcplan` [ RunTime:0.0017s ]
+SQL: SELECT d1._Identify,d1.SrcPartyCode,p1.PartyName as SrcPartyName,d1.TrgPartyCode,p2.PartyName as TrgPartyName,d1.SKCCode,`ProductName`,`ColorName`,`BrandName`,`YearName`,`SeasonName`,`SeasonStageName`,`MainTypeName`,`SubTypeName`,`MovQty`,`MakeDate`,`DealState` FROM dmovskcplan as d1 left join bparty as p1 on d1.srcpartycode = p1.partycode left join bparty as p2 on d1.trgpartycode = p2.partycode left join vwskc as p3 on d1.SKCCode = p3.SKCCode  WHERE d1.PlanType = '人工退货' AND d1.DealState = '未处理' AND d1.TrgPartyCode = 'ZYCK' LIMIT 0,1000   [ RunTime:0.1070s ]
+
+[ 2016-04-12T00:34:30+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001160s ]
+
+[ 2016-04-12T00:34:35+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/getRawUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0018s ]
+SQL: SELECT `vtext` FROM `bsyspara` WHERE `Name` = 'DSSuffix' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-04-12T00:34:35+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/checkUserPWD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+
+[ 2016-04-12T00:34:35+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+SQL: SHOW COLUMNS FROM `buser` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `buser` WHERE `UserCode` = 'admin'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `buserrole` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `buserrole` WHERE `UserCode` = 'admin'  [ RunTime:0.0003s ]
+SQL: select distinct a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel, max(b.Operation) as Operation,max(b.Open) as Open from buserrole as a inner join bprevilege as b on a.RoleName = b.RoleName inner join vwmodule as c on b.ModuleID = c.ModuleID where UserCode='admin' group by a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel [ RunTime:0.0014s ]
+
+[ 2016-04-12T00:34:36+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBModuleMng/getMyMenuTree/UserCode/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000776s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001056s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001210s ]
+SQL: select distinct a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel, max(b.Operation) as Operation,max(b.Open) as Open from buserrole as a inner join bprevilege as b on a.RoleName = b.RoleName inner join vwmodule as c on b.ModuleID = c.ModuleID where UserCode='Admin' group by a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel order by c.ModuleLevel [ RunTime:0.0027s ]
+
+[ 2016-04-12T00:34:36+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000988s ]
+
+[ 2016-04-12T00:34:36+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000968s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0026s ]
+SQL: SELECT PartyCode as id,PartyName as value FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0010s ]
+
+[ 2016-04-12T00:34:36+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001015s ]
+NOTIC: [8] Undefined variable: rs /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBUpLoadFileController.class.php 第 123 行.
+
+[ 2016-04-12T00:34:36+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001226s ]
+
+[ 2016-04-12T00:34:47+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001283s ]
+
+[ 2016-04-12T00:34:50+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/getRawUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0019s ]
+SQL: SELECT `vtext` FROM `bsyspara` WHERE `Name` = 'DSSuffix' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-04-12T00:34:50+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/checkUserPWD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+
+[ 2016-04-12T00:34:50+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+SQL: SHOW COLUMNS FROM `buser` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `buser` WHERE `UserCode` = 'admin'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `buserrole` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `buserrole` WHERE `UserCode` = 'admin'  [ RunTime:0.0003s ]
+SQL: select distinct a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel, max(b.Operation) as Operation,max(b.Open) as Open from buserrole as a inner join bprevilege as b on a.RoleName = b.RoleName inner join vwmodule as c on b.ModuleID = c.ModuleID where UserCode='admin' group by a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel [ RunTime:0.0014s ]
+
+[ 2016-04-12T00:34:51+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBModuleMng/getMyMenuTree/UserCode/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001410s ]
+SQL: select distinct a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel, max(b.Operation) as Operation,max(b.Open) as Open from buserrole as a inner join bprevilege as b on a.RoleName = b.RoleName inner join vwmodule as c on b.ModuleID = c.ModuleID where UserCode='Admin' group by a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel order by c.ModuleLevel [ RunTime:0.0028s ]
+
+[ 2016-04-12T00:34:51+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000072s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000865s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002238s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0042s ]
+SQL: SELECT PartyCode as id,PartyName as value FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0008s ]
+
+[ 2016-04-12T00:34:51+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000887s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001675s ]
+
+[ 2016-04-12T00:34:51+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: rs /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBUpLoadFileController.class.php 第 123 行.
+
+[ 2016-04-12T00:34:51+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000675s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001017s ]
+
+[ 2016-04-12T00:35:12+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000253s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001080s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001170s ]
+
+[ 2016-04-12T00:35:18+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/getRawUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0016s ]
+SQL: SELECT `vtext` FROM `bsyspara` WHERE `Name` = 'DSSuffix' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-04-12T00:35:18+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/checkUserPWD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+NOTIC: [8] Array to string conversion /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Model.class.php 第 1392 行.
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Password' in 'field list'
+
+[ 2016-04-12T00:35:42+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/getRawUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0015s ]
+SQL: SELECT `vtext` FROM `bsyspara` WHERE `Name` = 'DSSuffix' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-04-12T00:35:42+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/checkUserPWD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+NOTIC: [8] Array to string conversion /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Model.class.php 第 1392 行.
+SQL: select SHA('test232')=UserPassword as  cmprs from buser where LOWER(UserCode) ='admin' [ RunTime:0.0004s ]
+
+[ 2016-04-12T00:35:48+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/getRawUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+SQL: SHOW COLUMNS FROM `bsyspara` [ RunTime:0.0017s ]
+SQL: SELECT `vtext` FROM `bsyspara` WHERE `Name` = 'DSSuffix' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-04-12T00:35:48+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/checkUserPWD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+NOTIC: [8] Array to string conversion /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Model.class.php 第 1463 行.
+NOTIC: [8] Array to string conversion /Users/Ricky/Dev/SCMAdmin/ThinkPHP/Library/Think/Model.class.php 第 1392 行.
+SQL: select SHA('test')=UserPassword as  cmprs from buser where LOWER(UserCode) ='admin' [ RunTime:0.0004s ]
+
+[ 2016-04-12T00:35:48+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUserMng/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001041s ]
+SQL: SHOW COLUMNS FROM `buser` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `buser` WHERE `UserCode` = 'admin'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `buserrole` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `buserrole` WHERE `UserCode` = 'admin'  [ RunTime:0.0003s ]
+SQL: select distinct a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel, max(b.Operation) as Operation,max(b.Open) as Open from buserrole as a inner join bprevilege as b on a.RoleName = b.RoleName inner join vwmodule as c on b.ModuleID = c.ModuleID where UserCode='admin' group by a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel [ RunTime:0.0014s ]
+
+[ 2016-04-12T00:35:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBModuleMng/getMyMenuTree/UserCode/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001061s ]
+SQL: select distinct a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel, max(b.Operation) as Operation,max(b.Open) as Open from buserrole as a inner join bprevilege as b on a.RoleName = b.RoleName inner join vwmodule as c on b.ModuleID = c.ModuleID where UserCode='Admin' group by a.UserCode,b.RoleName,c.ParentModuleID,c.ParentModuleName, b.ModuleID,c.ModuleName,c.ModuleICON,c.ModuleDesc,c.ModuleLevel order by c.ModuleLevel [ RunTime:0.0029s ]
+
+[ 2016-04-12T00:35:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000636s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000985s ]
+
+[ 2016-04-12T00:35:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/Index/checkAuth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000981s ]
+
+[ 2016-04-12T00:35:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBUpLoadFile/getImportData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001106s ]
+NOTIC: [8] Undefined variable: rs /Users/Ricky/Dev/SCMAdmin/Index/Home/Controller/WBUpLoadFileController.class.php 第 123 行.
+
+[ 2016-04-12T00:35:49+08:00 ] 127.0.0.1 /SCMAdmin/index.php/Home/WBPartyMng/getRegionList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000844s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001592s ]
+SQL: SHOW COLUMNS FROM `bparty` [ RunTime:0.0028s ]
+SQL: SELECT PartyCode as id,PartyName as value FROM `bparty` WHERE `PartyType` = '分仓' AND `PartyEnabled` = 1 LIMIT 0,1000   [ RunTime:0.0011s ]
+

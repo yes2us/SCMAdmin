@@ -4,20 +4,21 @@ namespace Home\Controller;
 
 class TestController extends \Think\Controller {
 	public function Test() {
-		
-		$filename = "D:\\phpStudy4IIS\\WWW\\POAAdmin\\import-excel-php\\grid.xls";
-		importExcel2DB($filename);
+		$condition['PartyType'] = '分仓';			
+		$condition['PartyEnabled'] = 1;			
 
-//   p(D("StaffObject")->getStaffEvents('48024'));
-//	
+		$pagestr = getInputValue("Page","1,1000");
+		$fieldstr  = getInputValue("FieldStr","PartyCode,PartyName");
+		p($condition);
+//		import('@.Model.PartyObjectModel');
+//		$PartyObjectModel = new PartyObjectModel();
+		$rs = D("PartyObject")->getRegionList($condition,$pagestr,$fieldstr);
+		dump($rs);
+	}
 	
-//		upload2OSS("eekavip","andriod.jpg","D:\\网盘\\[Pictures]\\mmexport1431657043318.jpg");
-		
-//		$dmb = D("StaffObject");
-//		$condition['StaffCode']='48024';
-//		$rs = $dmb->getStaffRelDepts($condition);
-//		dump($rs);
-
+	public function Test2(){
+		$rs = D("BasicObject")->getSysPara();
+		dump($rs);
 	}
 }
 

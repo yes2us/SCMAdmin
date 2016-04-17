@@ -76,6 +76,10 @@ class WBUpLoadFileController extends \Think\Controller {
 	}
 	
 	public function importExcel2DB() {
+		ini_set('memory_limit', '2048M');
+		set_time_limit(1200);
+//		echo 'mem' . ini_get('memory_limit');
+		
 		$config = array(    
 			'maxSize'    =>    31457280,    
 			'savePath'   =>    '',    
@@ -85,6 +89,7 @@ class WBUpLoadFileController extends \Think\Controller {
 			'subName'    =>    array('date','Ymd'),
 		);
 
+		$TargetTable = substr(strrchr($_SERVER['PHP_SELF'],"/"),1);			
 		$upload = new \Think\Upload($config);
 		
 		// 上传单个文件
@@ -97,42 +102,45 @@ class WBUpLoadFileController extends \Think\Controller {
 				
 		$fullsavename = null;
 		  foreach($info as $file){
-		   	$fullSaveName = "./UpLoads/".$file["savepath"].$file["savename"];
-				setTag('savepath', $fullSaveName) ;
+		   	$fullSaveName = "./UpLoads/".$file["savepath"].$TargetTable. "_" .$file["savename"];
+//				setTag('savepath', $fullSaveName) ;
 		}
-	
-//		$fullSaveName = "./UpLoads/20150602/556da9ef2417e.xls";
-		$fieldArray = array("渠道四级名称","会员名称","会员编号","渠道五级名称","会员手机号码","会员归属品牌","产品编号",
-		"吊牌价","产品年代","产品波段","产品主题","产品系列","零售单号","总销售金额","总销售数量","消费日期");		
-		$tableName = 'TempSaleBill';
-		importExcel2DB(getMyCon(),$tableName,$fullSaveName,$fieldArray);	
+
+		$fullSaveName = "./UpLoads/20160417/testsmall.xls";
+		$fieldArray = array("门店编号","SKUCode","消费日期","销售金额","销售数量");		
+//		$tableName = 'importsale';
+
+		importExcel2DB(getMyCon(),$TargetTable,$fullSaveName,$fieldArray);	
+			return $this -> ajaxReturn("{ status: 'server',fullsname:'". $fullSaveName ."'}");
 		}	
 	}
 
 	public function getImportData(){
-//		$PageIndex = $_POST['PageIndex'];
-//		$PageLen = $_POST['PageLen'];
-//
-//		$Model = new \Think\Model("","",getMyCon(2));
-//		$sqlstring = M('sqllist','',getMyCon())->where("SQLIndex='WBSQL_ImpSaleData'")->getField("SQLCode");
-//		$sqlstring = str_replace('@parm1', $PageIndex, $sqlstring);
-//		$sqlstring = str_replace('@parm2', $PageLen, $sqlstring);
-//		
-//		$rs = $Model -> query($sqlstring);
+		$TargetTable = getInputValue('TargetTable');
+		$pageStr = getInputValue("Page","1,1000");
+		
+		$rs = M($TargetTable,"",getMyCon())
+			->where($condition)
+			->page($pageStr)
+			->select();
 		
 		return $this -> ajaxReturn($rs);
 	}
 	
 	public function clearImportData(){
-		$Model = new \Think\Model("","",getMyCon(2));
-		$sqlstring = " truncate table TempSaleBill";
+		$TargetTable = getInputValue('TargetTable');
+				
+		$Model = new \Think\Model("","",getMyCon());
+		$sqlstring = " truncate table " . $TargetTable;
 		$rs = $Model->execute($sqlstring);
 		return $this -> ajaxReturn($rs);
 	}
 	
 	public function saveImportData(){
-		$Model = new \Think\Model("","",getMyCon(2));
-		$sqlstring = " exec ImportVIPData";
+		$TargetTable = getInputValue('TargetTable');
+		
+		$Model = new \Think\Model("","",getMyCon());
+		$sqlstring = " exec Import". $TargetTable ."Data";
 		$rs = $Model->execute($sqlstring);
 		return $this -> ajaxReturn("OK");
 	}
